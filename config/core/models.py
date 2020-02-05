@@ -16,6 +16,7 @@ class Brand(models.Model):
 class Mall(models.Model):
     name = models.CharField(max_length=255)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='mall')
+
     def __str__(self):
         return self.name
 
