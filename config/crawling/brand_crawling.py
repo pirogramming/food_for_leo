@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup as bs
-from config.core.models import Brand
+from core.models import *
 
 #동물사랑, 퀸앤퍼피, 강아지왕국, 강아지대통령
 brand_list=[]
+pre_brand_selector=[]
 
 def brand_crawling():
     #동물사랑APS
@@ -35,6 +36,8 @@ def brand_crawling():
     html = req.text
     soup = bs(html, 'html.parser')
     brand_list_4 = [i.text.strip().split('(')[0] for i in soup.select('.nano-content.nano-content-scroll label')]
+    global pre_brand_selector
+    pre_brand_selector = soup.select('.nano-content.nano-content-scroll label input')
     brand_list += [brand_list_4]
 
 
