@@ -1,5 +1,10 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+import django
+django.setup()
 from crawling.brand_crawling import *
-
 
 
 def crawling_mall3():

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'core',
     'mypage',
+    'crawling',
 
     'allauth',
     'allauth.account',
