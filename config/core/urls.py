@@ -12,5 +12,4 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('sign_up', sign_up, name='sign_up'),
     path('product_list/', product_list, name='product_list'),
-    path('mypage/', include('mypage.urls')),
 ]
