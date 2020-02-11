@@ -47,7 +47,7 @@ def crawling_mall3_product():
             req = requests.get(url)
             req.encoding = 'euc-kr'
             html = req.text
-            soup = bs(html, 'html.parser')
+            soup = bs(html, 'lxml')
             # 가격
             # div.price_info > table > tbody > tr:nth-child(1) > td > span
             is_discount = \
