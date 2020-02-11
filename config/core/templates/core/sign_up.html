@@ -1,0 +1,18 @@
+<div class="container">
+    <div>
+        <h1>회원가입</h1>
+        <div class="container">
+            <form action="{% url 'core:sign_up' %}" method="POST">
+                {% csrf_token %}
+                <div>Username: <input type="text" name="username"></div>
+                <br>
+                <div>Password: <input type="password" name="password1"></div>
+                <br>
+                <div>Confirm Password: <input type="password" name="password2"></div>
+                <br>
+                <input type="submit" class="btn btn-outline-dark" value="제출">
+
+            </form>
+        </div>
+    </div>
+</div>

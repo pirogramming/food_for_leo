@@ -1,17 +1,7 @@
-<!-- home.html -->
-{% load socialaccount %}
-{% providers_media_js %}
+<h1>home</h1>
 
-<h1>소셜 로그인을 해봐요!</h1>
+<h3><a href="{% url 'core:login' %}">로그인하기</a></h3>
 
-<a href = "/accounts/signup">회원가입</a><br>
-
-{% if user.is_authenticated %}
-<a href = "/accounts/logout">로그아웃</a>
-{{user.username}} 님이 로그인중
-
-{% else %}
-<a href=" {% provider_login_url 'google' %}">구글 로그인</a><br>
-로그인 하셔야 합니다.
-
-{% endif %}
+<h3><a href="{% url 'core:home' %}">home</a></h3>
+<h3><a href="{% url 'core:brand_page' %}">brand_page</a></h3>
+<h3><a href="{% url 'mypage/profile' %}">mypage</a></h3>

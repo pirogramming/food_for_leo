@@ -1,0 +1,8 @@
+<h1>product list</h1>
+
+{% for product in product_list %}
+    <li>{{ product.name }}</li>
+{% endfor %}
+
+<h3><a href="{% url 'core:home' %}">home</a></h3>
+<h3><a href="{% url 'mypage:profile' %}">mypage</a></h3>
