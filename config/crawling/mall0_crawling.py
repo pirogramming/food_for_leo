@@ -89,7 +89,7 @@ def mall0_product_crawling():
             if get_stock == 777:
                 continue
             Product.objects.update_or_create(
-                name=get_apslove_name(product),
+                name=get_apslove_name(soup),
                 mall=mall,
                 price=soup.select('#price')[0].text.split('원')[0].replace(',', ''),
                 stock=get_stock,
@@ -100,12 +100,13 @@ def mall0_product_crawling():
             )
 
 
-def get_apslove_name(product):
-    name = product.getText()
+def get_apslove_name(soup):
+    name = soup.select("#goods_spec > form > div.goodsnm.dote-bottom > b")[0].text
     if ']' in name:
-        name = name.split(']')[1]
+        name = name.split(']')[1].strip()
+    else:
+        name = name
     return name
-
 
 def get_apslove_stock(soup):
     stock = soup.select('#goods_spec > form table:nth-child(6)')
