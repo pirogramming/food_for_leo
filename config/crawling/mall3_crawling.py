@@ -1,10 +1,14 @@
 import os
 import sys
+
+
+
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
 django.setup()
 from crawling.brand_crawling import *
+from core.models import *
 
 
 def crawling_mall3():
@@ -17,7 +21,7 @@ def crawling_mall3():
             if index >= len(brand_list[3]):
                 break
             elif str(brand) == brand_list[3][i]:
-                Mall.objects.create(
+                Mall.objects.update_or_create(
                     name='president',
                     brand=brand,
                     logo='http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif',
@@ -74,7 +78,7 @@ def crawling_mall3_product():
                 d_image = soup.select('#goods_desc_img')[0].get('src')
             else:
                 d_image = None
-            Product.objects.create(product_url=product.get('href'),
+            Product.objects.update_or_create(product_url=product.get('href'),
                                    mall=br_m,
                                    name=soup.select('fieldset > div.hd  h2')[0].text,
                                    price=pri,

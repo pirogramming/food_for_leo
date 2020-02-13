@@ -6,6 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 import django
 django.setup()
 from crawling.brand_crawling import *
+from core.models import *
 import time
 
 

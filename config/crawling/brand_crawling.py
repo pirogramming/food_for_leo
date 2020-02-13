@@ -54,7 +54,7 @@ def brand_create_first():
 
     #브랜드 객체 생성(brand4(강아지대통령)기준)
     for brand in brand_list[3]:
-        Brand.objects.create(
+        Brand.objects.update_or_create(
             name=brand
         )
 
@@ -71,7 +71,7 @@ def brand_create():
                     break
                 #아스키코드값 비교
                 elif brand < brand_object[j]:
-                    Brand.objects.create(
+                    Brand.objects.update_or_create(
                         name=brand
                     )
                     brand_object.insert(j, brand)

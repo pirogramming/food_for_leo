@@ -5,8 +5,9 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
 django.setup()
 from crawling.brand_crawling import *
+from core.models import *
 
-def mall3_crawling_mall():
+def mall2_crawling_mall():
     brands = Brand.objects.all().order_by('name')
     req = requests.get('http://www.dogskingdom.co.kr/shop/goods/goods_list.php?&category=001')
     html = req.text
@@ -26,7 +27,7 @@ def mall3_crawling_mall():
             if indx >= len(brand_3_url):
                 break
             elif str(brand) == brand_3_url[i][0]:
-                Mall.objects.create(
+                Mall.objects.update_or_create(
                     name='kingdom',
                     brand=brand,
                     logo='http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg',
@@ -40,7 +41,7 @@ def mall3_crawling_mall():
                 break
 
 
-def mall3_crawling_product():
+def mall2_crawling_product():
     for mall in Mall.objects.all():
         req = requests.get(mall.brand_url)
         html = req.text
@@ -73,7 +74,7 @@ def mall3_crawling_product():
             else:
                 name = name
 
-            Product.objects.create(
+            Product.objects.update_or_create(
                 name=name,
                 mall=mall,
                 price=[i.text for i in soup.select("#price")][0].replace(',', ''),
@@ -89,5 +90,5 @@ if __name__ == '__main__':
     brand_crawling()
     brand_create_first()
     brand_create()
-    mall3_crawling_mall()
-    mall3_crawling_product()
+    mall2_crawling_mall()
+    mall2_crawling_product()

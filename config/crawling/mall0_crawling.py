@@ -1,8 +1,13 @@
-import requests
-from bs4 import BeautifulSoup as bs
-
-from config.core.models import *
-
+import os
+from bs4 import BeautifulSoup
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+import django
+django.setup()
+from crawling.brand_crawling import *
+from core.models import *
+import time
 
 def mall0_crawling():
     brands = Brand.objects.all().order_by('name')  # 함수분리시 view에서 처리/매개변수로 받기
@@ -22,7 +27,7 @@ def mall0_crawling():
             if index >= len(brand_1_url):
                 break
             elif str(brand) == brand_1_url[i][0]:  # brandName은 튜플의 0번 인덱스
-                Mall.objects.create(
+                Mall.objects.update_or_create(
                     name='동물사랑APS',
                     brand=brand,
                     logo='http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif',
@@ -83,7 +88,7 @@ def mall0_product_crawling():
             get_stock = get_apslove_stock(soup)
             if get_stock == 777:
                 continue
-            Product.objects.create(
+            Product.objects.update_or_create(
                 name=get_apslove_name(product),
                 mall=mall,
                 price=soup.select('#price')[0].text.split('원')[0].replace(',', ''),
@@ -159,3 +164,12 @@ def get_apslove_made_in(soup):
         if "원산지" in madeIn_1[0].text:
             return (madeIn_1[0].text.split('\n')[3].split('원산지')[1])
     if madeIn_2:
+        if "원산지" in madeIn_2[0].text:
+            return (madeIn_2[0].text.split('\n')[3].split('원산지')[1])
+
+if __name__ == '__main__':
+    brand_crawling()
+    brand_create_first()
+    brand_create()
+    mall0_crawling()
+    mall0_product_crawling()
