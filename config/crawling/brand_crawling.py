@@ -33,8 +33,8 @@ def brand_crawling():
     req.encoding = 'euc-kr'
     html = req.text
     soup = bs(html, 'html.parser')
-    brand_list_2 = [i.text.strip().split('(')[0].strip() for i in soup.select(".list_subcate a")]
-    brand_list += [brand_list_2]
+    brand_list_3 = [i.text.strip() for i in soup.select(".list_subcate a")]
+    brand_list += [brand_list_3]
 
     #강아지대통령
     req = requests.get('http://www.dogpre.com/shop/goods/goods_list.php?category=036')
