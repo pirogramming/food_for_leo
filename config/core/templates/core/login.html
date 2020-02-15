@@ -19,19 +19,19 @@
             <a href="{% url 'core:logout' %}">로그아웃</a>
             {{ user.username }} 님이 로그인 중
 
-        {% else %}
+            <div>
+                <a href="{% url 'core:reset_pw' %}">비밀번호 변경</a>
+            </div>
+            <div>
+                <a href="{% url 'core:delete_account' %}">회원탈퇴</a>
+            </div>
 
+        {% else %}
             <div>
-            <div>
-                <div>
-                    <a href="{% provider_login_url 'google' %}" class="btn btn-outline-light" role="button"
-                       aria-pressed="true">GOOGLE</a>
-                </div>
+                <a href="{% provider_login_url 'google' %}">GOOGLE</a>
             </div>
             <div>
-                <a href="{% url 'core:sign_up' %}" class="btn btn-outline-light" role="button"
-                   aria-pressed="true">회원가입</a>
-            </div>
+                <a href="{% url 'core:sign_up' %}">회원가입</a>
             </div>
         {% endif %}
     </div>
