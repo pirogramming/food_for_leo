@@ -1,13 +1,17 @@
 import os
 from bs4 import BeautifulSoup
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import sys
+
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 import django
+
 django.setup()
 from crawling.brand_crawling import *
 from core.models import *
 import time
+
 
 def mall0_crawling():
     brands = Brand.objects.all().order_by('name')  # 함수분리시 view에서 처리/매개변수로 받기
@@ -101,12 +105,22 @@ def mall0_product_crawling():
 
 
 def get_apslove_name(soup):
-    name = soup.select("#goods_spec > form > div.goodsnm.dote-bottom > b")[0].text
-    if ']' in name:
-        name = name.split(']')[1].strip()
+    name = soup.select("#goods_spec > form > div.goodsnm.dote-bottom > b")[0].text.strip()
+
+    while ('[' in name[0]):
+        name = name.split(']', 1)[1].strip()
+    if '/' or '-' in name:
+        name = name.split('-')[0].strip()
+        name = name.split('/')[0].strip()
     else:
         name = name
+    name = name.replace('(set)', '')
+    name = name.replace('세트', '')
+    name = name.replace('(강아지)', '')
+    name = name.replace('강아지사료', '')
+    print(name)
     return name
+
 
 def get_apslove_stock(soup):
     stock = soup.select('#goods_spec > form table:nth-child(6)')
@@ -123,19 +137,19 @@ def get_apslove_stock(soup):
             if "품절된" in stock[0].text:
                 return 0
             else:
-                return 10000
+                return 10
     if stock_1:
         if '구매수량' in stock_1[0].text:
             if "품절된" in stock_1[0].text:
                 return 0
             else:
-                return 10000
+                return 10
     if stock_2:
         if '구매수량' in stock_2[0].text:
             if "품절된" in stock_2[0].text:
                 return 0
             else:
-                return 10000
+                return 10
 
 
 def get_apslove_imgDetail(soup):
@@ -167,6 +181,7 @@ def get_apslove_made_in(soup):
     if madeIn_2:
         if "원산지" in madeIn_2[0].text:
             return (madeIn_2[0].text.split('\n')[3].split('원산지')[1])
+
 
 if __name__ == '__main__':
     brand_crawling()

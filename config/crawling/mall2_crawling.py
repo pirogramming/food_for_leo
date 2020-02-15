@@ -1,11 +1,14 @@
 import os
 import sys
+
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
+
 django.setup()
 from crawling.brand_crawling import *
 from core.models import *
+
 
 def mall2_crawling_mall():
     brands = Brand.objects.all().order_by('name')
@@ -19,7 +22,6 @@ def mall2_crawling_mall():
     brand_3_url = sorted(brand_3_url.items())  # 딕셔너리 내 원소의 키, 값 튜플로 반환
     start = 0
     indx = 0
-
 
     for brand in brands:
         for i in range(start, len(brand_3_url)):
@@ -66,13 +68,19 @@ def mall2_crawling_product():
             if '품절된 상품입니다' == stocks:
                 stock = 0
             else:
-                stock = 10000
+                stock = 10
 
             name = soup.select(".goods_name")[0].text
             if ']' in name:
                 name = name.split(']')[1].strip()
             else:
                 name = name
+            name = name.replace('강아지사료', '')
+            name = name.replace('강아지용', '')
+            name = name.replace('맛선택가능', '')
+            name = name.replace('100% 휴먼 그레이드','')
+            name = name.replace('(박스포장)', '')
+
 
             Product.objects.update_or_create(
                 name=name,

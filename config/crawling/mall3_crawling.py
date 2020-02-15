@@ -1,11 +1,10 @@
 import os
 import sys
 
-
-
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
+
 django.setup()
 from crawling.brand_crawling import *
 from core.models import *
@@ -68,7 +67,7 @@ def crawling_mall3_product():
             # 재고
             sto = soup.select('div.cont > div.stock  dl  dt')[0].text.strip()
             if sto == '재고있음':
-                sto = 10000
+                sto = 10
             elif sto == '재고없음':
                 sto = 0
             else:
@@ -78,15 +77,17 @@ def crawling_mall3_product():
                 d_image = soup.select('#goods_desc_img')[0].get('src')
             else:
                 d_image = None
-            Product.objects.update_or_create(product_url=product.get('href'),
-                                   mall=br_m,
-                                   name=soup.select('fieldset > div.hd  h2')[0].text,
-                                   price=pri,
-                                   stock=sto,
-                                   img_main=soup.select('#detail_image')[0].get('src'),
-                                   img_detail=d_image,
-                                   made_in=soup.select('div.section.new-write > ul > li:nth-child(2) > p')[0].text,
-                                   )
+            Product.objects.update_or_create(product_url='http://www.dogpre.com' + product.get('href'),
+                                             mall=br_m,
+                                             name=soup.select('fieldset > div.hd  h2')[0].text,
+                                             price=pri,
+                                             stock=sto,
+                                             img_main=soup.select('#detail_image')[0].get('src'),
+                                             img_detail=d_image,
+                                             made_in=soup.select('div.section.new-write > ul > li:nth-child(2) > p')[
+                                                 0].text,
+                                             )
+
 
 if __name__ == '__main__':
     brand_crawling()
