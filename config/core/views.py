@@ -1,8 +1,8 @@
 from django.contrib import auth
+from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-
-from core.models import Product
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -35,6 +35,32 @@ def login(request):
         return render(request, 'core/login.html')
 
 
+def logout(request):
+    auth.logout(request)
+    return redirect('core:home')
+
+
+@login_required
+def reset_pw(request):
+    context = {}
+    if request.method == "POST":
+        current_password = request.POST.get("original_password")
+        user = request.user
+        if check_password(current_password, user.password):
+            new_password = request.POST.get("password1")
+            password_confirm = request.POST.get("password2")
+            if new_password == password_confirm:
+                user.set_password(new_password)
+                user.save()
+                auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                return redirect("core:home")
+            else:
+                context.update({'error': "새로운 비밀번호를 다시 확인해주세요."})
+        else:
+            context.update({'error': "현재 비밀번호가 일치하지 않습니다."})
+    return render(request, "core/reset_pw.html", context)
+
+
 def sign_up(request):
     if request.method == "POST":
         if request.POST["password1"] == request.POST["password2"]:
@@ -47,6 +73,19 @@ def sign_up(request):
         return render(request, 'core/sign_up.html')
 
 
-def logout(request):
-    auth.logout(request)
-    return redirect('core:home')
+@login_required
+def delete_account(request):
+    context = {}
+    if request.method == 'POST':
+        if request.POST.get("password1") == request.POST.get("password2"):
+            username = request.POST.get("delete_username")
+            password = request.POST.get("password1")
+            user = request.user
+            if check_password(password, user.password) and username == user.username:
+                request.user.delete()
+                return redirect('core:login')
+            else:
+                context.update({'error': "아이디와 비밀번호를 확인해주세요."})
+        else:
+            context.update({'error': "입력하신 비밀번호가 일치하지 않습니다."})
+    return render(request, 'core/delete_account.html', context)
