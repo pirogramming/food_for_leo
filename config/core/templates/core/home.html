@@ -1,3 +1,29 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        #SearchBar{
+            position: center; width: 400px;
+            margin: 20px auto;
+        }
+        #search, #result{
+            width: 360px;
+        }
+    </style>
+</head>
+
 <h1>home</h1>
 
 <h3><a href="{% url 'core:login' %}">로그인하기</a></h3>
@@ -6,11 +32,41 @@
 <h3><a href="{% url 'core:brand_page' %}">brand_page</a></h3>
 <h3><a href="{% url 'mypage:profile' %}">mypage</a></h3>
 
-<div class="search_bar">
-    <input type="text" id="search">
-    <button type="submit" id="submit">search</button>
-    <ul id="results">
-
+<div id="SearchBar">
+    <input class="form-control" type="text" id="search"/>
+    <button type="submit" value="get result" id="getResult"/>search</div>
+    <ul class="list-group" id="result">
     </ul>
-
 </div>
+<script>
+    function fetchJsonFilter(val) {
+        fetch('../../static/json/core_product.json').then(function (response) {
+            response.text().then(function (text) {
+                var p_list = JSON.parse(text);
+                var show_product = [];
+                p_list.filter(function (element, index, array) { //필터링하기
+                    if (array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_product.push(array[index]);
+                    }
+                });
+                var tags = [];
+                for (var i=0; i<show_product.length; i++) {
+                    var product = show_product[i];
+                    var tag = '<li class="list-group-item">' + product.name + '</li>'
+                    tags = tags + tag
+                }
+                document.querySelector('#result').innerHTML = tags;
+            })
+        })
+    }
+
+    $('#search').on('keyup', function () {
+        var searchInput = $(this).val();
+        if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
+            document.querySelector('#result').innerHTML = []
+        }
+        else{fetchJsonFilter(searchInput)}
+    });
+
+</script>
