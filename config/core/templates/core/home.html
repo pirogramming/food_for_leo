@@ -40,6 +40,23 @@
 </div>
 <script>
     function fetchJsonFilter(val) {
+         var tags = [];
+         //brand name filtering
+        fetch('../../static/json/core_brand.json').then(function(response){
+            response.text().then(function (text) {
+                var b_list = JSON.parse(text);
+                var show_brand=[];
+                b_list.filter(function (element, index, array) {
+                    if(array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_brand.push(array[index]);
+                    }
+                });
+                var brand_tag = '<li class="list-group-item">' + show_brand[0].name + '</li>'
+                tags=tags+brand_tag
+            })
+        })
+        //product name filtering
         fetch('../../static/json/core_product.json').then(function (response) {
             response.text().then(function (text) {
                 var p_list = JSON.parse(text);
@@ -50,7 +67,6 @@
                         show_product.push(array[index]);
                     }
                 });
-                var tags = [];
                 for (var i=0; i<show_product.length; i++) {
                     var product = show_product[i];
                     var tag = '<li class="list-group-item">' + product.name + '</li>'
