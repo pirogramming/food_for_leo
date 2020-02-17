@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% for foo in required_brand %}
+
+    <li><a href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}{{ foo.malls }}</a></li>
+
+{% endfor %}
+
+
+</body>
+</html>
