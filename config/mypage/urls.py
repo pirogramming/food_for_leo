@@ -9,4 +9,5 @@ urlpatterns = [
     path('profile/', update_profile, name='profile'),
     path('favorites/', favorites, name='favorites'),
     path('diary/', diary, name='diary'),
+    path('email_update/', email_update, name='email_update'),
 ]

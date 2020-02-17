@@ -2,28 +2,16 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.shortcuts import render, redirect
-
 from mypage.forms import ProfileForm
-
-
-# def create_profile(request):
-#     if request.method == 'POST':
-#         form = ProfileForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             instance = form.save(commit=False)
-#             instance.user = request.user
-#             instance.save()
-#             return redirect('mypage:profile')
-#     else:
-#         form = ProfileForm()
-#     return render(request, 'mypage/img_upload.html', {'form': form})
+from mypage.models import Profile
+from django.contrib.auth.models import User
 
 
 @login_required
 @transaction.atomic
 def update_profile(request):
     if request.method == 'POST':
-        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if profile_form.is_valid():
             profile_form.save()
             messages.success(request, 'Your profile was successfully updated!')
@@ -35,8 +23,15 @@ def update_profile(request):
     return render(request, 'mypage/img_upload.html', {'profile_form': profile_form})
 
 
-def name_update(request):
-    pass
+def email_update(request):
+    if request.method == 'POST':
+        user_id = request.user.id
+        user = User.objects.get(pk=user_id)
+        new_email = request.POST['email_update']
+        user.profile.email = new_email
+        user.save()
+        return redirect('mypage:profile')
+
 
 
 def favorites(request):
