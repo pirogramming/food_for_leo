@@ -1,12 +1,16 @@
-{% extends 'mypage/profile.html' %}
-
-{% block content %}
-<div class="img_form">
-    <h2>프로필 사진 등록</h2>
+<div class="create_pet_form">
+    <h2>펫 등록</h2>
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ profile_form.as_p }}
+        {{ pet_form.as_p }}
         <input type="submit" value="저장하기" class="btn btn-primary"/>
     </form>
 </div>
-{% endblock %}
+
+
+
+{% if messages %}
+	{% for message in messages %}
+		{{ message.message }}
+	{% endfor %}
+{% endif %}

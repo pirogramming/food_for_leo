@@ -29,8 +29,8 @@ def save_user_profile(sender, instance, **kwargs):
 
 
 class Pet(models.Model):
+    owner = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='pet', blank=True, null=True)
     name = models.CharField(max_length=255)
-    owner = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='pets')
     kind = models.CharField(max_length=255)
     petInfo = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -38,3 +38,15 @@ class Pet(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Diary(models.Model):
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='diary', blank=True, null=True)
+    title = models.CharField(max_length=255)
+    content = models.TextField(blank=True, null=True)
+    img = models.ImageField(blank=True, null=True, upload_to="media/user_diary/img")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title

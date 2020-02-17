@@ -1,0 +1,12 @@
+<div class="diary_detail">
+    <h5>title : {{ diary.title }}</h5>
+    <p>content : </p>
+    <p>{{ diary.content }}</p>
+    <p>author : {{ diary.author }}</p>
+    <p>created at : {{ diary.created_at }}</p>
+    <p>img :</p>
+    {% if diary.img %}
+        <img src="{{ diary.img.url }}" alt="no image" width="100px">
+    {% endif %}
+</div>
+

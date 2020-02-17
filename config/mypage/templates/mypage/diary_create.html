@@ -1,0 +1,7 @@
+<form action="{% url 'mypage:create_diary' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+    </table>
+    <button type="submit">pet 등록</button>
+</form>

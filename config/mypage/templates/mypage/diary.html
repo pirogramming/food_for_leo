@@ -1,6 +1,15 @@
-
+<!--다이어리 리스트 3개쯤 나오고 버튼으로 <추가하기><더보기> 만들어서 다른 페이지 넘어가기-->
+<!--다이어리 리스트 html로 변경해야함 js로 pet정보처럼 불러올예정-->
 <h1>diary</h1>
 
 <h3><a href="{% url 'mypage:profile' %}">profile</a></h3>
 <h3><a href="{% url 'mypage:favorites' %}">favorites</a></h3>
-<h3><a href="{% url 'mypage:diary' %}">diary</a></h3>
+<h3><a href="{% url 'mypage:create_diary' %}">create diary</a></h3>
+
+
+<ul class="diary_list">
+    {% for diary in diaries %}
+        <li>author : {{ diary.author }}</li>
+        <li>title : {{ diary.title }}</li>
+    {% endfor %}
+</ul>
