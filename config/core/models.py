@@ -33,9 +33,13 @@ class Product(models.Model):
     img_main =models.URLField(blank=True, null=True)
     img_detail = models.URLField(blank=True, null=True)
     made_in = models.CharField(max_length=255, blank=True, null=True)
-    like = models.ForeignKey(Profile, blank=True, null=True)
+    like = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True,blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True,blank=True, null=True)
 
     def __str__(self):
         return self.name
+
+    @property
+    def total_likes(self):
+        return self.likes.count()  # likes 컬럼의 값의 갯수를 센다

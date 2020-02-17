@@ -1,8 +1,13 @@
 from django.contrib import auth
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
+from django.core.serializers import json
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+
+from core.models import Product
 
 
 def home(request):
@@ -89,3 +94,22 @@ def delete_account(request):
         else:
             context.update({'error': "입력하신 비밀번호가 일치하지 않습니다."})
     return render(request, 'core/delete_account.html', context)
+
+
+@login_required
+@require_POST
+def like(request):
+    if request.method == 'POST':
+        profile = request.user.profile  # 로그인한 유저의 프로필을 가져온다.
+        product_id = request.POST.get('pk', None)
+        product = Product.objects.get(pk=product_id)  # 해당 메모 오브젝트를 가져온다
+
+        if product.likes.filter(id=profile.id).exists():  # 이미 해당 유저가 likes컬럼에 존재하면
+            product.likes.remove(profile)  # likes 컬럼에서 해당 유저를 지운다.
+            message = 'You disliked this'
+        else:
+            product.likes.add(profile)
+            message = 'You liked this'
+        context = {'likes_count': product.total_likes, 'message': message}
+        return HttpResponse(json.dumps(context), content_type='application/json')
+        # dic 형식을 json 형식으로 바꾸어 전달한다.
