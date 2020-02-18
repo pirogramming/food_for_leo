@@ -1,5 +1,5 @@
 import os
-from bs4 import BeautifulSoup
+
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import sys
@@ -10,7 +10,7 @@ import django
 django.setup()
 from crawling.brand_crawling import *
 from core.models import *
-import time
+
 
 
 def mall0_crawling():
