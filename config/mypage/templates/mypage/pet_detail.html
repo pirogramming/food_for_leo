@@ -1,0 +1,10 @@
+{% for pet in pets %}
+    <p>{{ pet.name }}</p>
+    <p>{{ pet.owner }}</p>
+    <p>{{ pet.kind }}</p>
+    <p>{{ pet.petInfo }}</p>
+{% endfor %}
+
+<a href="{% url 'mypage:pet' %}">펫 목록</a>
+<a href="{% url 'mypage:pet_detail' pk %}">펫 수정</a>
+{#<a href="{% url 'mypage:delete_diary' pk %}">펫 삭제</a>#}
