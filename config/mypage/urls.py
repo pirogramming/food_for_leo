@@ -7,14 +7,22 @@ app_name = 'mypage'
 
 urlpatterns = [
     path('profile/', update_profile, name='profile'),
-    path('create_pet/', create_pet, name='create_pet'),
-    path('pet_info/', pet_info, name='pet_info'),
+    path('name_update/', name_update, name='name_update'),
     path('email_update/', email_update, name='email_update'),
     path('tel_update/', tel_update, name='tel_update'),
+
+    path('pet/', pet, name='pet'),
+    path('pet/create/', create_pet, name='create_pet'),
+    path('pet/detail/<int:pk>/', pet_detail, name='pet_detail'),
+    path('pet/detail/<int:pk>/edit/', pet_update, name='pet_update'),
+    path('pet/detail/<int:pk>/delete/', pet_delete, name='pet_delete'),
+
 
     path('favorites/', favorites, name='favorites'),
 
     path('diary/', diary, name='diary'),
     path('diary/create/', create_diary, name='create_diary'),
     path('diary/detail/<int:pk>/', detail_diary, name='detail_diary'),
+    path('diary/detail/<int:pk>/edit/', update_diary, name='update_diary'),
+    path('diary/detail/<int:pk>/delete/', delete_diary, name='delete_diary'),
 ]

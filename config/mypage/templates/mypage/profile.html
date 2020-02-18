@@ -4,7 +4,10 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 
 
 
@@ -13,17 +16,58 @@
 <h3><a href="{% url 'mypage:profile' %}">profile</a></h3>
 <h3><a href="{% url 'mypage:favorites' %}">favorites</a></h3>
 <h3><a href="{% url 'mypage:diary' %}">diary</a></h3>
+<h3><a href="{% url 'mypage:pet' %}">pet</a></h3>
 
 
 {% if user.is_authenticated %}
 
 <div>
-{% if user.profile.img %}
-    <img src="{{ user.profile.img.url }}" class="photo" width="400px" height="400px" />
-{% endif %}
+    {% if user.profile.img %}
+        <img src="{{ user.profile.img.url }}" class="profile_img" width="400px" height="400px" />
+    {% endif %}
 </div>
 
-Email Adress: {{ user.profile.email }}
+<div class="profile_img_form">
+    <h3>프로필 사진 등록/변경</h3>
+    <form action="" method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+        <button type="submit" class="btn btn-primary">
+        Submit {% bootstrap_icon "ok" %}
+        </button>
+        {% endbuttons %}
+    </form>
+</div>
+
+    Name: {{ user.profile.name }}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#name_update" aria-expanded="false" aria-controls="collapseExample">
+    Name Update
+</button>
+
+<div class="collapse" id="name_update" style="width: 50%;">
+    <div class="card card-body" style="border: none;" >
+        <form action="{% url 'mypage:name_update' %}" method="POST">
+        {% csrf_token %}
+            <div class="form-group row">
+                <label for="input_Name" class="col-sm-2 col-form-label">New Name</label>
+
+                <div class="col-sm-8">
+                <input type="text" class="form-control" id="input_Name" name="name_update">
+                </div>
+
+                <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <br><br>
+
+    Email Adress: {{ user.profile.email }}
 
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#email_update" aria-expanded="false" aria-controls="collapseExample">
     Email Update
@@ -50,7 +94,7 @@ Email Adress: {{ user.profile.email }}
 
     <br><br>
 
-Mobile Phone: {{ user.profile.tel }}
+    Mobile Phone: {{ user.profile.tel }}
 
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tel_update" aria-expanded="false" aria-controls="collapseExample">
     Tel Update
@@ -75,17 +119,11 @@ Mobile Phone: {{ user.profile.tel }}
     </div>
 </div>
 
-<div class="profile_img_form">
-    <h2>프로필 사진 등록</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ profile_form.as_p }}
-        <input type="submit" value="저장하기" class="btn btn-primary"/>
-    </form>
-</div>
 
-    <p><a href="{% url 'mypage:create_pet' %}">펫 등록하기</a></p>
-    <p><a href="{% url 'mypage:pet_info' %}">펫 정보보기</a></p>
+
+
+
+
 
 {% endif %}
 
