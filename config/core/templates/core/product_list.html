@@ -6,18 +6,14 @@
 
 <h3><a href="{% url 'core:home' %}">home</a></h3>
 <h3><a href="{% url 'mypage:profile' %}">mypage</a></h3>
-<h1>브랜드 검색</h1>
+<h1>아이템 검색</h1>
 <form action="{% url "core:search_result" %}" method="GET">
     {% csrf_token %}
     <input type="text" name="q" value="{{ q }}">
     <input type="submit" value="search">
 </form>
 <h1>아이템 검색</h1>
-<form action="{% url "core:search_result_product" %}" method="GET">
-    {% csrf_token %}
-    <input type="text" name="q" value="{{ q }}">
-    <input type="submit" value="search">
-</form>
+
 
 {% if product_list %}
 
