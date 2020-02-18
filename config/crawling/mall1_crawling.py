@@ -95,11 +95,10 @@ def parse_brand():
                                              price=int(price_revised_2),
                                              stock=stock_revised,
                                              product_url="http://queenpuppy.co.kr" + product_url.get('href'),
-                                             mall_id=Mall.objects.filter(
-                                                 brand_id=Brand.objects.filter(name=x).first().id).first().id,
+                                             mall=Mall.objects.filter(
+                                                 brand=Brand.objects.filter(name=x).first()).get(name='QueenNPuppy'),
                                              img_main=img_main[0].get('src'),
                                              img_detail=img_detail_revised,
-
                                              )
 
 

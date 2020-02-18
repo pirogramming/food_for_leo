@@ -83,7 +83,8 @@ def mall0_product_crawling():
                     product_pass_url == 'goods/goods_view.php?goodsno=18774&category=006001012027') or \
                     (product_pass_url == 'goods/goods_view.php?goodsno=9183&category=006001012027') or (
                     product_pass_url == 'goods/goods_view.php?goodsno=9193&category=006001012027') or \
-                    ('006001012046' in product_pass_url):  # '퓨어럭스'제외
+                    (product_pass_url == 'goods/goods_view.php?goodsno=21281&category=006001012001') or (
+                    '006001012046' in product_pass_url):  # '퓨어럭스'제외
                 continue
 
             html_text = requests.get(f'http://www.apslove.com/shop/{product.get("href").split("..")[1]}').text
