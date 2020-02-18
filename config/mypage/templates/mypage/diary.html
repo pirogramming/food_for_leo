@@ -6,6 +6,10 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 
 <h1>diary</h1>
 
@@ -15,11 +19,11 @@
 
 
 {% for diary in diaries %}
-<div class="card" style="width: 18rem; height: 15rem; display: inline-block; overflow: hidden">
+<div class="card" style="width: 25rem; height: 20rem; display: inline-block; overflow: hidden">
   <div class="card-body">
-    <h5 class="card-title" style="height: 1.8rem; overflow: hidden">{{ diary.title }}</h5>
+    <h5 class="card-title" style="height: 2rem; overflow: hidden">{{ diary.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{ diary.created_at }}</h6>
-    <p class="card-text" style="height: 6rem; overflow: hidden">{{ diary.content }}</p>
+    <p class="card-text" style="height: 9rem; overflow: hidden">{{ diary.content }}</p>
     <a href="{% url 'mypage:detail_diary' diary.pk %}" class="card-link">다이어리 상세</a>
   </div>
 </div>

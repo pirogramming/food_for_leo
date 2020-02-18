@@ -1,10 +1,18 @@
-{% for pet in pets %}
-    <p>{{ pet.name }}</p>
-    <p>{{ pet.owner }}</p>
-    <p>{{ pet.kind }}</p>
-    <p>{{ pet.petInfo }}</p>
-{% endfor %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 
-<a href="{% url 'mypage:pet' %}">펫 목록</a>
-<a href="{% url 'mypage:pet_detail' pk %}">펫 수정</a>
-{#<a href="{% url 'mypage:delete_diary' pk %}">펫 삭제</a>#}
+
+    <p>name: {{ pet.name }}</p>
+    <p>kind: {{ pet.kind }}</p>
+    <p>img:
+        {% if pet.img %}
+        <img src="{{ pet.img.url }}" alt="no image" width="100px">
+        {% endif %}</p>
+    <p>info: {{ pet.petInfo }}</p>
+
+
+<a href="{% url 'mypage:pet' %}">펫 목록</a> <br>
+<a href="{% url 'mypage:pet_update' pk %}">펫 수정</a> <br>
+<a href="{% url 'mypage:pet_delete' pk %}">펫 삭제</a> <br>

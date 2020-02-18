@@ -28,7 +28,6 @@ def update_profile(request):
     })
 
 
-
 def name_update(request):
     if request.method == 'POST':
         user_id = request.user.id
@@ -59,10 +58,9 @@ def tel_update(request):
         return redirect('mypage:profile')
 
 
-
-#pet#pet
-#pet
-#pet
+# pet#pet
+# pet
+# pet
 
 def pet(request):
     pets = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0:3]
@@ -70,6 +68,7 @@ def pet(request):
         'pets': pets
     }
     return render(request, 'mypage/pet.html', ctx)
+
 
 @login_required
 @transaction.atomic
@@ -89,24 +88,37 @@ def create_pet(request):
     return render(request, 'mypage/create_pet.html', {'form': form})
 
 
-
 def pet_detail(request, pk):
-    pets = Pet.objects.get(pk=pk)
+    pet = Pet.objects.get(pk=pk)
     ctx = {
-        'pets': pets,
+        'pet': pet,
         'pk': pk,
     }
     return render(request, 'mypage/pet_detail.html', ctx)
 
 
-def pet_update(request):
-    pass
+def pet_update(request, pk):
+    pet = Pet.objects.get(pk=pk)
+    form = PetForm(request.POST, request.FILES, instance=pet)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your pet was successfully updated!')
+            return redirect(reverse('mypage:pet_detail', kwargs={'pk': pk}))
+    else:
+        form = PetForm(instance=pet)
+    return render(request, 'mypage/pet_edit.html', {
+        'pk': pk,
+        'form': form,
+    })
 
 
-def pet_delete(request):
-    pass
-
-
+def pet_delete(request, pk):
+    pet = Pet.objects.get(pk=pk)
+    if request.user.profile == pet.owner:
+        pet.delete()
+        messages.success(request, '성공적으로 삭제되었습니다.')
+    return redirect(reverse('mypage:pet'))
 
 
 # diary
@@ -142,6 +154,7 @@ def create_diary(request):
         'form': form,
     })
 
+
 def detail_diary(request, pk):
     diary = Diary.objects.get(pk=pk)
     data = {
@@ -175,12 +188,9 @@ def delete_diary(request, pk):
     return redirect(reverse('mypage:diary'))
 
 
-
-
 # favorites
 # favorites
 # favorites
-
 
 
 def favorites(request):

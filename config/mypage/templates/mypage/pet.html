@@ -4,19 +4,23 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 
 {% for pet in pets %}
-<div class="card" style="width: 18rem; height: 15rem; display: inline-block; overflow: hidden">
+<div class="card" style="width: 25rem; height: 20rem; display: inline-block; overflow: hidden">
   <div class="card-body">
-    <h5 class="card-title" style="height: 1.8rem; overflow: hidden">{{ pet.name }}</h5>
+    <h5 class="card-title" style="height: 2rem; overflow: hidden">{{ pet.name }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{ pet.kind }}</h6>
-    <p class="card-text" style="height: 6rem; overflow: hidden">{{ pet.petInfo }}</p>
+    <p class="card-text" style="height: 9rem; overflow: hidden">{{ pet.petInfo }}</p>
     <a href="{% url 'mypage:pet_detail' pet.pk %}" class="card-link">펫 상세정보</a>
   </div>
 </div>
 {% endfor %}
 
-
-
-    <p><a href="{% url 'mypage:create_pet' %}">펫 등록하기</a></p>
+<h3><a href="{% url 'mypage:profile' %}">profile</a></h3>
+<h3><a href="{% url 'mypage:favorites' %}">favorites</a></h3>
+<h3><a href="{% url 'mypage:create_pet' %}">펫 등록하기</a></h3>
 
