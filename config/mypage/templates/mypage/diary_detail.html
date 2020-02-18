@@ -1,8 +1,3 @@
-{% load bootstrap3 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-{% bootstrap_messages %}
-
 <div class="diary_detail">
     <h5>title : {{ diary.title }}</h5>
     <p>content : </p>
@@ -14,8 +9,4 @@
         <img src="{{ diary.img.url }}" alt="no image" width="100px">
     {% endif %}
 </div>
-
-<a href="{% url 'mypage:diary' %}">다이어리 목록</a> <br>
-<a href="{% url 'mypage:update_diary' pk %}">다이어리 수정</a> <br>
-<a href="{% url 'mypage:delete_diary' pk %}">다이어리 삭제</a> <br>
 

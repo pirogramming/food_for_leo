@@ -32,7 +32,6 @@ class Pet(models.Model):
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='pet', blank=True, null=True)
     name = models.CharField(max_length=255)
     kind = models.CharField(max_length=255)
-    img = img = models.ImageField(blank=True, null=True, upload_to="media/user_pet/img")
     petInfo = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

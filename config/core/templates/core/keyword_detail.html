@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1) Load D3.js and billboard.js separately -->
+    <!-- Load D3 -->
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- Load billboard.js with base(or theme) style -->
+    <link rel="stylesheet" href="{% static "core/billboard.css" %}">
+    <script src='{% static "core/billboard.js" %}'></script>
+    <style>
+        .chart_container {
+
+            overflow-x: scroll;
+        }
+        #dataStackNormalized_2{
+
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="chart_container">
+    <div id="dataStackNormalized_2"></div>
+</div>
+
+
+</body>
+<script>
+
+    var chart2 = bb.generate({
+        data: {
+            x: "x",
+            columns: [
+                {{ chart_index_1 | safe }},
+                {{ mall0 | safe }},
+                {{ mall1 | safe }},
+                {{ mall2 | safe }},
+                {{ mall3 | safe }},
+
+            ],
+            type: "bar",
+            groups: [
+                [
+                    "동물사랑APS",
+                    "QueenNPuppy",
+                    "kingdom",
+                    "president"
+                ]
+            ],
+            stack: {
+                normalize: true
+            }
+        },
+        axis: {
+            x: {
+                type: "category",
+                height: 100
+            },
+
+        },
+        size:{
+            "width":6000
+        },
+
+        bindto: "#dataStackNormalized_2"
+    });
+</script>
+</html>
