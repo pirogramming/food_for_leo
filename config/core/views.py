@@ -93,7 +93,7 @@ def keyword_detail(products):
                     mall2.append(0)
                 if i == 3:
                     mall3.append(0)
-
+    mall_length = len(similarity_group)
 
 
     return {"similarity_group": similarity_group,
@@ -102,6 +102,7 @@ def keyword_detail(products):
             "mall1": mall1,
             "mall2": mall2,
             "mall3": mall3,
+            "mall_length" : mall_length
             }
 
 def similarity_test(products, mallCount):
@@ -145,7 +146,11 @@ def similarity_test(products, mallCount):
             similarity={}
 
     return product_list
-
+def brand_page(request):
+    brand_all = Brand.objects.all()
+    return render(request, "core/brand_page.html",{
+        "brand_all": brand_all
+    })
 def brand_detail(request,pk):
     certain_brand = Brand.objects.get(id=pk)
     mall_of_certain_brand = certain_brand.malls.all()
@@ -202,6 +207,7 @@ def brand_detail(request,pk):
                     mall2.append(0)
                 if i == 3:
                     mall3.append(0)
+    mall_length = len(final_result)
     return render(request, "core/brand_detail.html", {
         "products_mall1": products_mall1,
         "products_mall2": products_mall2,
@@ -214,15 +220,12 @@ def brand_detail(request,pk):
         'mall1': mall1,
         'mall2': mall2,
         'mall3': mall3,
-
+        'mall_length':mall_length,
     })
 
 def home(request):
     return render(request, 'core/home.html')
 
-
-def brand_page(request):
-    return render(request, 'core/brand_page.html')
 
 
 def product_detail(request):
