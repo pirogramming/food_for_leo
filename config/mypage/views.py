@@ -69,6 +69,17 @@ def tel_update(request):
 # pet
 # pet
 
+def pet_brief(request):
+    pet1 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0]
+    pet2 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[1]
+    pet3 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[2]
+    ctx = {
+        'pet1': pet1,
+        'pet2': pet2,
+        'pet3': pet3,
+    }
+    return render(request, 'mypage/pet_brief.html',ctx)
+
 def pet_list(request):
     pets = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0:3]
     ctx = {
