@@ -17,7 +17,7 @@ function fetchJsonFilter(val) {
                     show_brand.push(array[index]);
                 }
             });
-            var brand_tag = '<li class="list-group-item">' + show_brand[0].name + '</li>'
+            var brand_tag = '<li class="list-group-item">'  + show_brand[0].name + '</li>'
             tags = tags + brand_tag
         })
     })
@@ -37,7 +37,7 @@ function fetchJsonFilter(val) {
                     break
                 } else {
                     var product = show_product[i];
-                    var tag = '<li class="list-group-item">' + product.name + '</li>'
+                    var tag = "<li class=\"list-group-item\">"+"<a href=\"\">" +  product.name +'</a>' + '</li>'
                     tags = tags + tag
                 }
             }
