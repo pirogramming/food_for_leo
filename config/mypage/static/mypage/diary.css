@@ -1,3 +1,40 @@
-#diary_card1, #diary_card2, #diary_card3 {
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.card {
     height: 30rem;
+}
+
+.card_img_div {
+    width: inherit; height: 14rem;
+}
+
+.card-img-top {
+    width: inherit; height: inherit;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    height: 3.3rem;
+    font-family: 'Jua', sans-serif;
+    font-size: 1.2rem;
+    overflow: hidden;
+}
+
+.card-text {
+    height: 6.2rem;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.card-link {
+    height: 1rem;
+    font-size: 0.8rem;
 }

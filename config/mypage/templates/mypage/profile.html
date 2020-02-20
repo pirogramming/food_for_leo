@@ -158,7 +158,7 @@ $('#img_text_wrap').mouseout(function() {
     <h3>프로필 사진 등록/변경</h3>
     <form action="" method="POST" class="form" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.img }}
         <button type="submit" id="img_form_submit" class="button_submit">
         Submit
         </button>
