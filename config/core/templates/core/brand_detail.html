@@ -11,64 +11,169 @@
     <!-- Load billboard.js with base(or theme) style -->
     <link rel="stylesheet" href="{% static "core/billboard.css" %}">
     <script src='{% static "core/billboard.js" %}'></script>
-
     <style>
-        #dataStackNormalized_2{
-            overflow-x:scroll;
+        a {
+            text-decoration: none;
+            color: black;
         }
-        .chart_container{
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            height: 60vh;
+        }
+
+        .header_upper_nav {
+            height: 20%;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .header_down_image {
+            height: 80%;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+
+        .content {
+            width: 90vw;
+            margin: 0 auto;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content_upper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content_upper_mall {
+            width: 100%;
+            text-align: center;
+        }
+
+        .content_upper_brand {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+
+        {#border: 1px solid red;#}{#box-sizing: border-box;#}
+        }
+
+        .content_upper_brand_context {
+            width: 10%;
+            font-size: 0.8em;
+            padding-left: 2%;
+        }
+
+        .content_down {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #dataStackNormalized_2 {
+            overflow-x: scroll;
+        }
+
+        .content_down_chart_container {
+            width: 100%;
             height: 600px;
         }
+
+        .content_down_products_container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .content_down_products_container_product {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .content_down_products_container_product_1 {
+            width: 100%;
+        }
+
     </style>
+
 </head>
 <body>
-<div class="chart_container">
-<div id="dataStackNormalized_2"></div>
+
+<div class="header">
+    <div class="header_upper_nav">네브바
+        <a href="{% url 'core:home' %}">home</a>
+        <a href="{% url 'mypage:profile' %}">mypage</a>
+    </div>
+    <div class="header_down_image">이미지</div>
+</div>
+<div class="content">
+    <div class="content_upper">
+        <div class="content_upper_mall"><h2>동물사랑APS</h2></div>
+        <div class="content_upper_brand">
+            {% for foo in brands_mall1 %}
+                <div class="content_upper_brand_context"><a
+                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+            {% endfor %}
+        </div>
+        <div class="content_upper_mall"><h2>퀸앤퍼피</h2></div>
+        <div class="content_upper_brand">
+            {% for foo in brands_mall2 %}
+                <div class="content_upper_brand_context"><a
+                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+            {% endfor %}
+        </div>
+        <div class="content_upper_mall"><h2>강아지왕국</h2></div>
+        <div class="content_upper_brand">
+            {% for foo in brands_mall3 %}
+                <div class="content_upper_brand_context"><a
+                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+            {% endfor %}
+        </div>
+        <div class="content_upper_mall"><h2>강아지대통령</h2></div>
+        <div class="content_upper_brand">
+            {% for foo in brands_mall4 %}
+                <div class="content_upper_brand_context"><a
+                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="content_down">
+        <div class="content_down_chart_container">
+            <div id="dataStackNormalized_2"></div>
+        </div>
+        <div class="content_down_products_container">
+            {% for i in final_result_revised %}
+                <div class="content_down_products_container_product">
+                    <div class="content_down_products_container_product_1"><img src="{{ i.img_main }}"
+                                                                                style="width:90%;" alt=""></div>
+                    <div class="content_down_products_container_product_1"><a
+                            href="{% url "core:product_detail" i.pk %}">{{ i.name }}</a></div>
+                    <div class="content_down_products_container_product_1">{{ i.made_in }}</div>
+                    <div class="content_down_products_container_product_1">{{ i.price }}</div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
-
-<h1>동물사랑APS</h1>
-{% for foo in products_mall1 %}
-
-    {{ foo.name }}({{ foo.price }}) <br>
-{% endfor %}
-
-<h2>mall1</h2>
-{% for foo in products_mall2 %}
-    {{ foo.name }}
-    <br>
-{% endfor %}
-
-<h2>Kingdom</h2>
-{% for foo in products_mall3 %}
-    {{ foo.name }}
-
-{% endfor %}
-
-<h2>president</h2>
-{% for foo in products_mall4 %}
-    {{ foo.name }}
-
-{% endfor %}
-<h1>
-    {{ mall_of_certain_brand }}
-</h1>
-<br>
-{% for foo in all_product_revised %}
-    {{ foo }}<br>
-
-{% endfor %}
-{% for foo in final_result %}
-    {{ foo }}
-
-{% endfor %}
-{% for foo in hooah %}
-    {{ foo }}<br>
-
-{% endfor %}
-
-
 </body>
+
 <script>
     var chart2 = bb.generate({
         data: {
@@ -97,13 +202,13 @@
         axis: {
             x: {
                 type: "category",
-                height: 100
+
 
             }
         },
-        size:{
-            width:200 * Number({{ mall_length }}),
-            height:400,
+        size: {
+            width: 100 * Number({{ mall_length }}),
+            height: 400,
         },
         bindto: "#dataStackNormalized_2"
     });

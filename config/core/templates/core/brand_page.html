@@ -9,6 +9,7 @@
     <style>
         a {
             text-decoration: none;
+            color: black;
         }
 
         html, body {
@@ -16,14 +17,235 @@
             margin: 0;
             padding: 0;
         }
+
+
+        .content {
+            width: 90vw;
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+
+        .content_upper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content_upper_mall {
+            width: 100%;
+            text-align: center;
+        }
+
+        .content_upper_brand {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+
+        }
+
+        .content_upper_brand_context {
+            width: 10%;
+            font-size: 0.8em;
+            padding-left: 2%;
+        }
+
+        .content_down {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .content_down_items {
+            width: 24%;
+
+        }
+
+        .content_down_items_img {
+            width: 100%;
+        }
+
+        .whole_wrapper {
+            padding-top: 30vh;
+        }
+
+        .header {
+            display: flex;
+            width: 100vw;
+            flex-direction: column;
+            height: 30vh;
+            position: fixed;
+            background-color: white;
+            z-index: 999;
+
+
+        }
+
+        .header_login {
+            width: 100%;
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .header_login div {
+            margin: auto 2%;
+        }
+
+        .header_logo {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4.5em;
+            color: #333333;
+
+        }
+
+        .header_logo_context {
+            font-family: Forte;
+        }
+
+        .header_nav {
+            width: 100%;
+            height: 35%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .header_nav_navbar a {
+            font-size: 1.5em;
+            font-family: 'Montserrat', sans-serif;
+            color: #333333;
+
+        }
+
+        .middle_img {
+            width: 100vw;
+            background-image: url("http://www.hearthstonehomemade.com/images/0-Dog-Not-Eating-635.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 50vh;
+
+        }
+
+        .middle_img_cover {
+            object-fit: cover;
+            width: 100vw;
+            height: 50vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .middle_img_cover_search {
+            width: 500px;
+        }
+
+        input.form-control {
+            width: 500px;
+            height: 50px;
+            background: white;
+            opacity: 50%;
+            border-radius: 30px;
+        }
+
+        .middle_img_cover_content {
+            color: white;
+            margin-bottom: 30px;
+            text-space: 2px;
+            opacity: 80%;
+
+        }
     </style>
+
 </head>
 <body>
-
-<h1>brand page</h1>
-
-
+<div class="header">
+    <div class="header_login">
+        <div class="header_login_login"><a href="{% url 'core:login' %}">login</a></div>
+        <div class="header_login_signup"><a href="{% url 'core:sign_up' %}">sign up</a></div>
+    </div>
+    <div class="header_logo">
+        <div class="header_logo_context"><a href="{% url 'core:home' %}">LEO</a></div>
+    </div>
+    <div class="header_nav">
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:brand_page' %}">Brands</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:product_list' %}">Products</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:product_list' %}">Wish List</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'mypage:diary' %}">Diary</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'mypage:profile' %}">My Page</a></div>
+    </div>
+</div>
+<div class="whole_wrapper">
+    <div class="middle_img">
+        <div class="middle_img_cover">
+            <div class="middle_img_cover_content">반려동물 사지말고 입양하세요</div>
+            <div class="middle_img_cover_search">
+                <input class="form-control" type="search" id="search">
+                <ul class="list-group" id="result"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content_upper">
+            <div class="content_upper_mall"><h2>동물사랑APS</h2></div>
+            <div class="content_upper_brand">
+                {% for foo in brands_mall1 %}
+                    <div class="content_upper_brand_context"><a
+                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+                {% endfor %}
+            </div>
+            <div class="content_upper_mall"><h2>퀸앤퍼피</h2></div>
+            <div class="content_upper_brand">
+                {% for foo in brands_mall2 %}
+                    <div class="content_upper_brand_context"><a
+                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+                {% endfor %}
+            </div>
+            <div class="content_upper_mall"><h2>강아지왕국</h2></div>
+            <div class="content_upper_brand">
+                {% for foo in brands_mall3 %}
+                    <div class="content_upper_brand_context"><a
+                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+                {% endfor %}
+            </div>
+            <div class="content_upper_mall"><h2>강아지대통령</h2></div>
+            <div class="content_upper_brand">
+                {% for foo in brands_mall4 %}
+                    <div class="content_upper_brand_context"><a
+                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="content_down">
+            {% for foo in product_all %}
+                <div class="content_down_items">
+                    <div class="content_down_items_img"><img src="{{ foo.img_main }}" style="width:80%;" alt=""></div>
+                    <div class="content_down_items_name">가격: <a
+                            href="{% url "core:product_detail" foo.pk %}">{{ foo.name }}</a></div>
+                    <div class="content_down_items_madein">{{ foo.made_in }}</div>
+                    <div class="content_down_items_price">{{ foo.price }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 <h3><a href="{% url 'core:home' %}">home</a></h3>
 <h3><a href="{% url 'mypage:profile' %}">mypage</a></h3>
+</div>
 </body>
 </html>

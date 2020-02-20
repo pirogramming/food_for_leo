@@ -21,9 +21,6 @@ import re
 import operator
 
 
-
-
-
 def product_list(request):
     product_all = Product.objects.all()
     brand_all = Brand.objects.all()
@@ -44,12 +41,12 @@ def search_result(request):
     required_brand = brand_all.filter(name__icontains=q)
     required_products = product_all.filter(name__icontains=q)
 
-    #brand 검색
+    # brand 검색
     if required_brand.count() != 0:
         return render(request, 'core/search_result.html', {
             "required_brand": required_brand,
         })
-    #keyword 검색
+    # keyword 검색
     else:
         result = keyword_detail(required_products)
 
@@ -70,7 +67,7 @@ def keyword_detail(products):
         for j in range(len(sameProducts)):
             product_include = str(Product.objects.get(id=sameProducts[j]).mall)
 
-            if  product_include== '동물사랑APS':
+            if product_include == '동물사랑APS':
                 mall0 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[0] = 1
             if product_include == 'QueenNPuppy':
@@ -95,63 +92,177 @@ def keyword_detail(products):
                     mall3.append(0)
     mall_length = len(similarity_group)
 
-
     return {"similarity_group": similarity_group,
             "chart_index_1": chart_index_1,
             "mall0": mall0,
             "mall1": mall1,
             "mall2": mall2,
             "mall3": mall3,
-            "mall_length" : mall_length
+            "mall_length": mall_length
             }
 
-def similarity_test(products, mallCount):
 
+def similarity_test(products, mallCount):
     product_id = []
     product_name = []
-    #products와 같은 id의 상품 이름, id가져오기
+    # products와 같은 id의 상품 이름, id가져오기
     for product in products:
         product_id += [product.pk]
         product_name += [product.name]
-
 
     for i in range(len(product_name)):
         product_name[i] = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', product_name[i]).lower()
         product_name[i] = product_name[i].replace('유기농', '').replace('플러스', '')
 
-
-    #id:상품명 -> 상품 pk찾기위해 딕셔녀리 생성
+    # id:상품명 -> 상품 pk찾기위해 딕셔녀리 생성
     product_dic = {}
     for i in range(len(product_dic)):
         product_dic[product_id[i]] = product_name[i]
 
-
-    #jaccardDistance 유사도 측정
+    # jaccardDistance 유사도 측정
     similarity = {}
     product_list = []
-    while(len(product_name) != 0):
+    while (len(product_name) != 0):
         for i in range(len(product_name)):
-
             jaccard = 1 - (distance.jaccard(product_name[0], product_name[i]))
             similarity[product_id[i]] = jaccard
 
         similarity = sorted(similarity.items(), key=operator.itemgetter(1), reverse=True)
-        product_list += [[pk for pk, sim in similarity[0: mallCount] if sim>=0.95]]
-
+        product_list += [[pk for pk, sim in similarity[0: mallCount] if sim >= 0.95]]
 
         for j in range(len(product_list[-1])):
             index = int(product_id.index(product_list[-1][j]))
             del product_id[index]
             del product_name[index]
-            similarity={}
+            similarity = {}
 
     return product_list
+
+
 def brand_page(request):
     brand_all = Brand.objects.all()
-    return render(request, "core/brand_page.html",{
-        "brand_all": brand_all
+    product_all = Product.objects.all()
+    brands_mall1 = []
+    brands_mall2 = []
+    brands_mall3 = []
+    brands_mall4 = []
+
+    brands_mall1 += Brand.objects.filter(malls__name="동물사랑APS").all()
+    brands_mall2 += Brand.objects.filter(malls__name="QueenNPuppy").all()
+    brands_mall3 += Brand.objects.filter(malls__name="kingdom").all()
+    brands_mall4 += Brand.objects.filter(malls__name="president").all()
+
+
+    return render(request, "core/brand_page.html", {
+        "brand_all": brand_all,
+        "product_all": product_all,
+        "brands_mall1": brands_mall1,
+        "brands_mall2": brands_mall2,
+        "brands_mall3": brands_mall3,
+        "brands_mall4": brands_mall4,
+
+
     })
-def brand_detail(request,pk):
+def product_detail(request,pk):
+    brands_mall1 = []
+    brands_mall2 = []
+    brands_mall3 = []
+    brands_mall4 = []
+
+    brands_mall1 += Brand.objects.filter(malls__name="동물사랑APS").all()
+    brands_mall2 += Brand.objects.filter(malls__name="QueenNPuppy").all()
+    brands_mall3 += Brand.objects.filter(malls__name="kingdom").all()
+    brands_mall4 += Brand.objects.filter(malls__name="president").all()
+
+    certain_product =Product.objects.get(id=pk)
+    print(certain_product.id)
+    print(certain_product.mall)
+    certain_product.name = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', certain_product.name).lower()
+    certain_product.name = certain_product.name.replace('유기농', '').replace('플러스', '')
+    print(certain_product)
+    product_all =Product.objects.all()
+    for i in product_all:
+        i.name = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', i.name).lower()
+        i.name= i.name.replace('유기농', '').replace('플러스', '')
+    similarity = {}
+    product_list=[]
+    for i in product_all:
+        jaccard = 1 - (distance.jaccard(certain_product.name, i.name))
+        similarity[i.id] = jaccard
+    similarity = sorted(similarity.items(), key=operator.itemgetter(1), reverse=True)
+    product_list += [[pk for pk, sim in similarity[0:4] if sim >= 0.95]]
+    chart_index_1 = ["x"]
+    mall0 = ["동물사랑APS"]
+    mall1 = ["QueenNPuppy"]
+    mall2 = ["kingdom"]
+    mall3 = ['president']
+    for sameProducts in product_list:
+        check = [0, 0, 0, 0]
+        print(sameProducts)
+        chart_index_1 += [Product.objects.get(id=sameProducts[0]).name]
+        for j in range(len(sameProducts)):
+            product_include = str(Product.objects.get(id=sameProducts[j]).mall)
+
+            if product_include == '동물사랑APS':
+                mall0 += [Product.objects.get(id=sameProducts[j]).stock]
+                check[0] = 1
+            if product_include == 'QueenNPuppy':
+                mall1 += [Product.objects.get(id=sameProducts[j]).stock]
+                check[1] = 1
+            if product_include == 'kingdom':
+                mall2 += [Product.objects.get(id=sameProducts[j]).stock]
+                check[2] = 1
+            if product_include == 'president':
+                mall3 += [Product.objects.get(id=sameProducts[j]).stock]
+                check[3] = 1
+        print(check)
+        for i in range(4):
+            if check[i] == 0:
+                if i == 0:
+                    mall0.append(0)
+                if i == 1:
+                    mall1.append(0)
+                if i == 2:
+                    mall2.append(0)
+                if i == 3:
+                    mall3.append(0)
+    mall_length = len(product_list)
+    final_result_revised=[]
+    for i in product_list[0]:
+        final_result_revised.append(Product.objects.get(id=i))
+    final_result_revised_detail = final_result_revised[0].img_detail
+
+
+
+
+    return render(request, 'core/product_detail.html',{
+        'chart_index_1': chart_index_1,
+        'mall0': mall0,
+        'mall1': mall1,
+        'mall2': mall2,
+        'mall3': mall3,
+        'mall_length': mall_length,
+        'final_result_revised': final_result_revised,
+        "brands_mall1": brands_mall1,
+        "brands_mall2": brands_mall2,
+        "brands_mall3": brands_mall3,
+        "brands_mall4": brands_mall4,
+        'final_result_revised_detail':final_result_revised_detail,
+    })
+
+def brand_detail(request, pk):
+    brand_all = Brand.objects.all()
+    product_all = Product.objects.all()
+    brands_mall1 = []
+    brands_mall2 = []
+    brands_mall3 = []
+    brands_mall4 = []
+
+    brands_mall1 += Brand.objects.filter(malls__name="동물사랑APS").all()
+    brands_mall2 += Brand.objects.filter(malls__name="QueenNPuppy").all()
+    brands_mall3 += Brand.objects.filter(malls__name="kingdom").all()
+    brands_mall4 += Brand.objects.filter(malls__name="president").all()
+
     certain_brand = Brand.objects.get(id=pk)
     mall_of_certain_brand = certain_brand.malls.all()
     products_mall1 = []
@@ -160,13 +271,13 @@ def brand_detail(request,pk):
     products_mall4 = []
 
     if certain_brand.malls.filter(name="동물사랑APS"):
-        products_mall1 += certain_brand.malls.filter(name="동물사랑APS").first().products.all()
+        products_mall1 += certain_brand.malls.get(name="동물사랑APS").products.all()
     if certain_brand.malls.filter(name="QueenNPuppy"):
-        products_mall2 += certain_brand.malls.filter(name="QueenNPuppy").first().products.all()
+        products_mall2 += certain_brand.malls.get(name="QueenNPuppy").products.all()
     if certain_brand.malls.filter(name="kingdom"):
-        products_mall3 += certain_brand.malls.filter(name="kingdom").first().products.all()
+        products_mall3 += certain_brand.malls.get(name="kingdom").products.all()
     if certain_brand.malls.filter(name="president"):
-        products_mall4 += certain_brand.malls.filter(name="president").first().products.all()
+        products_mall4 += certain_brand.malls.get(name="president").products.all()
 
     all_product = products_mall1 + products_mall2 + products_mall3 + products_mall4
 
@@ -184,7 +295,7 @@ def brand_detail(request,pk):
         for j in range(len(sameProducts)):
             product_include = str(Product.objects.get(id=sameProducts[j]).mall)
 
-            if  product_include== '동물사랑APS':
+            if product_include == '동물사랑APS':
                 mall0 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[0] = 1
             if product_include == 'QueenNPuppy':
@@ -196,7 +307,7 @@ def brand_detail(request,pk):
             if product_include == 'president':
                 mall3 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[3] = 1
-            print(check)
+        print(check)
         for i in range(4):
             if check[i] == 0:
                 if i == 0:
@@ -208,28 +319,37 @@ def brand_detail(request,pk):
                 if i == 3:
                     mall3.append(0)
     mall_length = len(final_result)
+    final_result_revised =[]
+    for i in final_result:
+        final_result_revised.append(Product.objects.get(id=i[0]))
+
+
     return render(request, "core/brand_detail.html", {
         "products_mall1": products_mall1,
         "products_mall2": products_mall2,
         "products_mall3": products_mall3,
         "products_mall4": products_mall4,
+        "brands_mall1": brands_mall1,
+        "brands_mall2": brands_mall2,
+        "brands_mall3": brands_mall3,
+        "brands_mall4": brands_mall4,
         'mall_of_certain_brand': mall_of_certain_brand,
         'final_result': final_result,
-        'chart_index_1':chart_index_1,
+        'chart_index_1': chart_index_1,
         'mall0': mall0,
         'mall1': mall1,
         'mall2': mall2,
         'mall3': mall3,
-        'mall_length':mall_length,
+        'mall_length': mall_length,
+        'final_result_revised':final_result_revised,
     })
+
 
 def home(request):
     return render(request, 'core/home.html')
 
 
 
-def product_detail(request):
-    return render(request, 'core/product_detail.html')
 
 
 def product_list(request):
@@ -323,6 +443,8 @@ def like(request):
         context = {'likes_count': product.total_likes, 'message': message}
         return HttpResponse(json.dumps(context), content_type='application/json')
         # dic 형식을 json 형식으로 바꾸어 전달한다.
+
+
 def logout(request):
     auth.logout(request)
     return redirect('core:home')
