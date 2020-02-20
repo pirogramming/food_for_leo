@@ -1,0 +1,44 @@
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+#diary_detail_wrap {
+    padding-top: 50px;
+}
+
+.diary_detail-title {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Jua', sans-serif;
+    padding-bottom: 10px;
+}
+
+.diary_detail-created {
+    text-align: right;
+    padding-right: 100px
+}
+
+.diary_detail-author {
+    text-align: right;
+    padding-right: 100px
+}
+
+.diary_detail-img {
+    text-align: center;
+    padding: 30px 0;
+
+}
+
+.dd-img {
+    width: 650px;
+    height: 450px;
+
+}
+
+
+.diary_detail-content {
+    padding: 0 30px;
+    font-size: 1.4em;
+}
