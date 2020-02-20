@@ -1,6 +1,8 @@
 import os
 import sys
 
+from django.core.paginator import PageNotAnInteger, Paginator
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
 
@@ -19,6 +21,7 @@ from core.models import *
 import distance
 import re
 import operator
+import random
 
 
 def product_list(request):
@@ -51,8 +54,6 @@ def search_result(request):
         result = keyword_detail(required_products)
 
         return render(request, 'core/keyword_detail.html', result)
-
-
 def keyword_detail(products):
     similarity_group = similarity_test(products, 4)
     chart_index_1 = ["x"]
@@ -61,13 +62,15 @@ def keyword_detail(products):
     mall2 = ["kingdom"]
     mall3 = ['president']
 
+    item_final = []
     for sameProducts in similarity_group:
         check = [0, 0, 0, 0]
         chart_index_1 += [Product.objects.get(id=sameProducts[0]).name]
+        item_final += [Product.objects.get(id=sameProducts[0])]
         for j in range(len(sameProducts)):
             product_include = str(Product.objects.get(id=sameProducts[j]).mall)
 
-            if product_include == '동물사랑APS':
+            if  product_include== '동물사랑APS':
                 mall0 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[0] = 1
             if product_include == 'QueenNPuppy':
@@ -90,17 +93,49 @@ def keyword_detail(products):
                     mall2.append(0)
                 if i == 3:
                     mall3.append(0)
-    mall_length = len(similarity_group)
+
+    mall_length = len(mall0)
 
     return {"similarity_group": similarity_group,
+            "item_final": item_final,
             "chart_index_1": chart_index_1,
             "mall0": mall0,
             "mall1": mall1,
             "mall2": mall2,
             "mall3": mall3,
-            "mall_length": mall_length
+            "mall_length": mall_length,
             }
 
+def item_House(request):
+    itemsAll = Product.objects.all()
+    sameItemPKs = similarity_test(itemsAll, 4)
+
+    randIndex = []
+    for i in range(30):
+        num = random.randrange(0, len(sameItemPKs))
+        while num in randIndex:
+            num = random.randrange(0, len(sameItemPKs))
+        randIndex.append(num)
+
+    item_final = []
+    for i in randIndex:
+        item_final += [Product.objects.get(id=sameItemPKs[i][0])]
+
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(item_final, 16)
+    try:
+        items = paginator.page(page)
+    except PageNotAnInteger:
+        items = paginator.page(1)
+    except EmptyPage:
+        items = paginator.page(paginator.num_pages)
+
+
+    return render(request, 'core/item_House.html',{
+        "item_final": item_final,
+        "items": items,
+    })
 
 def similarity_test(products, mallCount):
     product_id = []
@@ -112,7 +147,7 @@ def similarity_test(products, mallCount):
 
     for i in range(len(product_name)):
         product_name[i] = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', product_name[i]).lower()
-        product_name[i] = product_name[i].replace('유기농', '').replace('플러스', '')
+        product_name[i] = product_name[i].replace('유기농', '').replace('플러스', '').replace("eco","에코")
 
     # id:상품명 -> 상품 pk찾기위해 딕셔녀리 생성
     product_dic = {}
@@ -178,7 +213,7 @@ def product_detail(request,pk):
     print(certain_product.id)
     print(certain_product.mall)
     certain_product.name = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', certain_product.name).lower()
-    certain_product.name = certain_product.name.replace('유기농', '').replace('플러스', '')
+    certain_product.name = certain_product.name.replace('유기농', '').replace('플러스', '').replace('eco',"에코")
     print(certain_product)
     product_all =Product.objects.all()
     for i in product_all:

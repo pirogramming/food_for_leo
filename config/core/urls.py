@@ -19,6 +19,7 @@ urlpatterns = [
     path('result/',search_result, name="search_result"),
     path('brand/detail/<int:pk>',brand_detail, name='brand_detail'),
     path('brand_page', brand_page, name='brand_page'),
+    path('item_house', item_House,name="item_House")
 
 
 ]

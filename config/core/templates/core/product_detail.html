@@ -26,57 +26,70 @@
 
         }
 
-        .header {
-            height: 60vh;
+        a {
+            text-decoration: none;
+            color: black;
         }
 
-        .header_upper_nav {
-            height: 20%;
-            border: 1px solid black;
-            box-sizing: border-box;
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
 
-        .header_down_image {
-            height: 80%;
-            border: 1px solid red;
-            box-sizing: border-box;
+        .whole_wrapper {
+            padding-top: 20vh;
+        }
+
+        .middle_img {
+            width: 100vw;
+            background-image: url("http://www.hearthstonehomemade.com/images/0-Dog-Not-Eating-635.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 50vh;
+
+        }
+
+        .middle_img_cover {
+            object-fit: cover;
+            width: 100vw;
+            height: 50vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .middle_img_cover_search {
+            width: 500px;
+        }
+
+        input.form-control {
+            width: 500px;
+            height: 50px;
+            background: white;
+            opacity: 50%;
+            border-radius: 30px;
+        }
+
+        .middle_img_cover_content {
+            color: white;
+            margin-bottom: 30px;
+            text-space: 2px;
+            opacity: 80%;
+
         }
 
         .content {
             width: 90vw;
             margin: 0 auto;
-            border: 1px solid black;
-            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .content_upper {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content_upper_mall {
-            width: 100%;
-            text-align: center;
-        }
-
-        .content_upper_brand {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-
-
-        {#border: 1px solid red;#}{#box-sizing: border-box;#}
-        }
-
-        .content_upper_brand_context {
-            width: 10%;
-            font-size: 0.8em;
-            padding-left: 2%;
-        }
 
         .content_down {
             width: 100%;
@@ -99,8 +112,7 @@
         .content_down_chart_container_context {
             width: 50%;
 
-            border: 1px solid black;
-            box-sizing: border-box;
+
             display: flex;
             justify-content: center;
 
@@ -109,23 +121,21 @@
         .content_down_chart_container_status {
             width: 50%;
 
-            border: 1px solid black;
-            box-sizing: border-box;
+
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
 
 
-
-        }
-        .content_down_chart_container_status_1{
-            width:100%;
-            font-size:1.5em;
-
-
         }
 
+        .content_down_chart_container_status_1 {
+            width: 100%;
+            font-size: 1.5em;
+
+
+        }
 
 
         .content_down_detail_container {
@@ -161,79 +171,59 @@
     </style>
 </head>
 <body>
-<div class="header">
-    <div class="header_upper_nav">네브바
-        <a href="{% url 'core:home' %}">home</a>
-        <a href="{% url 'mypage:profile' %}">mypage</a>
-    </div>
-    <div class="header_down_image">이미지</div>
-</div>
-<div class="content">
-    <div class="content_upper">
-        <div class="content_upper_mall"><h2>동물사랑APS</h2></div>
-        <div class="content_upper_brand">
-            {% for foo in brands_mall1 %}
-                <div class="content_upper_brand_context"><a
-                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-            {% endfor %}
-        </div>
-        <div class="content_upper_mall"><h2>퀸앤퍼피</h2></div>
-        <div class="content_upper_brand">
-            {% for foo in brands_mall2 %}
-                <div class="content_upper_brand_context"><a
-                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-            {% endfor %}
-        </div>
-        <div class="content_upper_mall"><h2>강아지왕국</h2></div>
-        <div class="content_upper_brand">
-            {% for foo in brands_mall3 %}
-                <div class="content_upper_brand_context"><a
-                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-            {% endfor %}
-        </div>
-        <div class="content_upper_mall"><h2>강아지대통령</h2></div>
-        <div class="content_upper_brand">
-            {% for foo in brands_mall4 %}
-                <div class="content_upper_brand_context"><a
-                        href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-            {% endfor %}
+{% include "core/base.html" %}
+<div class="whole_wrapper">
+    <div class="middle_img">
+        <div class="middle_img_cover">
+            <div class="middle_img_cover_content">
+                <h2>
+                    한 해 발생하는 유기동물 수 97,852마리<br/>
+                    그 중 73%인 68,140마리는 유기견</h2>
+                반려동물 사지말고 입양하세요
+            </div>
+            <div class="middle_img_cover_search">
+                <input class="form-control" type="search" id="search">
+                <ul class="list-group" id="result"></ul>
+            </div>
         </div>
     </div>
-    <div class="content_down">
-        <div class="content_down_chart_container">
-            <div class="content_down_chart_container_context">
-                <div id="dataStackNormalized_2"></div>
-            </div>
-            <div class="content_down_chart_container_status">
-                {% for foo in final_result_revised %}
-                    <a href="{{ foo.product_url }}">
-                        <div class="content_down_chart_container_status_1">
-                            쇼핑몰 : {{ foo.mall }} 재고 :  {{ foo.stock }} 가격 : {{ foo.price }}
-                        </div>
-                    </a>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="content_down_detail_container">
-
-            <div class="content_down_detail_container_context">
-                <img src="{{ final_result_revised_detail }}" style="width:80%;" alt="">
-
-
-            </div>
-        </div>
-        <div class="content_down_products_container">
-            {% for i in final_result_revised %}
-                <div class="content_down_products_container_product">
-                    <div class="content_down_products_container_product_1"><img src="{{ i.img_main }}"
-                                                                                style="width:90%;" alt=""></div>
-                    <div class="content_down_products_container_product_1"><a
-                            href="{% url "core:product_detail" i.pk %}">{{ i.name }}</a></div>
-                    <div class="content_down_products_container_product_1">{{ i.made_in }}</div>
-                    <div class="content_down_products_container_product_1">{{ i.price }}</div>
+    <div class="content">
+        <div class="content_down">
+            <div class="content_down_chart_container">
+                <div class="content_down_chart_container_context">
+                    <div id="dataStackNormalized_2"></div>
                 </div>
+                <div class="content_down_chart_container_status">
+                    {% for foo in final_result_revised %}
+                        <a href="{{ foo.product_url }}">
+                            <div class="content_down_chart_container_status_1">
+                                쇼핑몰 : {{ foo.mall }} 재고 : {{ foo.stock }} 가격 : {{ foo.price }}
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="content_down_detail_container">
 
-            {% endfor %}
+                <div class="content_down_detail_container_context">
+                    <img src="{{ final_result_revised_detail }}" style="width:80%;" alt="">
+
+
+                </div>
+            </div>
+{#            <div class="content_down_products_container">#}
+            {#                {% for i in final_result_revised %}#}
+            {#                    <div class="content_down_products_container_product">#}
+            {#                        <div class="content_down_products_container_product_1"><img src="{{ i.img_main }}"#}
+            {#                                                                                    style="width:90%;" alt=""></div>#}
+            {#                        <div class="content_down_products_container_product_1"><a#}
+            {#                                href="{% url "core:product_detail" i.pk %}">{{ i.name }}</a></div>#}
+            {#                        <div class="content_down_products_container_product_1">{{ i.made_in }}</div>#}
+            {#                        <div class="content_down_products_container_product_1">{{ i.price }}</div>#}
+            {#                    </div>#}
+            {##}
+            {#                {% endfor %}#}
+            {#            </div>#}
         </div>
     </div>
 </div>
@@ -243,7 +233,7 @@
 </body>
 
 <script>
- var chart2 = bb.generate({
+    var chart2 = bb.generate({
         data: {
             x: "x",
             columns: [
@@ -273,14 +263,13 @@
             },
 
         },
-        size:{
-            "width":100*Number{{ mall_length }}
+        size: {
+            "width": 100 * Number{{ mall_length }}
         },
 
         bindto: "#dataStackNormalized_2"
     });
 </script>
-
 
 
 <script>

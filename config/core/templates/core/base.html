@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            width: 100vw;
+            flex-direction: column;
+            height: 20vh;
+            position: fixed;
+            background-color: white;
+            z-index: 999;
+        }
+
+        .header_login {
+            width: 100%;
+            height: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+        }
+
+        .header_login div a{
+            padding:0 20px;
+        }
+        .header_login_signup{
+            margin-right:50px;
+        }
+
+        .header_logo {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.5em;
+            color: #333333;
+
+        }
+
+        .header_logo_context {
+            font-family: Forte;
+        }
+
+        .header_nav {
+            width: 100%;
+            height: 35%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .header_nav_navbar a {
+            font-size: 1.2em;
+            font-family: 'Montserrat', sans-serif;
+
+
+        }
+
+        .header_nav_navbar a:hover {
+            color: #808080;
+
+
+        }
+
+        #arrowTop {
+            height: 20px;
+            width: 20px;
+            color: black;
+            position: absolute;
+            display: flex;
+            cursor: pointer;
+            right: 10px;
+
+        }
+
+        #arrowTop::before {
+            content: '▲';
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="header_login">
+        <div class="header_login_login"><a href="{% url 'core:login' %}">login</a></div>
+        <div class="header_login_signup"><a href="{% url 'core:sign_up' %}">sign up</a></div>
+    </div>
+    <div class="header_logo">
+        <div class="header_logo_context"><a href="{% url 'core:home' %}">LEO</a></div>
+    </div>
+    <div class="header_nav">
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:brand_page' %}">Brands</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:item_House' %}">Products</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:product_list' %}">Wish List</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'mypage:diary' %}">Diary</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'mypage:profile' %}">My Page</a></div>
+    </div>
+
+</div>
+
+<div id="arrowTop" hidden></div>
+</body>
+<script>
+
+    arrowTop.onclick = function() {
+      window.scrollTo(pageXOffset, 0);
+      // after scrollTo, there will be a "scroll" event, so the arrow will hide automatically
+    };
+
+    window.addEventListener('scroll', function() {
+      arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+    });
+
+////
+//야매 ㅎㅎ
+   /**
+    $(window).scroll(function() {
+    if($(this).scrollTop() == 0)
+        $('#imgs').css('opacity','0');
+    else
+
+    $('#imgs').css('opacity','0');
+
+});
+
+**/
+
+  </script>
+
