@@ -1,129 +1,166 @@
+<!-- Load CSS -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'mypage/profile.css' %}">
+
+<!-- Bootstrap CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-{% load bootstrap3 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+<!-- Django-Bootstrap4 -->
+{% load bootstrap4 %}
+{#{% bootstrap_css %}#}
+{#{% bootstrap_javascript %}#}
 {% bootstrap_messages %}
 
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
 
-<h1>profile</h1>
+<!-- Main Code Starts -->
 
-<h3><a href="{% url 'mypage:profile' %}">profile</a></h3>
-<h3><a href="{% url 'mypage:favorites' %}">favorites</a></h3>
-<h3><a href="{% url 'mypage:diary' %}">diary</a></h3>
-<h3><a href="{% url 'mypage:pet' %}">pet</a></h3>
+<div id="top_wrap">
+    <div id="profile_img_background_wrap">
+        {% if user.profile.img %}
+            <img src="{{ user.profile.img.url }}" id="profile_img_background" />
+        {% endif %}
+    </div>
 
-
-{% if user.is_authenticated %}
-
-<div>
-    {% if user.profile.img %}
-        <img src="{{ user.profile.img.url }}" class="profile_img" width="400px" height="400px" />
-    {% endif %}
+    <div class="container" id="profile_top_container">
+        <div class="row" style="display: flex; justify-content: center">
+            <div class="col-md-3" id="profile_img">
+                {% if user.profile.img %}
+                    <div id="img_text_wrap">
+                        <label for="id_img"><img src="{{ user.profile.img.url }}" id="profile_img_main" /></label>
+                        <p class="profile_change_text">프로필 사진 바꾸기</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6" id="profile_info">
+                <div id="profile_img_name">이름: {{ user.profile.name }}</div>
+                <div id="profile_img_email">이메일: {{ user.profile.email }}</div>
+                <div id="profile_img_tel">휴대전화: {{ user.profile.tel }}</div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="profile_img_form">
+<script>
+$('#img_text_wrap').mouseover(function() {
+  $('.profile_change_text').css("visibility","visible");
+  $('#profile_img_main').css("filter","brightness(50%)");
+});
+
+$('#img_text_wrap').mouseout(function() {
+  $('.profile_change_text').css("visibility","hidden");
+  $('#profile_img_main').css("filter","brightness(100%)");
+});
+</script>
+
+<div class="container" id="profile_bottom_container">
+    <div class="row" style="display: flex; justify-content: center">
+        <div class="col-md-6" id="profile_wrap">
+            <div class="row" id="profile_name_row">
+                <div class="col-md-3" id="name_div">이름</div>
+                <div class="col-md-9" id="name_div_long">
+                    <div class="infoinfo">{{ user.profile.name }}</div>
+                    <button class="button_change" type="button" data-toggle="collapse" data-target="#name_update" aria-expanded="false" aria-controls="collapseExample">
+                        변경하기
+                    </button>
+                    <div class="collapse" id="name_update">
+                        <div class="card card-body">
+                            <form action="{% url 'mypage:name_update' %}" method="POST">
+                            {% csrf_token %}
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="input_Name" name="name_update">
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                    <button type="submit" class="button_submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="profile_email_row">
+                <div class="col-md-3" id="email_div">이메일</div>
+                <div class="col-md-9" id="email_div_long">
+                    <div class="infoinfo">{{ user.profile.email }}</div>
+                    <button class="button_change" type="button" data-toggle="collapse" data-target="#email_update" aria-expanded="false" aria-controls="collapseExample">
+                        변경하기
+                    </button>
+                    <div class="collapse" id="email_update">
+                        <div class="card card-body">
+                            <form action="{% url 'mypage:email_update' %}" method="POST">
+                            {% csrf_token %}
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="input_Email" name="email_update">
+                                    </div>
+                                    <div class="col-sm-3">
+                                    <button type="submit" class="button_submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="profile_tel_row">
+                <div class="col-md-3" id="tel_div">휴대전화</div>
+                <div class="col-md-9" id="tel_div_long">
+                    <div class="infoinfo">{{ user.profile.tel }}</div>
+                    <button class="button_change" type="button" data-toggle="collapse" data-target="#tel_update" aria-expanded="false" aria-controls="collapseExample">
+                        변경하기
+                    </button>
+                    <div class="collapse" id="tel_update">
+                        <div class="card card-body">
+                            <form action="{% url 'mypage:tel_update' %}" method="POST">
+                            {% csrf_token %}
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="input_Tel" name="tel_update">
+                                    </div>
+                                    <div class="col-sm-3">
+                                    <button type="submit" class="button_submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" id="sidebar_wrap">
+            <div class="list-group" id="sidebar_list">
+              <a href="{% url 'mypage:profile' %}" class="list-group-item list-group-item-action active">
+                마이 페이지
+              </a>
+              <a href="{% url 'mypage:pet'%}" class="list-group-item list-group-item-action">애완동물 관리</a>
+              <a href="{% url 'mypage:diary' %}" class="list-group-item list-group-item-action">다이어리</a>
+              <a href="{% url 'mypage:favorites'%}" class="list-group-item list-group-item-action">찜한 상품</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div id="profile_img_form">
     <h3>프로필 사진 등록/변경</h3>
     <form action="" method="POST" class="form" enctype="multipart/form-data">
         {% csrf_token %}
-        {% bootstrap_form form %}
-        {% buttons %}
-        <button type="submit" class="btn btn-primary">
-        Submit {% bootstrap_icon "ok" %}
+        {{ form.as_p }}
+        <button type="submit" id="img_form_submit" class="button_submit">
+        Submit
         </button>
-        {% endbuttons %}
     </form>
 </div>
-
-    Name: {{ user.profile.name }}
-
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#name_update" aria-expanded="false" aria-controls="collapseExample">
-    Name Update
-</button>
-
-<div class="collapse" id="name_update" style="width: 50%;">
-    <div class="card card-body" style="border: none;" >
-        <form action="{% url 'mypage:name_update' %}" method="POST">
-        {% csrf_token %}
-            <div class="form-group row">
-                <label for="input_Name" class="col-sm-2 col-form-label">New Name</label>
-
-                <div class="col-sm-8">
-                <input type="text" class="form-control" id="input_Name" name="name_update">
-                </div>
-
-                <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-    <br><br>
-
-    Email Adress: {{ user.profile.email }}
-
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#email_update" aria-expanded="false" aria-controls="collapseExample">
-    Email Update
-</button>
-
-<div class="collapse" id="email_update" style="width: 50%;">
-    <div class="card card-body" style="border: none;" >
-        <form action="{% url 'mypage:email_update' %}" method="POST">
-        {% csrf_token %}
-            <div class="form-group row">
-                <label for="input_Email" class="col-sm-2 col-form-label">New Email</label>
-
-                <div class="col-sm-8">
-                <input type="email" class="form-control" id="input_Email" name="email_update">
-                </div>
-
-                <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-    <br><br>
-
-    Mobile Phone: {{ user.profile.tel }}
-
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#tel_update" aria-expanded="false" aria-controls="collapseExample">
-    Tel Update
-</button>
-
-<div class="collapse" id="tel_update" style="width: 50%;">
-    <div class="card card-body" style="border: none;" >
-        <form action="{% url 'mypage:tel_update' %}" method="POST">
-        {% csrf_token %}
-            <div class="form-group row">
-                <label for="input_Tel" class="col-sm-2 col-form-label">New Tel</label>
-
-                <div class="col-sm-8">
-                <input type="text" class="form-control" id="input_Tel" name="tel_update">
-                </div>
-
-                <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-
-
-
-
-
-
-{% endif %}
-

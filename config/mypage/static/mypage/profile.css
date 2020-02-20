@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+#top_wrap {
+    width: 100vw; height: 40vh;
+    display: flex;
+}
+
+#profile_img_background_wrap {
+    width: inherit; height: inherit;
+    position: absolute;
+    z-index: 1;
+}
+
+#profile_img_background{
+    width: inherit; height: inherit;
+    object-fit: cover;
+    filter: brightness(65%) blur(4px);
+}
+
+#profile_top_container {
+    width: inherit; height: inherit;
+    position: relative;
+    top: 5vh;
+    z-index: 999;
+}
+
+#img_text_wrap {
+    width: 182px; height: 182px;
+    border-radius: 100%;
+    position: relative;
+}
+
+#profile_img_main {
+    width: 180px; height: 180px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.profile_change_text {
+    position:absolute;
+    top: 45%;
+    left: 25%;
+    color: white;
+    font-size: 0.8rem;
+    visibility: hidden;
+}
+
+#profile_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#profile_img_name, #profile_img_email, #profile_img_tel {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+
+#profile_img_form {
+
+}
+
+.button_change {
+    width: 75px; height: 35px;
+    border-radius: 10px;
+    background-color: #D09E88;
+    color: white;
+}
+
+.button_submit {
+    width: 75px; height: 35px;
+    border-radius: 10px;
+    background-color: #754F44;
+    color: white;
+}
+
+#img_form_submit {
+
+}
+
+#profile_name_row, #profile_tel_row {
+    border: black 1px solid;
+    padding: 5px;
+}
+
+#profile_email_row {
+    border-right: black 1px solid;
+    border-left: black 1px solid;
+    padding: 5px;
+}
+
+#profile_bottom_container {
+    margin-top: 30px;
+}
+
+
+
+#name_div, #email_div, #tel_div {
+    border-right: black 1px solid;
+    padding-top: 6px;
+}
+
+#name_div_long, #email_div_long, #tel_div_long {
+
+}
+
+.infoinfo {
+    padding-top: 6px;
+}
