@@ -43,6 +43,8 @@
         </div>
     </div>
 
+
+
     <div class="wrap_home">
         <div class="row">
             <div class="col-md-8">
@@ -50,10 +52,14 @@
                     <div class="welcome_text">LEO</div>
                     <div style="display: flex; flex-direction: row; position: relative">
                         <div class="search_bar">
-                            <form action="#" autocomplete="off">
+                            <form action="{% url "core:search_result" %}" method="GET" autocomplete="off">
                                 <fieldset class="url">
-                                    <input id="url" class="search" type="text" name="url" required>
-                                    <div class="search_list"><ul class="list-group" id="result"></ul></div>
+                                    <input id="url" class="search" type="text" name="q" value="{{ q }}" required>
+                                    <div class="search_list">
+                                        <ul class="list-group" id="result">
+
+                                        </ul>
+                                    </div>
                                     <label for="url"><i class="fa fa-search" aria-hidden="true"></i> Search</label>
                                     <div class="after"></div>
                                 </fieldset>
@@ -69,10 +75,10 @@
             <div class="col-md-4">
                 <div class="container" id="nav">
                     <div class="row" id="a1"><a href="{% url 'core:brand_page' %}">Brands</a></div>
-                    <div class="row" id="a2"><a href="">Products</a></div>
+                    <div class="row" id="a2"><a href="{% url 'core:item_House' %}">Products</a></div>
                     <div class="row" id="a3"><a href="">Wish List</a></div>
-                    <div class="row" id="a4"><a href="">Diary</a></div>
-                    <div class="row" id="a5"><a href="">My Page</a></div>
+                    <div class="row" id="a4"><a href="{% url 'mypage:diary' %}">Diary</a></div>
+                    <div class="row" id="a5"><a href="{% url 'mypage:profile' %}">My Page</a></div>
                 </div>
             </div>
         </div>
