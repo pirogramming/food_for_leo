@@ -46,7 +46,7 @@ function fetchJsonFilter(val) {
     })
 }
 
-$('#search').on('keyup', function () {
+$('.search').on('keyup', function () {
     var searchInput = $(this).val();
     if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
         document.querySelector('#result').innerHTML = []

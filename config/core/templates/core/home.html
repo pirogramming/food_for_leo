@@ -3,12 +3,12 @@
 {% block content %}
     <style>
         .col-md-4, .col-md-8 {
-            width: 100vw; height: 100vh;
+            width: 100vw;
+            height: 100vh;
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
-
         .carousel-inner {
             height: 100vh;
             position: absolute;
@@ -40,7 +40,7 @@
             overflow: hidden
         }
 
-        #nav #a1,#nav #a2,#nav #a3,#nav #a4,#nav #a5{
+        #nav #a1, #nav #a2, #nav #a3, #nav #a4, #nav #a5 {
             position: relative;
         }
 
@@ -63,58 +63,74 @@
             font-size: large;
         }
 
-        #nav a:before, #nav a:after{
-            width: 1px;
+        #nav a:before, #nav a:after {
+            width: 2px;
             height: 0;
         }
-        #nav a:before{
-            right: 0;top: 0;
+
+        #nav a:before {
+            right: 0;
+            top: 0;
         }
-        #nav a:after{
-            left: 0;bottom: 0;
+
+        #nav a:after {
+            left: 0;
+            bottom: 0;
         }
-        #nav a:before, #nav a:after{
-            position: absolute;content: '';
-            background-color: #FFFFFF; z-index: 1;
+
+        #nav a:before, #nav a:after {
+            position: absolute;
+            content: '';
+            background-color: #FFFFFF;
+            z-index: 1;
             -webkit-transition: all 0.4s ease-in;
             transition: all 0.4s ease-in;
             opacity: 0.9;
         }
-        #nav a:before, #nav a:after{
-            height: 1px;
+
+        #nav a:before, #nav a:after {
+            height: 2px;
             width: 0%;
         }
-        #nav a:before{
-            top:0; left: 0;
+
+        #nav a:before {
+            top: 0;
+            left: 0;
         }
-        #nav a:after{
-            bottom:0; right: 0;
+
+        #nav a:after {
+            bottom: 0;
+            right: 0;
         }
-        #nav a:hover a,#nav.hover a{
+
+        #nav a:hover a, #nav.hover a {
             opacity: 1;
         }
-        #nav #a1 a:hover,#nav #a2 a:hover,
+
+        #nav #a1 a:hover, #nav #a2 a:hover,
         #nav #a3 a:hover, #nav #a4 a:hover,
-        #nav #a5 a:hover{
+        #nav #a5 a:hover {
             background-color: rgba(0, 0, 0, 0.4);
             color: #D09E88;
             font-size: x-large;
             transition: 0.1s ease-in-out;
         }
+
         #nav a:hover a:before, #nav.hover a:before,
-        #nav a:hover a:after, #nav.hover a:after{
+        #nav a:hover a:after, #nav.hover a:after {
             height: 100%;
         }
+
         #nav a:hover:before, #nav a.hover:before,
-        #nav a:hover:after, #nav a.hover:after{
+        #nav a:hover:after, #nav a.hover:after {
             width: 100%;
         }
 
         #nav a:hover:before, #nav a.hover:before,
-        #nav a:hover:after, #nav a.hover:after
-        {
+        #nav a:hover:after, #nav a.hover:after {
             opacity: 0.1;
         }
+
         .wrap_home > .row {
             height: 100%;
             margin: 0;
@@ -124,41 +140,238 @@
         .col-md-4 .row {
             height: 20%;
         }
-/*오른쪽 구성*/
-    .col-md-8{
-        padding: 15% 0 0 8%;
-    }
-    .welcome_text{
-        color: antiquewhite; font-size: 6rem;
-        z-index: 10000;
-        display: block;
-    }
-    #search{
-        border-radius: 40px 80px / 80px 40px;
-    }
-    .search_list{
-        position: absolute;
-        z-index: 10000;
-        box-shadow: black;
-    }
-    #result li:nth-child(1){
-        border-radius: 20px 20px 0 0;
-    }
-    #result li:nth-last-child(1){
-        border-radius: 0 0 20px 20px;
-    }
-    #getResult{
-        margin: auto 0 auto 8%;
-        border-radius: 40px 80px / 80px 40px;
-        width: 100%; height: 100%;
-        display: flex; align-content: center;
-        background-color: #566270; color: white;
-        border: 1px #3E4348;
-    }
 
-    .carousel-inner img{
-        object-fit: cover;
-    }
+        /*오른쪽 구성*/
+        .col-md-8 {
+            padding: 15% 0 0 8%;
+        }
+
+        .welcome_text {
+            color:white;
+            font-size: 6rem;
+            z-index: 10000;
+            display: block;font-family: Forte;
+        }
+
+        .search_bar {
+            margin-top: -150px;
+        }
+
+        .search_list {
+            position: absolute;
+            z-index: 10000;
+            box-shadow: black;
+        }
+
+        #result li{
+            border: none;
+            border-bottom: 1px solid dimgray;
+            background: none; color: white;
+        }
+
+        #getResult {
+            margin: auto 0 auto 8%;
+            border-radius: 40px 80px / 80px 40px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-content: center;
+            background-color: #566270;
+            color: white;
+            border: 1px #3E4348;
+        }
+
+        .carousel-inner img {
+            object-fit: cover;
+        }
+
+        /*---------search bar----------*/
+    .search_bar form {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            position: absolute;
+            top: 50px;
+            width: 70%;
+            z-index: 100000;  /*추가*/
+        }
+
+        .url fieldset{
+            position: relative;
+        }
+
+        .fa-search {
+            position: relative;
+            top: 0px;
+            font-size: 20px !important;
+        }
+
+        .url {
+            /*padding-left: 50px;*/
+            -webkit-box-flex: 5;
+            -ms-flex-positive: 5;
+            flex-grow: 5;
+        }
+
+        .enter {
+            margin: -5px 20px;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+        }
+
+        .url label {
+            position: absolute;
+            top: -5px;
+            letter-spacing: 10px;
+            font-size: 20px;
+            color: RGBA(254, 253, 255, 1.00);
+            -webkit-transform-origin: left;
+            -ms-transform-origin: left;
+            transform-origin: left;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        input:focus ~ label {
+            color: RGBA(254, 253, 255, 1.00);
+        }
+
+        input:focus ~ label,
+        input:valid ~ label {
+            top: 0;
+            letter-spacing: 5px;
+            -webkit-transform: translate(0, -30px) scale(0.7, 0.7);
+            -ms-transform: translate(0, -30px) scale(0.7, 0.7);
+            transform: translate(0, -30px) scale(0.7, 0.7);
+
+        }
+
+        input {
+            font-family: system-ui, Helvetica, Arial, sans-serif;
+            font-size: 20px !important;
+            width: 100%;
+            border: none;
+            margin-top: 0;
+            background-color: transparent;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .after {
+            width: 100%;
+            height: 2px;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, RGBA(254, 253, 255, 1.00)), color-stop(50%, transparent));
+            background: -webkit-linear-gradient(left, RGBA(254, 253, 255, 1.00) 50%, transparent 50%);
+            background: -o-linear-gradient(left, RGBA(254, 253, 255, 1.00) 50%, transparent 50%);
+            background: linear-gradient(to right, RGBA(254, 253, 255, 1.00) 50%, transparent 50%);
+            background-color: RGBA(254, 253, 255, 1.00);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        input:focus ~ .after {
+            background-position: 0 0;
+        }
+
+        button {
+            position: relative;
+            width: 100px; height: 40px;
+            font-size: 20px;
+            font-family: system-ui, Helvetica, Arial, sans-serif;
+            line-height: 1;
+            margin-top: 10px;
+            padding: 0 10px 20px;
+            color: rgba(255, 255, 255, 0.8);
+            background:none;
+            border: none;
+            border-radius: 15px;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, white), color-stop(50%, transparent));
+            background: -webkit-linear-gradient(left, white 50%, transparent 50%);
+            background: -o-linear-gradient(left, white 50%, transparent 50%);
+            background: linear-gradient(to right, white 50%, transparent 50%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        button:before {
+            position: absolute; content: "\f00c";
+            font-family: system-ui, FontAwesome, Helvetica, Arial, sans-serif;;
+            font-size: 20px;
+            letter-spacing: 3px;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            display: block;
+            border-radius: 15px;
+            /*color: white;*/
+        }
+
+        button:active,
+        button:focus,
+        button:hover {
+            outline: none;
+            color: white; font-weight: bolder;
+            letter-spacing: 2px;
+        }
+
+        @media (min-width: 1260px) {
+            .body {
+                background-size: 100%;
+            }
+        }
+
+        @media (max-width: 590px) {
+            button {
+                width: 150px;
+                margin-left: -20px !important;
+            }
+
+            label {
+                letter-spacing: 7px;
+            }
+        }
+
+        @media (max-width: 475px) {
+            form {
+                -webkit-box-orient: vertical !important;
+                -webkit-box-direction: normal !important;
+                -ms-flex-direction: column !important;
+                flex-direction: column !important;
+            }
+
+            button {
+                float: right;
+                margin-right: 25px !important;
+            }
+        }
+
+        @media (max-width: 315px) {
+            label {
+                letter-spacing: 5px;
+            }
+        }
+
+        @media (max-width: 300px) {
+            label {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+        }
 
     </style>
     <div class="wrap_img">
@@ -176,7 +389,7 @@
                     <div class="bg_gray"></div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://cdn.pixabay.com/photo/2018/11/01/00/55/animal-3786987__340.jpg"
+                    <img src="https://t3.ftcdn.net/jpg/02/76/34/36/240_F_276343643_eBl9mRxY5RoE6UtuyrF3tCY1EsVw1bwW.jpg"
                          class="d-block w-100" alt="...">
                     <div class="bg_gray"></div>
                 </div>
@@ -195,13 +408,20 @@
             <div class="col-md-8">
                 <div style="display: flex; flex-direction: column">
                     <div class="welcome_text">LEO</div>
-                    <div style="display: flex; flex-direction: row">
+                    <div style="display: flex; flex-direction: row; position: relative">
                         <div class="search_bar">
-                            <input class="form-control" type="text" id="search"/>
-                            <div class="search_list"><ul class="list-group" id="result">
-                            </ul></div>
+                            <form action="#" autocomplete="off">
+                                <fieldset class="url">
+                                    <input id="url" class="search" type="text" name="url" required>
+                                    <div class="search_list"><ul class="list-group" id="result"></ul></div>
+                                    <label for="url"><i class="fa fa-search" aria-hidden="true"></i> Search</label>
+                                    <div class="after"></div>
+                                </fieldset>
+                                <fieldset class="enter">
+                                    <button></button>
+                                </fieldset>
+                            </form>
                         </div>
-                        <div><button type="submit" value="get result" id="getResult">search</button></div>
                     </div>
                 </div>
 
@@ -217,7 +437,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="../../static/js/search.js"></script>
 
 {% endblock %}
