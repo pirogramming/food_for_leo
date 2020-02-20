@@ -128,9 +128,15 @@ def pet_delete(request, pk):
 
 @login_required
 def diary(request):
-    diaries = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0:3]
+    diary1 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0]
+    diary2 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[1]
+    diary3 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[2]
+    diaries = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0:2]
     ctx = {
-        'diaries': diaries
+        'diary1': diary1,
+        'diary2': diary2,
+        'diary3': diary3,
+        'diaries': diaries,
     }
     return render(request, 'mypage/diary.html', ctx)
 

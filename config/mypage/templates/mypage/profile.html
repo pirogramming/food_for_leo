@@ -66,7 +66,7 @@ $('#img_text_wrap').mouseout(function() {
             <div class="row" id="profile_name_row">
                 <div class="col-md-3" id="name_div">이름</div>
                 <div class="col-md-9" id="name_div_long">
-                    <div class="infoinfo">{{ user.profile.name }}</div>
+                    {{ user.profile.name }}
                     <button class="button_change" type="button" data-toggle="collapse" data-target="#name_update" aria-expanded="false" aria-controls="collapseExample">
                         변경하기
                     </button>
@@ -75,12 +75,12 @@ $('#img_text_wrap').mouseout(function() {
                             <form action="{% url 'mypage:name_update' %}" method="POST">
                             {% csrf_token %}
                                 <div class="form-group row">
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-8">
                                     <input type="text" class="form-control" id="input_Name" name="name_update">
                                     </div>
 
-                                    <div class="col-sm-3">
-                                    <button type="submit" class="button_submit">Submit</button>
+                                    <div class="col-sm-2">
+                                    <button type="submit" class="button_submit">변경</button>
                                     </div>
                                 </div>
                             </form>
@@ -91,7 +91,7 @@ $('#img_text_wrap').mouseout(function() {
             <div class="row" id="profile_email_row">
                 <div class="col-md-3" id="email_div">이메일</div>
                 <div class="col-md-9" id="email_div_long">
-                    <div class="infoinfo">{{ user.profile.email }}</div>
+                    {{ user.profile.email }}
                     <button class="button_change" type="button" data-toggle="collapse" data-target="#email_update" aria-expanded="false" aria-controls="collapseExample">
                         변경하기
                     </button>
@@ -100,11 +100,11 @@ $('#img_text_wrap').mouseout(function() {
                             <form action="{% url 'mypage:email_update' %}" method="POST">
                             {% csrf_token %}
                                 <div class="form-group row">
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-8">
                                     <input type="email" class="form-control" id="input_Email" name="email_update">
                                     </div>
                                     <div class="col-sm-3">
-                                    <button type="submit" class="button_submit">Submit</button>
+                                    <button type="submit" class="button_submit">변경</button>
                                     </div>
                                 </div>
                             </form>
@@ -115,7 +115,7 @@ $('#img_text_wrap').mouseout(function() {
             <div class="row" id="profile_tel_row">
                 <div class="col-md-3" id="tel_div">휴대전화</div>
                 <div class="col-md-9" id="tel_div_long">
-                    <div class="infoinfo">{{ user.profile.tel }}</div>
+                    {{ user.profile.tel }}
                     <button class="button_change" type="button" data-toggle="collapse" data-target="#tel_update" aria-expanded="false" aria-controls="collapseExample">
                         변경하기
                     </button>
@@ -124,11 +124,11 @@ $('#img_text_wrap').mouseout(function() {
                             <form action="{% url 'mypage:tel_update' %}" method="POST">
                             {% csrf_token %}
                                 <div class="form-group row">
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-8">
                                     <input type="text" class="form-control" id="input_Tel" name="tel_update">
                                     </div>
                                     <div class="col-sm-3">
-                                    <button type="submit" class="button_submit">Submit</button>
+                                    <button type="submit" class="button_submit">변경</button>
                                     </div>
                                 </div>
                             </form>
