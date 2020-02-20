@@ -12,6 +12,9 @@ from django.contrib.auth.models import User
 @login_required
 @transaction.atomic
 def update_profile(request):
+    diary1 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0]
+    diary2 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[1]
+    diary3 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[2]
     if request.method == 'POST':
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if profile_form.is_valid():
@@ -22,7 +25,13 @@ def update_profile(request):
             messages.error(request, 'Please correct the error below.')
     else:
         profile_form = ProfileForm(instance=request.user.profile)
-    return render(request, 'mypage/profile.html', {'profile_form': profile_form})
+        ctx = {
+            'diary1': diary1,
+            'diary2': diary2,
+            'diary3': diary3,
+            'form': profile_form,
+        }
+    return render(request, 'mypage/profile.html', ctx)
 
 
 @login_required
@@ -63,22 +72,88 @@ def tel_update(request):
         return redirect('mypage:profile')
 
 
-@login_required
-def pet_info(request):
-    pets = Pet.objects.filter(owner=request.user.profile)
+# pet#pet
+# pet
+# pet
+
+def pet_brief(request):
+    pet1 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0]
+    pet2 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[1]
+    pet3 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[2]
+    ctx = {
+        'pet1': pet1,
+        'pet2': pet2,
+        'pet3': pet3,
+    }
+    return render(request, 'mypage/pet_brief.html',ctx)
+
+def pet_list(request):
+    pets = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0:3]
     ctx = {
         'pets': pets
     }
-    return render(request, 'mypage/pet_info.html', ctx)
+    return render(request, 'mypage/pet_list.html', ctx)
 
 
 @login_required
-def diary(request):
-    diaries = Diary.objects.filter(author=request.user.profile)
+@transaction.atomic
+def create_pet(request):
+    if request.method == 'POST':
+        form = PetForm(request.POST, request.FILES)
+        if form.is_valid():
+            pet = form.save()
+            pet.owner = request.user.profile
+            pet.save()
+            messages.success(request, 'Your pet info was successfully updated!')
+            return redirect(reverse('mypage:pet_detail', kwargs={'pk': pet.pk}))
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PetForm()
+    return render(request, 'mypage/create_pet.html', {'form': form})
+
+
+def pet_detail(request, pk):
+    pet = Pet.objects.get(pk=pk)
     ctx = {
-        'diaries': diaries
+        'pet': pet,
+        'pk': pk,
     }
-    return render(request, 'mypage/diary.html', ctx)
+    return render(request, 'mypage/pet_detail.html', ctx)
+
+
+def pet_update(request, pk):
+    pet = Pet.objects.get(pk=pk)
+    form = PetForm(request.POST, request.FILES, instance=pet)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your pet was successfully updated!')
+            return redirect(reverse('mypage:pet_detail', kwargs={'pk': pk}))
+    else:
+        form = PetForm(instance=pet)
+    return render(request, 'mypage/pet_edit.html', {
+        'pk': pk,
+        'form': form,
+    })
+
+
+def pet_delete(request, pk):
+    pet = Pet.objects.get(pk=pk)
+    if request.user.profile == pet.owner:
+        pet.delete()
+        messages.success(request, '성공적으로 삭제되었습니다.')
+    return redirect(reverse('mypage:pet'))
+
+
+# diary
+# diary
+# diary
+
+
+@login_required
+def diary_list(request):
+    return render(request, 'mypage/diary_list.html')
 
 
 @login_required

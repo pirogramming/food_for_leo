@@ -24,6 +24,8 @@ import operator
 import random
 
 
+
+
 def product_list(request):
     product_all = Product.objects.all()
     brand_all = Brand.objects.all()
@@ -138,6 +140,7 @@ def item_House(request):
     })
 
 def similarity_test(products, mallCount):
+
     product_id = []
     product_name = []
     # products와 같은 id의 상품 이름, id가져오기
@@ -145,16 +148,19 @@ def similarity_test(products, mallCount):
         product_id += [product.pk]
         product_name += [product.name]
 
+
     for i in range(len(product_name)):
         product_name[i] = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', product_name[i]).lower()
         product_name[i] = product_name[i].replace('유기농', '').replace('플러스', '').replace("eco","에코")
 
-    # id:상품명 -> 상품 pk찾기위해 딕셔녀리 생성
+
+    #id:상품명 -> 상품 pk찾기위해 딕셔녀리 생성
     product_dic = {}
     for i in range(len(product_dic)):
         product_dic[product_id[i]] = product_name[i]
 
-    # jaccardDistance 유사도 측정
+
+    #jaccardDistance 유사도 측정
     similarity = {}
     product_list = []
     while (len(product_name) != 0):
@@ -165,11 +171,12 @@ def similarity_test(products, mallCount):
         similarity = sorted(similarity.items(), key=operator.itemgetter(1), reverse=True)
         product_list += [[pk for pk, sim in similarity[0: mallCount] if sim >= 0.95]]
 
+
         for j in range(len(product_list[-1])):
             index = int(product_id.index(product_list[-1][j]))
             del product_id[index]
             del product_name[index]
-            similarity = {}
+            similarity={}
 
     return product_list
 
@@ -306,13 +313,13 @@ def brand_detail(request, pk):
     products_mall4 = []
 
     if certain_brand.malls.filter(name="동물사랑APS"):
-        products_mall1 += certain_brand.malls.get(name="동물사랑APS").products.all()
+        products_mall1 += certain_brand.malls.filter(name="동물사랑APS").first().products.all()
     if certain_brand.malls.filter(name="QueenNPuppy"):
-        products_mall2 += certain_brand.malls.get(name="QueenNPuppy").products.all()
+        products_mall2 += certain_brand.malls.filter(name="QueenNPuppy").first().products.all()
     if certain_brand.malls.filter(name="kingdom"):
-        products_mall3 += certain_brand.malls.get(name="kingdom").products.all()
+        products_mall3 += certain_brand.malls.filter(name="kingdom").first().products.all()
     if certain_brand.malls.filter(name="president"):
-        products_mall4 += certain_brand.malls.get(name="president").products.all()
+        products_mall4 += certain_brand.malls.filter(name="president").first().products.all()
 
     all_product = products_mall1 + products_mall2 + products_mall3 + products_mall4
 
@@ -370,7 +377,7 @@ def brand_detail(request, pk):
         "brands_mall4": brands_mall4,
         'mall_of_certain_brand': mall_of_certain_brand,
         'final_result': final_result,
-        'chart_index_1': chart_index_1,
+        'chart_index_1':chart_index_1,
         'mall0': mall0,
         'mall1': mall1,
         'mall2': mall2,

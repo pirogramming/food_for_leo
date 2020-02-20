@@ -10,3 +10,6 @@
     {% endif %}
 </div>
 
+<a href="{% url 'mypage:diary_list' %}">다이어리 목록</a> <br>
+<a href="{% url 'mypage:update_diary' pk %}">다이어리 수정</a> <br>
+<a href="{% url 'mypage:delete_diary' pk %}">다이어리 삭제</a> <br>
