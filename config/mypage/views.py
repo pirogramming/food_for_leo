@@ -13,6 +13,9 @@ from django.contrib.auth.models import User
 @login_required
 @transaction.atomic
 def update_profile(request):
+    diary1 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0]
+    diary2 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[1]
+    diary3 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[2]
     if request.method == 'POST':
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if profile_form.is_valid():
@@ -23,9 +26,13 @@ def update_profile(request):
             messages.error(request, 'Please correct the error below.')
     else:
         profile_form = ProfileForm(instance=request.user.profile)
-    return render(request, 'mypage/profile.html', {
-        'form': profile_form,
-    })
+        ctx = {
+            'diary1': diary1,
+            'diary2': diary2,
+            'diary3': diary3,
+            'form': profile_form,
+        }
+    return render(request, 'mypage/profile.html', ctx)
 
 
 def name_update(request):
@@ -62,12 +69,12 @@ def tel_update(request):
 # pet
 # pet
 
-def pet(request):
+def pet_list(request):
     pets = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0:3]
     ctx = {
         'pets': pets
     }
-    return render(request, 'mypage/pet.html', ctx)
+    return render(request, 'mypage/pet_list.html', ctx)
 
 
 @login_required
@@ -127,18 +134,8 @@ def pet_delete(request, pk):
 
 
 @login_required
-def diary(request):
-    diary1 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0]
-    diary2 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[1]
-    diary3 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[2]
-    diaries = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0:2]
-    ctx = {
-        'diary1': diary1,
-        'diary2': diary2,
-        'diary3': diary3,
-        'diaries': diaries,
-    }
-    return render(request, 'mypage/diary.html', ctx)
+def diary_list(request):
+    return render(request, 'mypage/diary_list.html')
 
 
 @login_required

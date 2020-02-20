@@ -1,6 +1,7 @@
 <!-- Load CSS -->
 {% load static %}
 <link rel="stylesheet" href="{% static 'mypage/profile.css' %}">
+<link rel="stylesheet" href="{% static 'mypage/diary_brief.css' %}">
 
 <!-- Bootstrap CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -19,6 +20,9 @@
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
+
 
 <!-- Main Code Starts -->
 
@@ -71,7 +75,7 @@ $('#img_text_wrap').mouseout(function() {
                         변경하기
                     </button>
                     <div class="collapse" id="name_update">
-                        <div class="card card-body">
+                        <div class="collapse_div">
                             <form action="{% url 'mypage:name_update' %}" method="POST">
                             {% csrf_token %}
                                 <div class="form-group row">
@@ -96,7 +100,7 @@ $('#img_text_wrap').mouseout(function() {
                         변경하기
                     </button>
                     <div class="collapse" id="email_update">
-                        <div class="card card-body">
+                        <div class="collapse_div">
                             <form action="{% url 'mypage:email_update' %}" method="POST">
                             {% csrf_token %}
                                 <div class="form-group row">
@@ -120,7 +124,7 @@ $('#img_text_wrap').mouseout(function() {
                         변경하기
                     </button>
                     <div class="collapse" id="tel_update">
-                        <div class="card card-body">
+                        <div class="collapse_div">
                             <form action="{% url 'mypage:tel_update' %}" method="POST">
                             {% csrf_token %}
                                 <div class="form-group row">
@@ -142,8 +146,8 @@ $('#img_text_wrap').mouseout(function() {
               <a href="{% url 'mypage:profile' %}" class="list-group-item list-group-item-action active">
                 마이 페이지
               </a>
-              <a href="{% url 'mypage:pet'%}" class="list-group-item list-group-item-action">애완동물 관리</a>
-              <a href="{% url 'mypage:diary' %}" class="list-group-item list-group-item-action">다이어리</a>
+              <a href="{% url 'mypage:pet_list'%}" class="list-group-item list-group-item-action">애완동물 관리</a>
+              <a href="{% url 'mypage:diary_list' %}" class="list-group-item list-group-item-action">다이어리</a>
               <a href="{% url 'mypage:favorites'%}" class="list-group-item list-group-item-action">찜한 상품</a>
             </div>
         </div>
@@ -151,6 +155,8 @@ $('#img_text_wrap').mouseout(function() {
 </div>
 
 
+
+{% include 'mypage/diary_brief.html' %}
 
 
 

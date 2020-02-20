@@ -1,8 +1,8 @@
-* {
-    font-family: 'Nanum Gothic', sans-serif;
+#page_wrap {
+    margin-top: 30px;
 }
 
-.card {
+#diary_card1, #diary_card2, #diary_card3 {
     height: 30rem;
 }
 
@@ -10,12 +10,12 @@
     width: inherit; height: 14rem;
 }
 
-.card-img-top {
+#card_img_top1, #card_img_top2, #card_img_top3 {
     width: inherit; height: inherit;
     object-fit: cover;
 }
 
-.card-body {
+#diary_card_body1, #diary_card_body2, #diary_card_body3 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

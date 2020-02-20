@@ -1,40 +1,17 @@
 <!-- Load CSS -->
 {% load static %}
-<link rel="stylesheet" href="{% static 'mypage/diary.css' %}">
-
-<!-- Bootstrap CDN -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-<!-- Django-Bootstrap4 -->
-{% load bootstrap4 %}
-{#{% bootstrap_css %}#}
-{#{% bootstrap_javascript %}#}
-{% bootstrap_messages %}
+<link rel="stylesheet" href="{% static 'mypage/diary_brief.css' %}">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
 
-
-
-
-<h1>diary</h1>
-
-<h3><a href="{% url 'mypage:profile' %}">profile</a></h3>
-<h3><a href="{% url 'mypage:favorites' %}">favorites</a></h3>
-<h3><a href="{% url 'mypage:create_diary' %}">create diary</a></h3>
-
-
-
-<div class="container">
+<div class="container" id="page_wrap">
     <div class="row" style="display: flex; justify-content: center;">
+
         <div class="col-md-3" >
+
             <div class="card" id="diary_card1">
                 {% if diary1.img %}
-                    <div class="card_img_div"><img src="{{ diary1.img.url }}" class="card-img-top"></div>
+                    <div class="card_img_div"><img src="{{ diary1.img.url }}" id="card_img_top1" class="card-img-top"></div>
                 {% endif %}
                 {% if not diary1.img %}
                     <div class="card_img_div"></div>
@@ -49,7 +26,7 @@
         <div class="col-md-3">
             <div class="card" id="diary_card2">
                 {% if diary2.img %}
-                    <div class="card_img_div"><img src="{{ diary2.img.url }}" class="card-img-top"></div>
+                    <div class="card_img_div"><img src="{{ diary2.img.url }}" id="card_img_top2" class="card-img-top"></div>
                 {% endif %}
                 {% if not diary2.img %}
                     <div class="card_img_div"></div>
@@ -64,7 +41,7 @@
         <div class="col-md-3">
             <div class="card" id="diary_card3">
                 {% if diary3.img %}
-                    <div class="card_img_div"><img src="{{ diary3.img.url }}" class="card-img-top"></div>
+                    <div class="card_img_div"><img src="{{ diary3.img.url }}" id="card_img_top3" class="card-img-top"></div>
                 {% endif %}
                 {% if not diary3.img %}
                     <div class="card_img_div">이미지가 없습니다</div>
