@@ -42,6 +42,10 @@
         color: black;
     }
 
+    a:hover {
+        text-decoration: none;
+        color: #808080;
+    }
     html, body {
         height: 100%;
         margin: 0;
@@ -87,31 +91,39 @@
         }
 
     .item-list {
-        padding:30px 15px;
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        margin-top: 15px;
     }
 
-    .col {
-        text-align: center;
-        margin-top: 10px;
+    .content_down_items {
+        width: 24%;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+
+
     }
 
-    .col > a {
+    .content_down_items > a {
         text-decoration: none;
         color: black;
     }
 
-    .col li {
-        list-style: none;
-        display: inline-block;
+    .content_down_items div {
+        text-align: center;
     }
 
     .itemimg {
-        display: flex;
-        justify-content: center;
-        object-fit: cover;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
 
-        transform: scale(1.0);
-        transition: transform .5s;
+            transform: scale(1.0);
+            transition: transform .5s;
     }
 
     .itemimg:hover {
@@ -120,15 +132,13 @@
     }
 
     .itemName {
-        font-size: small;
-        width: 150px;
-        height: 43px;
         padding-top: 5px;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
 
     .pagination-container{
         text-align: center;
@@ -152,11 +162,11 @@
      <div class="middle_img">
         <div class="middle_img_cover">
             <div class="middle_img_cover_content">
-                <h1>BRANDS</h1>
+                <h1>PRODUCTS</h1>
             </div>
             <div class="search_bar" style="display: flex; flex-direction: row; position: relative">
 
-                <form action="{% url "core:search_result" %}" method="GET" autocomplete="off">
+                <form action="{% url 'core:search_result' %}" method="GET" autocomplete="off">
                     <fieldset class="url">
                         <input id="url" class="search" type="text" name="q" value="{{ q }}" required>
                         <div class="search_list">
@@ -174,17 +184,14 @@
         </div>
     </div>
     <div id="product-container">
-        <div class="item-list row">
+        <div class="item-list">
             {% for item in items %}
-                <div class="col col-md-3 col-sm-6 col-xs-6">
+                <div class="content_down_items">
                     <a href="{% url 'core:product_detail' item.pk %}">
-                        <li>
                             <div class="itemimg">
-                                <img src="{{ item.img_main }}" alt="" width=150" height="150" align="center">
+                                <img src="{{ item.img_main }}" alt="" style="width:80%">
                             </div>
-                            <div class="itemName" title="{{ item.name }}">{{ item.name }}
-                            </div>
-                        </li>
+                            <div class="itemName" title="{{ item.name }}">{{ item.name }}</div>
                     </a>
                 </div>
             {% endfor %}
