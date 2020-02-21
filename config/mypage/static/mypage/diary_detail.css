@@ -5,25 +5,33 @@
 }
 
 #diary_detail_wrap {
-    padding-top: 50px;
+    padding-top: 10px;
 }
+
+.diary_detail_logo {
+  font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Nanum Gothic Coding', monospace;
+font-family: 'Do Hyeon', sans-serif;
+font-family: 'Pattaya', sans-serif;
+font-family: 'Lobster', cursive;
+    font-size: 3em;
+    color: #473403;
+}
+.diary_detail-created,.diary_detail-author  {
+    color: #4f4f4f;
+}
+
 
 .diary_detail-title {
     text-align: center;
     font-size: 2em;
     font-family: 'Jua', sans-serif;
-    padding-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: #333333 dotted 1px;
+    border-top: #333333 solid 1px;
+    opacity: 90%;
 }
 
-.diary_detail-created {
-    text-align: right;
-    padding-right: 100px
-}
-
-.diary_detail-author {
-    text-align: right;
-    padding-right: 100px
-}
 
 .diary_detail-img {
     text-align: center;
@@ -41,4 +49,9 @@
 .diary_detail-content {
     padding: 0 30px;
     font-size: 1.4em;
+}
+
+.diary_detail-crud a {
+    text-decoration: none;
+    color: #333333;
 }

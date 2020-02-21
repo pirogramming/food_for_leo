@@ -16,6 +16,8 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Lobster|Nanum+Gothic|Nanum+Gothic+Coding|Pattaya&display=swap"
+      rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic|Nanum+Gothic+Coding&display=swap"
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
@@ -28,15 +30,18 @@
         <div class="col-md-1">aaaa</div>
         <div class="col-md-10" id="diary_detail_wrap">
 
-            <div class="diary_detail">
-                <div class="diary_detail-title">
-                    {{ diary.title }}
+            <div class="diary_detail-top">
+                <div class="diary_detail_logo">Diary</div>
+                <div class="diary_detail-author">
+                    {{ diary.author }}
                 </div>
                 <div class="diary_detail-created">
                     {{ diary.created_at|date:"Y.m.d (D) P" }}
                 </div>
-                <div class="diary_detail-author">
-                   {{ diary.author }}
+            </div>
+            <div class="diary_detail-body">
+                <div class="diary_detail-title">
+                    {{ diary.title }}
                 </div>
                 <div class="diary_detail-img">
                     {% if diary.img %}
@@ -46,12 +51,12 @@
                 <div class="diary_detail-content">
                     <p>{{ diary.content }}</p>
                 </div>
-
             </div>
+
             <div class="diary_detail-crud">
-                <a class="diary_detail-list" href="{% url 'mypage:diary_list' %}">다이어리 목록</a> <br>
-                <a class="diary_detail-update" href="{% url 'mypage:update_diary' pk %}">다이어리 수정</a> <br>
-                <a class="diary_detail-delete" href="{% url 'mypage:delete_diary' pk %}">다이어리 삭제</a> <br>
+                <a class="diary_detail-list" href="{% url 'mypage:diary_list' %}">list</a> <br>
+                <a class="diary_detail-update" href="{% url 'mypage:update_diary' pk %}">edit</a> <br>
+                <a class="diary_detail-delete" href="{% url 'mypage:delete_diary' pk %}">delete</a> <br>
             </div>
         </div>
         <div class="col-md-1">bbb</div>
