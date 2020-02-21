@@ -17,9 +17,6 @@ urlpatterns = [
     path('pet/detail/<int:pk>/edit/', pet_update, name='pet_update'),
     path('pet/detail/<int:pk>/delete/', pet_delete, name='pet_delete'),
 
-    path('pet/brief/', pet_brief, name='pet_brief'),
-
-
     path('favorites/', favorites, name='favorites'),
 
     path('diary_list/', diary_list, name='diary_list'),

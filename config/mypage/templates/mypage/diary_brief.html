@@ -12,7 +12,7 @@
                     <div class="card_img_div"><img src="{{ diary1.img.url }}" id="card_img_top1" class="card-img-top"></div>
                 {% endif %}
                 {% if not diary1.img %}
-                    <div class="card_img_div"></div>
+                    <div class="card_img_div">이미지가 없습니다</div>
                 {% endif %}
                     <div class="card-body" id="diary_card_body1">
                         <div class="card-title">{{ diary1.title }}</div>
@@ -27,7 +27,7 @@
                     <div class="card_img_div"><img src="{{ diary2.img.url }}" id="card_img_top2" class="card-img-top"></div>
                 {% endif %}
                 {% if not diary2.img %}
-                    <div class="card_img_div"></div>
+                    <div class="card_img_div">이미지가 없습니다</div>
                 {% endif %}
                 <div class="card-body" id="diary_card_body2">
                     <div class="card-title">{{ diary2.title }}</div>

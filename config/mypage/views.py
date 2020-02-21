@@ -16,6 +16,9 @@ def update_profile(request):
     diary1 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[0]
     diary2 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[1]
     diary3 = Diary.objects.filter(author=request.user.profile).order_by('-created_at')[2]
+    pet1 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0]
+    pet2 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[1]
+    pet3 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[2]
     if request.method == 'POST':
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if profile_form.is_valid():
@@ -30,6 +33,9 @@ def update_profile(request):
             'diary1': diary1,
             'diary2': diary2,
             'diary3': diary3,
+            'pet1': pet1,
+            'pet2': pet2,
+            'pet3': pet3,
             'form': profile_form,
         }
     return render(request, 'mypage/profile.html', ctx)
@@ -68,17 +74,6 @@ def tel_update(request):
 # pet#pet
 # pet
 # pet
-
-def pet_brief(request):
-    pet1 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0]
-    pet2 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[1]
-    pet3 = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[2]
-    ctx = {
-        'pet1': pet1,
-        'pet2': pet2,
-        'pet3': pet3,
-    }
-    return render(request, 'mypage/pet_brief.html',ctx)
 
 def pet_list(request):
     pets = Pet.objects.filter(owner=request.user.profile).order_by('-created_at')[0:3]
@@ -199,7 +194,7 @@ def delete_diary(request, pk):
     if request.user.profile == diary.author:
         diary.delete()
         messages.success(request, '성공적으로 삭제되었습니다.')
-    return redirect(reverse('mypage:diary'))
+    return redirect(reverse('mypage:diary_list'))
 
 
 # favorites

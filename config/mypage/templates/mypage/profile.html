@@ -2,6 +2,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'mypage/profile.css' %}">
 <link rel="stylesheet" href="{% static 'mypage/diary_brief.css' %}">
+<link rel="stylesheet" href="{% static 'mypage/pet_brief.css' %}">
 
 <!-- Bootstrap CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -18,11 +19,11 @@
 <!-- JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Google Fonts -->
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">
 
 <!-- Main Code Starts -->
 
@@ -155,8 +156,33 @@ $('#img_text_wrap').mouseout(function() {
 </div>
 
 
+<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-md-10" style="display: flex; flex-direction: row">
+            <div class="diary_title">다이어리</div>
+            <div style="display: flex; align-items: flex-end"><div class="diary_subtitle text-muted">최근 3개</div></div>
+            <div style="display: flex; align-items: flex-end"><div class="diary_more">
+                <a href="{% url 'mypage:diary_list' %}">지난 글 더 보기</a>
+            </div></div>
+        </div>
+    </div>
+</div>
 
 {% include 'mypage/diary_brief.html' %}
+
+
+<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-md-10" style="display: flex; flex-direction: row">
+            <div class="pet_title">반려동물</div>
+            <div class="pet_more">반려동물 더 보기</div>
+        </div>
+    </div>
+</div>
+
+{% include 'mypage/pet_brief.html' %}
 
 
 

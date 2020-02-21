@@ -6,6 +6,7 @@
 
 div {
     box-sizing: border-box;
+    border: black 1px solid;
 }
 
 #top_wrap {
@@ -102,4 +103,24 @@ div {
 #name_div, #email_div, #tel_div {
     border-right: black 1px solid;
     padding-top: 6px;
+}
+
+.diary_title {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Sunflower', sans-serif;
+}
+
+.diary_subtitle {
+    font-size: 0.8rem;
+}
+
+.diary_more {
+    font-size: 0.8rem;
+}
+
+.pet_title {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Sunflower', sans-serif;
 }
