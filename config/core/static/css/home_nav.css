@@ -148,6 +148,7 @@
     font-size: 6rem;
     z-index: 10000;
     display: block;
+    opacity: 75%;
     font-family: 'Volkhov';
     font-family: 'Crimson Text';
 }

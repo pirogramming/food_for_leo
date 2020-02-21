@@ -36,7 +36,7 @@
         <div class="col-md-10" id="diary_detail_wrap">
 
             <div class="diary_detail-top">
-                <div class="diary_detail_logo">Diary</div>
+                <a class="diary_detail_logo" href="{% url 'mypage:diary_list' %}">Diary</a>
                 <div class="diary_detail-author">
                     {{ diary.author }}
                 </div>

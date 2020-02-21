@@ -74,6 +74,7 @@ div {
     font-family: 'Do Hyeon', sans-serif;
     font-size: 1.2rem;
     color: white;
+    padding-bottom: 7px;
 }
 
 .button_change {
@@ -279,3 +280,6 @@ div {
 #name_div_long, #tel_div_long, #email_div_long {
     padding-left: 50px;
 }
+
+
+.diary_list_page_duperwrap {padding-bottom: 120px}
