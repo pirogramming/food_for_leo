@@ -30,16 +30,111 @@ def search_result(request):
     q = request.GET.get('q', '')
 
     required_brand = brand_all.filter(name__icontains=q)
+    required_brand_1 = required_brand.first()
     required_products = product_all.filter(name__icontains=q)
 
     # brand 검색
     if required_brand.count() != 0:
-        return render(request, 'core/search_result.html', {
-            "required_brand": required_brand,
+        brands_mall1 = []
+        brands_mall2 = []
+        brands_mall3 = []
+        brands_mall4 = []
+
+        brands_mall1 += Brand.objects.filter(malls__name="동물사랑APS").all()
+        brands_mall2 += Brand.objects.filter(malls__name="QueenNPuppy").all()
+        brands_mall3 += Brand.objects.filter(malls__name="kingdom").all()
+        brands_mall4 += Brand.objects.filter(malls__name="president").all()
+
+        certain_brand = required_brand_1
+        mall_of_certain_brand = certain_brand.malls.all()
+        products_mall1 = []
+        products_mall2 = []
+        products_mall3 = []
+        products_mall4 = []
+
+        if certain_brand.malls.filter(name="동물사랑APS"):
+            products_mall1 += certain_brand.malls.filter(name="동물사랑APS").first().products.all()
+        if certain_brand.malls.filter(name="QueenNPuppy"):
+            products_mall2 += certain_brand.malls.filter(name="QueenNPuppy").first().products.all()
+        if certain_brand.malls.filter(name="kingdom"):
+            products_mall3 += certain_brand.malls.filter(name="kingdom").first().products.all()
+        if certain_brand.malls.filter(name="president"):
+            products_mall4 += certain_brand.malls.filter(name="president").first().products.all()
+
+        all_product = products_mall1 + products_mall2 + products_mall3 + products_mall4
+
+        final_result = similarity_test(all_product, 4)
+        final_result_sort = {}
+        for i in range(len(final_result)):
+            final_result_sort[str(final_result[i])] = len(final_result[i])
+        final_result = ["".join(list(i[0])[1:-1]).split(", ") for i in
+                        sorted(final_result_sort.items(), key=operator.itemgetter(1), reverse=True)]
+        chart_index_1 = ["x"]
+        mall0 = ["동물사랑APS"]
+        mall1 = ["QueenNPuppy"]
+        mall2 = ["kingdom"]
+        mall3 = ['president']
+
+        for sameProducts in final_result:
+            check = [0, 0, 0, 0]
+            chart_index_1 += [Product.objects.get(id=sameProducts[0]).name]
+            for j in range(len(sameProducts)):
+                product_include = str(Product.objects.get(id=sameProducts[j]).mall)
+
+                if product_include == '동물사랑APS':
+                    mall0 += [Product.objects.get(id=sameProducts[j]).stock]
+                    check[0] = 1
+                if product_include == 'QueenNPuppy':
+                    mall1 += [Product.objects.get(id=sameProducts[j]).stock]
+                    check[1] = 1
+                if product_include == 'kingdom':
+                    mall2 += [Product.objects.get(id=sameProducts[j]).stock]
+                    check[2] = 1
+                if product_include == 'president':
+                    mall3 += [Product.objects.get(id=sameProducts[j]).stock]
+                    check[3] = 1
+            print(check)
+            for i in range(4):
+                if check[i] == 0:
+                    if i == 0:
+                        mall0.append(0)
+                    if i == 1:
+                        mall1.append(0)
+                    if i == 2:
+                        mall2.append(0)
+                    if i == 3:
+                        mall3.append(0)
+        mall_length = len(final_result)
+        final_result_revised = []
+        for i in final_result:
+            final_result_revised.append(Product.objects.get(id=i[0]))
+
+        return render(request, "core/search_result.html", {
+            "products_mall1": products_mall1,
+            "products_mall2": products_mall2,
+            "products_mall3": products_mall3,
+            "products_mall4": products_mall4,
+            "brands_mall1": brands_mall1,
+            "brands_mall2": brands_mall2,
+            "brands_mall3": brands_mall3,
+            "brands_mall4": brands_mall4,
+            'mall_of_certain_brand': mall_of_certain_brand,
+            'final_result': final_result,
+            'chart_index_1': chart_index_1,
+            'mall0': mall0,
+            'mall1': mall1,
+            'mall2': mall2,
+            'mall3': mall3,
+            'mall_length': mall_length,
+            'final_result_revised': final_result_revised,
+            "required_brand":required_brand,
+            "q":q
         })
+
     # keyword 검색
     else:
         result = keyword_detail(required_products)
+        result["q"]=q
 
         return render(request, 'core/keyword_detail.html', result)
 
@@ -394,7 +489,7 @@ def login(request):
             auth.login(request, user)
             return redirect('core:home')
         else:
-            return render(request, 'core/home.html', {'error': 'username or password is incorrect'})
+            return render(request, 'core/login.html', {'error': 'username or password is incorrect'})
     else:
         return render(request, 'core/login.html')
 

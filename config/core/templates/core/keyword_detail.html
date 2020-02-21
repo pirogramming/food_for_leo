@@ -11,6 +11,7 @@
     <!-- Load billboard.js with base(or theme) style -->
     <link rel="stylesheet" href="{% static "core/billboard.css" %}">
     <script src='{% static "core/billboard.js" %}'></script>
+    <link rel="stylesheet" href="../../static/css/product_detail_search.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -28,6 +29,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript"
             src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <style>
         a {
             text-decoration: none;
@@ -51,6 +53,7 @@
             background-size: cover;
             background-position: center center;
             height: 50vh;
+
         }
 
         .middle_img_cover {
@@ -64,9 +67,22 @@
             align-items: center;
         }
 
-        .middle_img_cover_search {
-            width: 500px;
+
+        .middle_img_cover_content {
+            color: white;
+            margin-bottom: 30px;
+            text-space: 2px;
+            opacity: 80%;
+            text-align: center;
+
         }
+
+        .search_bar {
+            width: 30%;
+            height: 20%;
+            margin-left: 10%;
+        }
+
 
         input.form-control {
             width: 500px;
@@ -158,14 +174,24 @@
     <div class="middle_img">
         <div class="middle_img_cover">
             <div class="middle_img_cover_content">
-                <h2>
-                    한 해 발생하는 유기동물 수 97,852마리<br/>
-                    그 중 73%인 68,140마리는 유기견</h2>
-                반려동물 사지말고 입양하세요
+                <h1>"{{ q }}"에 대한 검색 결과</h1>
             </div>
-            <div class="middle_img_cover_search">
-                <input class="form-control" type="search" id="search">
-                <ul class="list-group" id="result"></ul>
+            <div class="search_bar" style="display: flex; flex-direction: row; position: relative">
+
+                <form action="{% url "core:search_result" %}" method="GET" autocomplete="off">
+                    <fieldset class="url">
+                        <input id="url" class="search" type="text" name="q" value="{{ q }}" required>
+                        <div class="search_list">
+                            <ul class="list-group" id="result">
+                            </ul>
+                        </div>
+                        <label for="url"><i class="fa fa-search" aria-hidden="true"></i> Search</label>
+                        <div class="after"></div>
+                    </fieldset>
+                    <fieldset class="enter">
+                        <button></button>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
@@ -193,7 +219,57 @@
 </div>
 </body>
 <script>
+    function fetchJsonFilter(val) {
+    var tags = [];
+    //brand name filtering
+    fetch('../../static/json/core_brand.json').then(function (response) {
+        response.text().then(function (text) {
+            var b_list = JSON.parse(text);
+            var show_brand = [];
+            b_list.filter(function (element, index, array) {
+                if (array[index].name.includes(val)) {
+                    console.log(array[index].name)
+                    show_brand.push(array[index]);
+                }
+            });
+            var brand=show_brand[0]
+            var brand_tag = '<li class="list-group-item"><a href="{% url "core:brand_detail" 111 %}">'.replace(111, brand.id) + show_brand[0].name + '</a></li>'
+            tags = tags + brand_tag
+        })
+    })
+    //product name filtering
+    fetch('../../static/json/core_product.json').then(function (response) {
+        response.text().then(function (text) {
+            var p_list = JSON.parse(text);
+            var show_product = [];
+            p_list.filter(function (element, index, array) { //필터링하기
+                if (array[index].name.includes(val)) {
+                    console.log(array[index].name)
+                    show_product.push(array[index]);
+                }
+            });
+            for (var i = 0; i < show_product.length; i++) {
+                if (i > 1) {
+                    break
+                } else {
+                    var product = show_product[i];
+                    var tag = '<li class="list-group-item"><a href="{% url "core:product_detail" 111 %}">'.replace(111, product.id) + product.name + '</a></li>'
+                    tags = tags + tag
+                }
+            }
+            document.querySelector('#result').innerHTML = tags;
+        })
+    })
+}
 
+$('.search').on('keyup', function () {
+    var searchInput = $(this).val();
+    if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
+        document.querySelector('#result').innerHTML = []
+    } else {
+        fetchJsonFilter(searchInput)
+    }
+});
     var chart2 = bb.generate({
         data: {
             x: "x",

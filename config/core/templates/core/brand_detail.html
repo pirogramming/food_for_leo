@@ -27,12 +27,17 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <style>
         a {
             text-decoration: none;
             color: black;
+        }
+        a:hover{
+            text-decoration: none;
+            color:#808080;
         }
 
         html, body {
@@ -111,6 +116,7 @@
             width: 100%;
             display: flex;
             flex-direction: row;
+            border-top:1px solid lightgray;
         }
 
         .content_upper_container_mall {
@@ -118,24 +124,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid lightgray;
+
         }
 
         .content_upper_container_mall_context {
             font-size: 1.5em;
+            font-family: 'Nanum Gothic', sans-serif;
         }
 
         .content_upper_container_brand {
             width: 80%;
             display: flex;
             flex-wrap: wrap;
-            border: 1px solid lightgray;
+
         }
 
         .content_upper_container_brand_context {
             width: 10%;
-            font-size: 0.8em;
+            font-size: 0.7em;
             padding: 5px;
+            font-family: 'Nanum Gothic', sans-serif;
 
 
         }
@@ -257,7 +265,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="content_upper_container">
+            <div class="content_upper_container" style="border-bottom: 1px solid lightgray">
                 <div class="content_upper_container_mall">
                     <div class="content_upper_container_mall_context">
                         강아지대통령
