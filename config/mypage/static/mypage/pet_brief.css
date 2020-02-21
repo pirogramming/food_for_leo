@@ -11,7 +11,7 @@
     width: inherit; height: 14rem;
 }
 
-#pet_card_img_top1, #pet_card_img_top2, #pet_card_img_top3 {
+.pet_img_top {
     width: inherit; height: inherit;
     object-fit: cover;
 }

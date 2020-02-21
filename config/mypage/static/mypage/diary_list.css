@@ -3,6 +3,16 @@
     list-style: none;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-container a {
+    color: black;
+}
+
+.pagination-container a:hover {
+    color: #4E4025;
+    text-decoration: none;
 }
 
 .diary_list_page_wrap {
@@ -17,6 +27,11 @@ div {
     margin-top: 30px;
 }
 
+.diary_list_background {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
 .diary_list_img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -24,28 +39,41 @@ div {
 
 .diary_list_body {
     height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
 
 .diary_list_title {
     font-size: 1.2rem;
+    font-family: "Do Hyeon", sans-serif;
     height: 1.8rem;
-    border-bottom: gainsboro 1px dotted;
+    border-bottom: #a3a1a1 1px dotted;
 }
 
 .diary_list_text {
     font-size: 1rem;
     height: 3rem;
     overflow: hidden;
+    font-family: "Nanum Gothic", sans-serif;
 }
 
 .diary_list_last_col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
     border-top: black 1px solid;
     padding-top: 5px;
+    position: relative;
+    top: 14px;
 }
 
 .diary_list_text.text-muted {
     font-size: 0.8rem;
     height: 1.3rem;
+    font-family: "Nanum Gothic", sans-serif;
 }
 
 .diary_detail-crud {
@@ -58,7 +86,7 @@ div {
     color: #333333;
     border: 1px solid #333333;
     border-radius: 35%;
-    padding: 3px 8px;
+    padding: 2px 7px;
 }
 
 .diary_detail-crud a:hover {
@@ -66,3 +94,18 @@ div {
     color: #4E4025
 }
 
+.diary_detail-update, .diary_detail-list {
+    margin-right: 5px;
+}
+
+.button_diary_create a {
+    color: #333333;
+    border: 1px solid #333333;
+    border-radius: 35%;
+    padding: 2px 7px;
+}
+
+.button_diary_create a:hover {
+    text-decoration: none;
+    color: #4E4025
+}

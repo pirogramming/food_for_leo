@@ -39,7 +39,10 @@
         <div class="col-md-5" id="pet_detail-imgWrap">
             <div class="pet_detail-img">
                 {% if pet.img %}
-                    <img class="pd-img" src="{{ pet.img.url }}" alt="no image" width="100px">
+                    <img class="pd-img" src="{{ pet.img.url }}">
+                {% endif %}
+                {% if not pet.img %}
+                    <img class="pd-img" src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/2076503/910/607/m1/fpnw/wm0/dog_cm-.jpg?1483086484&s=b6fc5adc727b1f892beeea285638feba">
                 {% endif %}
             </div>
         </div>

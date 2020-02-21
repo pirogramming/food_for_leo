@@ -49,7 +49,10 @@
                 </div>
                 <div class="diary_detail-img">
                     {% if diary.img %}
-                        <p><img class="dd-img" src="{{ diary.img.url }}" alt="no image" width="100px"></p>
+                        <p><img class="dd-img" src="{{ diary.img.url }}"></p>
+                    {% endif %}
+                    {% if not diary.img %}
+                        <p><img src="https://cdn1.iconfinder.com/data/icons/personal-business-finance-4-2/64/x-10-512.png" class="dd-img"></p>
                     {% endif %}
                 </div>
                 <div class="diary_detail-content">

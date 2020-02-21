@@ -17,7 +17,7 @@
 .diary_detail-title {
     text-align: center;
     font-size: 2em;
-    font-family: 'Do Hyeon';
+    font-family: 'Do Hyeon', sans-serif;
     padding: 10px 0;
     border-bottom: #333333 dotted 1px;
     border-top: #333333 solid 1px;
@@ -39,8 +39,7 @@
 .diary_detail-content {
     padding: 0 30px 20px 30px;
     font-size: 1.2em;
-    font-family: 'Poor Story';
-    font-family: 'Nanum Myeongjo';
+    font-family: 'Nanum Myeongjo', sans-serif;
     border-bottom: black 1px solid;
 }
 

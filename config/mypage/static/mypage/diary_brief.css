@@ -7,11 +7,11 @@
     box-shadow: 3px 4px 2px #a3a1a1;
 }
 
-.card_img_div {
+.diary_card_img_div {
     width: inherit; height: 14rem;
 }
 
-#card_img_top1, #card_img_top2, #card_img_top3 {
+.diary_img_top {
     width: inherit; height: inherit;
     object-fit: cover;
 }
