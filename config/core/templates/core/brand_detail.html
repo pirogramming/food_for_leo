@@ -35,6 +35,11 @@
             color: black;
         }
 
+        a:hover {
+            text-decoration: none;
+            color: #808080
+        }
+
         html, body {
             height: 100%;
             margin: 0;
@@ -171,11 +176,30 @@
             width: 25%;
             display: flex;
             flex-direction: column;
+            margin-top: 15px;
         }
 
         .content_down_products_container_product_1 {
             text-align: center;
 
+            transform: scale(1.0);
+            transition: transform .5s;
+        }
+
+        .itemImg {
+            margin-bottom: 5px;
+        }
+
+        .itemImg:hover {
+            transform: scale(1.1);
+            transition: transform .5s;
+        }
+
+        .itemName {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
     </style>
@@ -282,12 +306,11 @@
 
                 {% for i in final_result_revised %}
                     <div class="content_down_products_container_product">
-                        <div class="content_down_products_container_product_1"><img src="{{ i.img_main }}"
+                        <a href="{% url "core:product_detail" i.pk %}">
+                        <div class="content_down_products_container_product_1 itemImg"><img src="{{ i.img_main }}"
                                                                                     style="width:70%;" alt=""></div>
-                        <div class="content_down_products_container_product_1"><a
-                                href="{% url "core:product_detail" i.pk %}">{{ i.name }}</a></div>
-                        <div class="content_down_products_container_product_1">{{ i.made_in }}</div>
-
+                        <div class="content_down_products_container_product_1 itemName" title="{{i.name}}">{{ i.name }}</div>
+                        </a>
                     </div>
 
                 {% endfor %}

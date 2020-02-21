@@ -34,6 +34,11 @@
             color: black;
         }
 
+        a:hover {
+            text-decoration: none;
+            color: #808080
+        }
+
         html, body {
             height: 100%;
             margin: 0;
@@ -100,23 +105,19 @@
             overflow: auto;
         }
 
-        .item-list {
+        .content_down_products_container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
 
         }
 
-        .col {
+        .content_down_products_container_product {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
             text-align: center;
-            margin-top: 10px;
-        }
-
-        .col > a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .col li {
-            list-style: none;
-            display: inline-block;
         }
 
         .itemimg {
@@ -134,9 +135,6 @@
         }
 
         .itemName {
-            font-size: small;
-            width: 150px;
-            height: 43px;
             padding-top: 5px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -174,17 +172,14 @@
     </div>
 
     <div id="product-container">
-        <div class="item-list row">
+        <div class="content_down_products_container">
             {% for item in item_final %}
-                <div class="col col-md-3 col-sm-6 col-xs-6">
+                <div class="content_down_products_container_product">
                     <a href="{% url 'core:product_detail' item.pk %}">
-                        <li>
                             <div class="itemimg">
-                                <img src="{{ item.img_main }}" alt="" width=150" height="150" align="center">
+                                <img src="{{ item.img_main }}" alt="" style="width:70%;">
                             </div>
-                            <div class="itemName" title="{{item.name}}">{{ item.name }}
-                            </div>
-                        </li>
+                            <div class="itemName" title="{{item.name}}">{{ item.name }}</div>
                     </a>
                 </div>
             {% endfor %}

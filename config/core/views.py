@@ -98,22 +98,12 @@ def keyword_detail(products):
 
 
 def item_House(request):
-    itemsAll = Product.objects.all()
-    sameItemPKs = similarity_test(itemsAll, 4)
-
-    randIndex = []
-    for i in range(30):
-        num = random.randrange(0, len(sameItemPKs))
-        while num in randIndex:
-            num = random.randrange(0, len(sameItemPKs))
-        randIndex.append(num)
-
-    item_final = []
-    for i in randIndex:
-        item_final += [Product.objects.get(id=sameItemPKs[i][0])]
+    itemsAll = list(Product.objects.all())
+    random.shuffle(itemsAll)
+    itemsRand = itemsAll[:50]
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(item_final, 16)
+    paginator = Paginator(itemsRand, 16)
     try:
         items = paginator.page(page)
     except PageNotAnInteger:
@@ -122,7 +112,6 @@ def item_House(request):
         items = paginator.page(paginator.num_pages)
 
     return render(request, 'core/item_House.html', {
-        "item_final": item_final,
         "items": items,
     })
 
@@ -174,10 +163,13 @@ def brand_page(request):
     brands_mall2 += Brand.objects.filter(malls__name="QueenNPuppy").all()
     brands_mall3 += Brand.objects.filter(malls__name="kingdom").all()
     brands_mall4 += Brand.objects.filter(malls__name="president").all()
-    itemsAll=list(Product.objects.all())[:50]
+    itemsAll=list(Product.objects.all())
     random.shuffle(itemsAll)
+    itemsRand = itemsAll[:50]
+
+
     page = request.GET.get('page', 1)
-    paginator = Paginator(itemsAll, 16)
+    paginator = Paginator(itemsRand, 16)
     try:
         items = paginator.page(page)
     except PageNotAnInteger:
@@ -186,7 +178,7 @@ def brand_page(request):
         items = paginator.page(paginator.num_pages)
 
     return render(request, "core/brand_page.html", {
-        "itemsAll_random" : itemsAll,
+        "itemsAll_random" : itemsRand,
         "items":items,
         "brands_mall1":brands_mall1,
         "brands_mall2": brands_mall2,
