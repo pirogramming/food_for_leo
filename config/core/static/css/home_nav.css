@@ -20,7 +20,7 @@
 }
 
 .wrap_home a {
-    border-bottom:0.3px solid dimgray;
+    border-bottom: 0.3px solid dimgray;
     -webkit-box-sizing: border-box;
 }
 
@@ -148,7 +148,8 @@
     font-size: 6rem;
     z-index: 10000;
     display: block;
-    font-family: Forte;
+    font-family: 'Volkhov';
+    font-family: 'Crimson Text';
 }
 
 #getResult {
