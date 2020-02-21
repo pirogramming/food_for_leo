@@ -1,30 +1,325 @@
-<h1>User delete</h1>
+{% load socialaccount %}
+{% providers_media_js %}
+<!doctype html>
+<html lang="en">
 
-<div class="error_message">
-    {{error}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8">
+<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Nanum+Gothic&display=swap" rel="stylesheet">
+
+
+<style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        height: 20vh;
+        position: fixed;
+
+        z-index: 999;
+
+    }
+
+    .header a {
+        color: white;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    .header_login {
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: white;
+
+
+    }
+
+    .header_login div a {
+        padding: 0 20px;
+    }
+
+    .header_login_signup {
+        margin-right: 50px;
+    }
+
+    .header_logo {
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5em;
+        color: #333333;
+
+    }
+
+    .header_logo_context a {
+        font-family: Forte;
+    }
+
+    .header_nav {
+        width: 100%;
+        height: 35%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    .header_nav_navbar a {
+        font-size: 1.2em;
+        font-family: 'Montserrat', sans-serif;
+
+
+    }
+
+    .header_nav_navbar a:hover {
+        color: #808080;
+
+
+    }
+
+    .whole_wrapper {
+    {#padding-top: 20vh;#}
+    }
+
+    .middle_img {
+        width: 100vw;
+        background-image: url("https://images.squarespace-cdn.com/content/v1/579fb6febebafb9495e73399/1502470564397-0SWPOBP9CH35P2DRSNWK/ke17ZwdGBToddI8pDm48kNvT88LknE-K9M4pGNO0Iqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USOFn4xF8vTWDNAUBm5ducQhX-V3oVjSmr829Rco4W2Uo49ZdOtO_QXox0_W7i2zEA/dog-hd-wallpaper-16.jpg?format=2500w");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+
+    }
+
+    .middle_img_cover {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+
+    .middle_img_cover_content {
+        color: white;
+        margin-bottom: 30px;
+        text-space: 2px;
+        opacity: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 13vw;
+        margin-top: 15vh;
+
+    }
+
+    .middle_img_cover_content_context h1 {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+
+    .exp_1 body, p, input, select, textarea, button {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+    }
+
+    .exp_1 div, p {
+        color: #BABECC;
+        text-shadow: 1px 1px 1px #FFF;
+    }
+
+
+    .exp_1 form {
+        padding: 16px;
+        width: 320px;
+        margin: 0 auto;
+    }
+
+    .exp_1 .segment {
+        padding: 32px 0;
+        text-align: center;
+    }
+
+    .exp_1 button, input {
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        border-radius: 320px;
+        padding: 16px;
+        background-color: #EBECF0;
+        text-shadow: 1px 1px 0 #FFF;
+    }
+
+    .exp_1 label {
+        display: block;
+        margin-bottom: 24px;
+        width: 100%;
+    }
+
+    .exp_1 input {
+
+        box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in-out;
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 15px 0px;
+
+    }
+
+
+    .exp_1 button {
+        color: #61677C;
+        height: 50px;
+        font-weight: bold;
+    {#box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;#} transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .exp_1 button:hover {
+        box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    }
+
+
+    .exp_1 button:active {
+        box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    }
+
+
+    .exp_1 .icon {
+        margin-right: 32px;
+    }
+
+    .exp_1 .unit {
+        border-radius: 32px;
+        line-height: 0;
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 8px;
+        font-size: 19.2px;
+    }
+
+    .exp_1 .icon {
+        margin-right: 0;
+    }
+
+
+    .exp_1 .red {
+        display: block;
+        width: 100%;
+        color: #AE1100;
+    }
+
+
+    .exp_1 .input-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .exp_1 label {
+        margin: 0;
+        flex: 1;
+    }
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="header">
+    <div class="header_login">
+        {% if user.is_authenticated %}
+            <div class="header_login_resetpw"><a href="{% url 'core:reset_pw' %}">Reset pw</a></div>
+            <div class="header_login_delete"><a href="{% url 'core:delete_account' %}">Delete account</a></div>
+            <div class="header_login_logout"><a href="{% url 'core:logout' %}">Log out</a></div>
+        {% else %}
+            <div class="header_login_login"><a href="{% url 'core:login' %}">Sign in</a></div>
+            <div class="header_login_signup"><a href="{% url 'core:sign_up' %}">Sign up</a></div>
+
+        {% endif %}
+    </div>
+    <div class="header_logo">
+        <div class="header_logo_context"><a href="{% url 'core:home' %}">LEO</a></div>
+    </div>
+    <div class="header_nav">
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:brand_page' %}">Brands</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:item_House' %}">Products</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'core:item_House' %}">Wish List</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'mypage:diary_list' %}">Diary</a></div>
+        <div class="header_nav_navbar"><a class='nav_item' href="{% url 'mypage:profile' %}">My Page</a></div>
+    </div>
+
 </div>
 
-<form method="POST" action="{% url 'core:delete_account' %}" class="delete_form">
-    {% csrf_token %}
+<div class="whole_wrapper">
+    <div class="middle_img">
+        <div class="middle_img_cover">
+            <div class="middle_img_cover_content">
+                <div class="middle_img_cover_content_context"><h1>Delete Account</h1>
+                </div>
+                <div class="exp_1">
 
-    <div class="delete_input_container">
-        <div>Username</div>
-        <div class="input_container">
-            <input class="delete_input" name="delete_username" type="text">
-        </div>
+                    <form action="{% url "core:delete_account" %}" method="POST">
+                        {% csrf_token %}
 
-        <div class="password_form_text">Password</div>
-        <div class="input_container">
-            <input class="delete_input" name="password1" type="password">
-        </div>
-        <div class="confirm_password_form_text">Confirm Password</div>
-        <div class="input_container">
-            <input class="delete_input" name="password2" type="password">
+                        <label>
+                            <input type="text" name="delete_username" placeholder="Username"/>
+                        </label>
+                        <label>
+                            <input type="password" name="password1" placeholder="Password"/>
+                        </label>
+                        <label>
+                            <input type="password" name="password2" placeholder="Confirm password"/>
+                        </label>
+                        <button class="red" type="submit"><i class="icon ion-md-lock"></i> submit</button>
+                    </form>
+
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="delete_btn_container">
-        <input type="submit" class="delete_btn" value="Submit">
-    </div>
-</form>
 
-<h3><a href="{% url 'core:home' %}">home</a></h3>
+
+</div>
+</body>
+<script>
+
+</script>
+</html>
+
+

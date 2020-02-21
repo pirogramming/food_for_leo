@@ -392,16 +392,12 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('core:login')
+            return redirect('core:home')
         else:
-            return render(request, 'core/login.html', {'error': 'username or password is incorrect'})
+            return render(request, 'core/home.html', {'error': 'username or password is incorrect'})
     else:
         return render(request, 'core/login.html')
 
-
-def logout(request):
-    auth.logout(request)
-    return redirect('core:home')
 
 
 @login_required
@@ -476,4 +472,4 @@ def like(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('core:home')
+    return redirect('core:login')

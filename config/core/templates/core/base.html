@@ -24,7 +24,7 @@
             position: fixed;
             background-color: white;
             z-index: 999;
-            border-bottom: 1px grey solid;
+
         }
 
         .header_login {
@@ -102,8 +102,15 @@
 <body>
 <div class="header">
     <div class="header_login">
-        <div class="header_login_login"><a href="{% url 'core:login' %}">login</a></div>
-        <div class="header_login_signup"><a href="{% url 'core:sign_up' %}">sign up</a></div>
+        {% if user.is_authenticated %}
+            <div class="header_login_resetpw"><a href="{% url 'core:reset_pw' %}">Reset pw</a></div>
+            <div class="header_login_delete"><a href="{% url 'core:delete_account' %}">Delete account</a></div>
+            <div class="header_login_logout"><a href="{% url 'core:logout' %}">Log out</a></div>
+        {% else %}
+        <div class="header_login_login"><a href="{% url 'core:login' %}">Sign in</a></div>
+        <div class="header_login_signup"><a href="{% url 'core:sign_up' %}">Sign up</a></div>
+
+        {% endif %}
     </div>
     <div class="header_logo">
         <div class="header_logo_context"><a href="{% url 'core:home' %}">LEO</a></div>

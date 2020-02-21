@@ -67,7 +67,6 @@
         }
 
 
-
         .middle_img_cover_content {
             color: white;
             margin-bottom: 30px;
@@ -76,15 +75,17 @@
             text-align: center;
 
         }
+
         .search_bar {
             width: 30%;
-            height:20%;
-            margin-left:10%;
+            height: 20%;
+            margin-left: 10%;
         }
 
         .content {
             width: 90vw;
-            margin: 0 auto;
+
+            margin: 5vh auto 5vh auto;
 
             display: flex;
             flex-direction: column;
@@ -97,22 +98,46 @@
             flex-direction: column;
         }
 
-        .content_upper_mall {
-            width: 100%;
-            text-align: center;
-        }
-
-        .content_upper_brand {
+        .content_upper {
             width: 100%;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            margin: 5vh auto 5vh auto;
+
 
         }
 
-        .content_upper_brand_context {
+        .content_upper_container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .content_upper_container_mall {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid lightgray;
+        }
+
+        .content_upper_container_mall_context {
+            font-size: 1.5em;
+        }
+
+        .content_upper_container_brand {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid lightgray;
+        }
+
+        .content_upper_container_brand_context {
             width: 10%;
             font-size: 0.8em;
-            padding-left: 2%;
+            padding: 5px;
+
+
         }
 
         .content_down {
@@ -139,17 +164,18 @@
             display: flex;
             flex-wrap: wrap;
 
+
         }
 
         .content_down_products_container_product {
             width: 25%;
             display: flex;
             flex-direction: column;
-
         }
 
         .content_down_products_container_product_1 {
-            width: 100%;
+            text-align: center;
+
         }
 
     </style>
@@ -187,34 +213,66 @@
     <div class="content">
 
         <div class="content_upper">
-            <div class="content_upper_mall"><h2>동물사랑APS</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall1 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
+            <div class="content_upper_container">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        동물사랑APS
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall1 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
+
+                </div>
             </div>
-            <div class="content_upper_mall"><h2>퀸앤퍼피</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall2 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
+            <div class="content_upper_container">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        퀸앤퍼피
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall2 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+
             </div>
-            <div class="content_upper_mall"><h2>강아지왕국</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall3 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
+            <div class="content_upper_container">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        강아지왕국
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall3 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-            <div class="content_upper_mall"><h2>강아지대통령</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall4 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
+            <div class="content_upper_container">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        강아지대통령
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall4 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
+
+
         </div>
         <div class="content_down">
             <div class="content_down_chart_container">
@@ -225,11 +283,11 @@
                 {% for i in final_result_revised %}
                     <div class="content_down_products_container_product">
                         <div class="content_down_products_container_product_1"><img src="{{ i.img_main }}"
-                                                                                    style="width:90%;" alt=""></div>
+                                                                                    style="width:70%;" alt=""></div>
                         <div class="content_down_products_container_product_1"><a
                                 href="{% url "core:product_detail" i.pk %}">{{ i.name }}</a></div>
                         <div class="content_down_products_container_product_1">{{ i.made_in }}</div>
-                        <div class="content_down_products_container_product_1">{{ i.price }}</div>
+
                     </div>
 
                 {% endfor %}

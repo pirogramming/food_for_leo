@@ -30,19 +30,26 @@
     <title>Document</title>
 
     <!--tooltip CDN-->
-<link type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 
-<script type="text/javascript">
-    $(".content_down_items_name").tooltip({track:true});
-</script>
+    <script type="text/javascript">
+        $(".content_down_items_name").tooltip({track: true});
+    </script>
 
     <style>
         a {
             text-decoration: none;
             color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #808080;
         }
 
         html, body {
@@ -53,6 +60,7 @@
 
         .whole_wrapper {
             padding-top: 20vh;
+
         }
 
         .middle_img {
@@ -91,62 +99,88 @@
 
         .content {
             width: 90vw;
-            margin: 0 auto;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin: 0 auto;
 
         }
 
 
         .content_upper {
             width: 100%;
+            margin: 5vh auto 5vh auto;
             display: flex;
             flex-direction: column;
+
+
         }
 
-        .content_upper_mall {
-            width: 100%;
-            text-align: center;
-        }
-
-        .content_upper_brand {
+        .content_upper_container {
             width: 100%;
             display: flex;
-            flex-wrap: wrap;
-
-
+            flex-direction: row;
         }
 
-        .content_upper_brand_context {
+        .content_upper_container_mall {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid lightgray;
+        }
+
+        .content_upper_container_mall_context {
+            font-size: 1.5em;
+        }
+
+        .content_upper_container_brand {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            border-top: 1px solid lightgray;
+        }
+
+        .content_upper_container_brand_context {
             width: 10%;
             font-size: 0.8em;
-            padding-left: 2%;
+            padding: 5px;
+
+
         }
 
         .content_down {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-around;
+
             margin-top: 15px;
         }
 
         .content_down_items {
             width: 24%;
             margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .content_down_items div {
+            text-align: center;
         }
 
         .content_down_items_img {
             width: 100%;
             text-align: center;
+            margin-bottom: 30px;
 
             transform: scale(1.0);
             transition: transform .5s;
         }
 
-        .content_down_items_img:hover{
+        .content_down_items_img:hover {
             transform: scale(1.1);
             transition: transform .5s;
         }
@@ -157,6 +191,16 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+
+        .pagination-container {
+            text-align: center;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        .pagination-container li{
+            padding:0 10px;
         }
 
     </style>
@@ -191,46 +235,78 @@
     </div>
     <div class="content">
         <div class="content_upper">
-            <div class="content_upper_mall"><h2>동물사랑APS</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall1 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
-            </div>
-            <div class="content_upper_mall"><h2>퀸앤퍼피</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall2 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
-            </div>
-            <div class="content_upper_mall"><h2>강아지왕국</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall3 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
-            </div>
-            <div class="content_upper_mall"><h2>강아지대통령</h2></div>
-            <div class="content_upper_brand">
-                {% for foo in brands_mall4 %}
-                    <div class="content_upper_brand_context"><a
-                            href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a></div>
-                {% endfor %}
-            </div>
-        </div>
+            <div class="content_upper_container">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        동물사랑APS
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall1 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
 
+                </div>
+            </div>
+            <div class="content_upper_container">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        퀸앤퍼피
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall2 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="content_upper_container">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        강아지왕국
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall3 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="content_upper_container" style="border-bottom: 1px solid lightgray">
+                <div class="content_upper_container_mall">
+                    <div class="content_upper_container_mall_context">
+                        강아지대통령
+                    </div>
+                </div>
+                <div class="content_upper_container_brand">
+                    {% for foo in brands_mall4 %}
+                        <div class="content_upper_container_brand_context"><a
+                                href="{% url "core:brand_detail" foo.pk %}">{{ foo.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+        </div>
 
 
         <div class="content_down">
             {% for foo in items %}
                 <div class="content_down_items">
                     <a href="{% url "core:product_detail" foo.pk %}">
-                    <div class="content_down_items_img"><img src="{{ foo.img_main }}" style="width:80%;" alt=""></div>
-                    <div class="content_down_items_name" title="{{foo.name}}"> {{ foo.name }}</div>
-                    <div class="content_down_items_madein">{{ foo.made_in }}</div>
-                    <div class="content_down_items_price">가격:{{ foo.price }}</div>
+                        <div class="content_down_items_img"><img src="{{ foo.img_main }}" style="width:80%;" alt="">
+                        </div>
+                        <div class="content_down_items_name" title="{{ foo.name }}"> {{ foo.name }}</div>
+                        <div class="content_down_items_madein">{{ foo.made_in }}</div>
+
                     </a>
                 </div>
             {% endfor %}
@@ -239,6 +315,7 @@
 </div>
 <!--pagination-->
 {% if items.has_other_pages %}
+
     <ul class="pagination-container">
         {% if items.has_previous %}
             <li><a href="?page={{ items.previous_page_number }}">&laquo;</a></li>
@@ -258,6 +335,61 @@
             <li class="disabled"><span>&raquo;</span></li>
         {% endif %}
     </ul>
+
 {% endif %}
+
 </body>
+<script>
+    function fetchJsonFilter(val) {
+    var tags = [];
+    //brand name filtering
+    fetch('../../static/json/core_brand.json').then(function (response) {
+        response.text().then(function (text) {
+            var b_list = JSON.parse(text);
+            var show_brand = [];
+            b_list.filter(function (element, index, array) {
+                if (array[index].name.includes(val)) {
+                    console.log(array[index].name)
+                    show_brand.push(array[index]);
+                }
+            });
+            var brand=show_brand[0]
+            var brand_tag = '<li class="list-group-item"><a href="{% url "core:brand_detail" 111 %}">'.replace(111, brand.id) + show_brand[0].name + '</a></li>'
+            tags = tags + brand_tag
+        })
+    })
+    //product name filtering
+    fetch('../../static/json/core_product.json').then(function (response) {
+        response.text().then(function (text) {
+            var p_list = JSON.parse(text);
+            var show_product = [];
+            p_list.filter(function (element, index, array) { //필터링하기
+                if (array[index].name.includes(val)) {
+                    console.log(array[index].name)
+                    show_product.push(array[index]);
+                }
+            });
+            for (var i = 0; i < show_product.length; i++) {
+                if (i > 1) {
+                    break
+                } else {
+                    var product = show_product[i];
+                    var tag = '<li class="list-group-item"><a href="{% url "core:product_detail" 111 %}">'.replace(111, product.id) + product.name + '</a></li>'
+                    tags = tags + tag
+                }
+            }
+            document.querySelector('#result').innerHTML = tags;
+        })
+    })
+}
+
+$('.search').on('keyup', function () {
+    var searchInput = $(this).val();
+    if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
+        document.querySelector('#result').innerHTML = []
+    } else {
+        fetchJsonFilter(searchInput)
+    }
+});
+    </script>
 </html>
