@@ -11,6 +11,24 @@
     <!-- Load billboard.js with base(or theme) style -->
     <link rel="stylesheet" href="{% static "core/billboard.css" %}">
     <script src='{% static "core/billboard.js" %}'></script>
+    <link rel="stylesheet" href="../../static/css/product_detail_search.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <style>
         a {
             text-decoration: none;
@@ -48,24 +66,20 @@
             align-items: center;
         }
 
-        .middle_img_cover_search {
-            width: 500px;
-        }
 
-        input.form-control {
-            width: 500px;
-            height: 50px;
-            background: white;
-            opacity: 50%;
-            border-radius: 30px;
-        }
 
         .middle_img_cover_content {
             color: white;
             margin-bottom: 30px;
             text-space: 2px;
             opacity: 80%;
+            text-align: center;
 
+        }
+        .search_bar {
+            width: 30%;
+            height:20%;
+            margin-left:10%;
         }
 
         .content {
@@ -148,14 +162,25 @@
     <div class="middle_img">
         <div class="middle_img_cover">
             <div class="middle_img_cover_content">
-                <h2>
-                    한 해 발생하는 유기동물 수 97,852마리<br/>
-                    그 중 73%인 68,140마리는 유기견</h2>
-                반려동물 사지말고 입양하세요
+
+                <h1>BRANDS</h1>
             </div>
-            <div class="middle_img_cover_search">
-                <input class="form-control" type="search" id="search">
-                <ul class="list-group" id="result"></ul>
+            <div class="search_bar" style="display: flex; flex-direction: row; position: relative">
+
+                <form action="{% url "core:search_result" %}" method="GET" autocomplete="off">
+                    <fieldset class="url">
+                        <input id="url" class="search" type="text" name="q" value="{{ q }}" required>
+                        <div class="search_list">
+                            <ul class="list-group" id="result">
+                            </ul>
+                        </div>
+                        <label for="url"><i class="fa fa-search" aria-hidden="true"></i> Search</label>
+                        <div class="after"></div>
+                    </fieldset>
+                    <fieldset class="enter">
+                        <button></button>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
@@ -242,7 +267,7 @@
         axis: {
             x: {
                 type: "category",
-                height:  50,
+                height: 50,
 
 
             }
