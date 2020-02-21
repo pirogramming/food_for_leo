@@ -12,6 +12,8 @@
 {% load bootstrap3 %}
 {% bootstrap_messages %}
 
+{% include "core/base.html" %}
+<div style="padding-top: 20vh">
 {% for pet in pets %}
 <div class="card" style="width: 25rem; height: 20rem; display: inline-block; overflow: hidden">
   <div class="card-body">
@@ -27,3 +29,4 @@
 <h3><a href="{% url 'mypage:favorites' %}">favorites</a></h3>
 <h3><a href="{% url 'mypage:create_pet' %}">펫 등록하기</a></h3>
 
+</div>

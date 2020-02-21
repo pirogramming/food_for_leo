@@ -3,7 +3,9 @@
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
 
+{% include "core/base.html" %}
 
+<div style="padding-top: 20vh">
 <form action="{% url 'mypage:update_diary' pk %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
         {% bootstrap_form form %}
@@ -13,4 +15,4 @@
         </button>
         {% endbuttons %}
 </form>
-
+</div>
