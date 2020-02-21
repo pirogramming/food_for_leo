@@ -1,1910 +1,335 @@
 [
     {
-        "brand_id": 2273,
+        "brand_id": 2416,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012001",
-        "created_at": "2020-02-17 05:11:25.855409",
-        "id": 1278,
+        "created_at": "2020-02-21 07:59:14.227438",
+        "id": 1490,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.855448"
+        "updated_at": "2020-02-21 08:28:37.526332"
     },
     {
-        "brand_id": 2356,
+        "brand_id": 2498,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012023",
-        "created_at": "2020-02-17 05:11:25.863030",
-        "id": 1279,
+        "created_at": "2020-02-21 07:59:14.344777",
+        "id": 1491,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.863070"
+        "updated_at": "2020-02-21 08:28:37.577939"
     },
     {
-        "brand_id": 2357,
+        "brand_id": 2499,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012054",
-        "created_at": "2020-02-17 05:11:25.872785",
-        "id": 1280,
+        "created_at": "2020-02-21 07:59:14.441939",
+        "id": 1492,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.872837"
+        "updated_at": "2020-02-21 08:28:37.611190"
     },
     {
-        "brand_id": 2358,
+        "brand_id": 2500,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012045",
-        "created_at": "2020-02-17 05:11:25.879021",
-        "id": 1281,
+        "created_at": "2020-02-21 07:59:14.581574",
+        "id": 1493,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.879060"
+        "updated_at": "2020-02-21 08:28:37.645524"
     },
     {
-        "brand_id": 2281,
+        "brand_id": 2424,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012051",
-        "created_at": "2020-02-17 05:11:25.883665",
-        "id": 1282,
+        "created_at": "2020-02-21 07:59:14.670336",
+        "id": 1494,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.883706"
+        "updated_at": "2020-02-21 08:28:37.684881"
     },
     {
-        "brand_id": 2282,
+        "brand_id": 2425,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012028",
-        "created_at": "2020-02-17 05:11:25.887785",
-        "id": 1283,
+        "created_at": "2020-02-21 07:59:14.763340",
+        "id": 1495,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.887825"
+        "updated_at": "2020-02-21 08:28:37.723621"
     },
     {
-        "brand_id": 2359,
+        "brand_id": 2501,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012030",
-        "created_at": "2020-02-17 05:11:25.891693",
-        "id": 1284,
+        "created_at": "2020-02-21 07:59:14.856515",
+        "id": 1496,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.891733"
+        "updated_at": "2020-02-21 08:28:37.765179"
     },
     {
-        "brand_id": 2285,
+        "brand_id": 2428,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012003",
-        "created_at": "2020-02-17 05:11:25.895685",
-        "id": 1285,
+        "created_at": "2020-02-21 07:59:14.948307",
+        "id": 1497,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.895726"
+        "updated_at": "2020-02-21 08:28:37.807788"
     },
     {
-        "brand_id": 2288,
+        "brand_id": 2431,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012004",
-        "created_at": "2020-02-17 05:11:25.899463",
-        "id": 1286,
+        "created_at": "2020-02-21 07:59:15.032140",
+        "id": 1498,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.899504"
+        "updated_at": "2020-02-21 08:28:37.846030"
     },
     {
-        "brand_id": 2360,
+        "brand_id": 2502,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012050",
-        "created_at": "2020-02-17 05:11:25.903973",
-        "id": 1287,
+        "created_at": "2020-02-21 07:59:15.117206",
+        "id": 1499,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.904013"
+        "updated_at": "2020-02-21 08:28:37.877942"
     },
     {
-        "brand_id": 2361,
+        "brand_id": 2503,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012005",
-        "created_at": "2020-02-17 05:11:25.907316",
-        "id": 1288,
+        "created_at": "2020-02-21 07:59:15.201979",
+        "id": 1500,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.907355"
+        "updated_at": "2020-02-21 08:28:37.905555"
     },
     {
-        "brand_id": 2297,
+        "brand_id": 2440,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012027",
-        "created_at": "2020-02-17 05:11:25.911381",
-        "id": 1289,
+        "created_at": "2020-02-21 07:59:15.293467",
+        "id": 1501,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.911422"
+        "updated_at": "2020-02-21 08:28:37.937027"
     },
     {
-        "brand_id": 2299,
+        "brand_id": 2442,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012024",
-        "created_at": "2020-02-17 05:11:25.915471",
-        "id": 1290,
+        "created_at": "2020-02-21 07:59:15.381784",
+        "id": 1502,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.915561"
+        "updated_at": "2020-02-21 08:28:37.968536"
     },
     {
-        "brand_id": 2300,
+        "brand_id": 2443,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012056",
-        "created_at": "2020-02-17 05:11:25.919964",
-        "id": 1291,
+        "created_at": "2020-02-21 07:59:15.473001",
+        "id": 1503,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.920008"
+        "updated_at": "2020-02-21 08:28:37.999440"
     },
     {
-        "brand_id": 2362,
+        "brand_id": 2504,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012006",
-        "created_at": "2020-02-17 05:11:25.925866",
-        "id": 1292,
+        "created_at": "2020-02-21 07:59:15.563904",
+        "id": 1504,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.925909"
+        "updated_at": "2020-02-21 08:28:38.037252"
     },
     {
-        "brand_id": 2363,
+        "brand_id": 2505,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012057",
-        "created_at": "2020-02-17 05:11:25.929934",
-        "id": 1293,
+        "created_at": "2020-02-21 07:59:15.673898",
+        "id": 1505,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.929970"
+        "updated_at": "2020-02-21 08:28:38.074561"
     },
     {
-        "brand_id": 2364,
+        "brand_id": 2506,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012041",
-        "created_at": "2020-02-17 05:11:25.934460",
-        "id": 1294,
+        "created_at": "2020-02-21 07:59:15.761728",
+        "id": 1506,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.934501"
+        "updated_at": "2020-02-21 08:28:38.114679"
     },
     {
-        "brand_id": 2308,
+        "brand_id": 2450,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012052",
-        "created_at": "2020-02-17 05:11:25.938467",
-        "id": 1295,
+        "created_at": "2020-02-21 07:59:15.850852",
+        "id": 1507,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.938516"
+        "updated_at": "2020-02-21 08:28:38.147633"
     },
     {
-        "brand_id": 2313,
+        "brand_id": 2455,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012047",
-        "created_at": "2020-02-17 05:11:25.942645",
-        "id": 1296,
+        "created_at": "2020-02-21 07:59:15.975453",
+        "id": 1508,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.942685"
+        "updated_at": "2020-02-21 08:28:38.181570"
     },
     {
-        "brand_id": 2314,
+        "brand_id": 2456,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012048",
-        "created_at": "2020-02-17 05:11:25.946153",
-        "id": 1297,
+        "created_at": "2020-02-21 07:59:16.007152",
+        "id": 1509,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.946193"
+        "updated_at": "2020-02-21 08:28:38.216679"
     },
     {
-        "brand_id": 2365,
+        "brand_id": 2507,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012025",
-        "created_at": "2020-02-17 05:11:25.950559",
-        "id": 1298,
+        "created_at": "2020-02-21 07:59:16.048852",
+        "id": 1510,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.950600"
+        "updated_at": "2020-02-21 08:28:38.251732"
     },
     {
-        "brand_id": 2315,
+        "brand_id": 2457,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012008",
-        "created_at": "2020-02-17 05:11:25.953933",
-        "id": 1299,
+        "created_at": "2020-02-21 07:59:16.081760",
+        "id": 1511,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.953972"
+        "updated_at": "2020-02-21 08:28:38.284875"
     },
     {
-        "brand_id": 2366,
+        "brand_id": 2508,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012053",
-        "created_at": "2020-02-17 05:11:25.958404",
-        "id": 1300,
+        "created_at": "2020-02-21 07:59:16.125646",
+        "id": 1512,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.958443"
+        "updated_at": "2020-02-21 08:28:38.321239"
     },
     {
-        "brand_id": 2367,
+        "brand_id": 2509,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012010",
-        "created_at": "2020-02-17 05:11:25.961857",
-        "id": 1301,
+        "created_at": "2020-02-21 07:59:16.158559",
+        "id": 1513,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.961897"
+        "updated_at": "2020-02-21 08:28:38.357490"
     },
     {
-        "brand_id": 2321,
+        "brand_id": 2463,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012011",
-        "created_at": "2020-02-17 05:11:25.966241",
-        "id": 1302,
+        "created_at": "2020-02-21 07:59:16.190474",
+        "id": 1514,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.966283"
+        "updated_at": "2020-02-21 08:28:38.401461"
     },
     {
-        "brand_id": 2323,
+        "brand_id": 2465,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012012",
-        "created_at": "2020-02-17 05:11:25.972175",
-        "id": 1303,
+        "created_at": "2020-02-21 07:59:16.224380",
+        "id": 1515,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.972220"
+        "updated_at": "2020-02-21 08:28:38.435918"
     },
     {
-        "brand_id": 2328,
+        "brand_id": 2470,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012033",
-        "created_at": "2020-02-17 05:11:25.977682",
-        "id": 1304,
+        "created_at": "2020-02-21 07:59:16.258289",
+        "id": 1516,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.977783"
+        "updated_at": "2020-02-21 08:28:38.471178"
     },
     {
-        "brand_id": 2330,
+        "brand_id": 2472,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012019",
-        "created_at": "2020-02-17 05:11:25.983868",
-        "id": 1305,
+        "created_at": "2020-02-21 07:59:16.291239",
+        "id": 1517,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.983912"
+        "updated_at": "2020-02-21 08:28:38.506532"
     },
     {
-        "brand_id": 2368,
+        "brand_id": 2510,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012014",
-        "created_at": "2020-02-17 05:11:25.988666",
-        "id": 1306,
+        "created_at": "2020-02-21 07:59:16.325112",
+        "id": 1518,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.988706"
+        "updated_at": "2020-02-21 08:28:38.541104"
     },
     {
-        "brand_id": 2369,
+        "brand_id": 2511,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012013",
-        "created_at": "2020-02-17 05:11:25.992108",
-        "id": 1307,
+        "created_at": "2020-02-21 07:59:16.371986",
+        "id": 1519,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.992148"
+        "updated_at": "2020-02-21 08:28:38.577936"
     },
     {
-        "brand_id": 2342,
+        "brand_id": 2483,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012026",
-        "created_at": "2020-02-17 05:11:25.995779",
-        "id": 1308,
+        "created_at": "2020-02-21 07:59:16.406891",
+        "id": 1520,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.995824"
+        "updated_at": "2020-02-21 08:28:38.614153"
     },
     {
-        "brand_id": 2370,
+        "brand_id": 2512,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012046",
-        "created_at": "2020-02-17 05:11:25.999172",
-        "id": 1309,
+        "created_at": "2020-02-21 07:59:16.441799",
+        "id": 1521,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:25.999213"
+        "updated_at": "2020-02-21 08:28:38.648372"
     },
     {
-        "brand_id": 2349,
+        "brand_id": 2490,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012038",
-        "created_at": "2020-02-17 05:11:26.002867",
-        "id": 1310,
+        "created_at": "2020-02-21 07:59:16.477701",
+        "id": 1522,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:26.002939"
+        "updated_at": "2020-02-21 08:28:38.684555"
     },
     {
-        "brand_id": 2371,
+        "brand_id": 2513,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012035",
-        "created_at": "2020-02-17 05:11:26.006865",
-        "id": 1311,
+        "created_at": "2020-02-21 07:59:16.533552",
+        "id": 1523,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:26.006904"
+        "updated_at": "2020-02-21 08:28:38.723027"
     },
     {
-        "brand_id": 2351,
+        "brand_id": 2492,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012049",
-        "created_at": "2020-02-17 05:11:26.010649",
-        "id": 1312,
+        "created_at": "2020-02-21 07:59:16.579448",
+        "id": 1524,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:26.010689"
+        "updated_at": "2020-02-21 08:28:38.758429"
     },
     {
-        "brand_id": 2352,
+        "brand_id": 2493,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012017",
-        "created_at": "2020-02-17 05:11:26.014332",
-        "id": 1313,
+        "created_at": "2020-02-21 07:59:16.628299",
+        "id": 1525,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:26.014389"
+        "updated_at": "2020-02-21 08:28:38.794464"
     },
     {
-        "brand_id": 2372,
+        "brand_id": 2514,
         "brand_url": "http://www.apslove.com/shop/goods/goods_list.php?category=006001012055",
-        "created_at": "2020-02-17 05:11:26.018234",
-        "id": 1314,
+        "created_at": "2020-02-21 07:59:16.675184",
+        "id": 1526,
         "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
         "name": "동물사랑APS",
-        "updated_at": "2020-02-17 05:11:26.018275"
-    },
-    {
-        "brand_id": 2273,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=183",
-        "created_at": "2020-02-17 05:19:27.306251",
-        "id": 1315,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:19:27.306287"
-    },
-    {
-        "brand_id": 2373,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=440",
-        "created_at": "2020-02-17 05:19:57.298285",
-        "id": 1316,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:19:57.298343"
-    },
-    {
-        "brand_id": 2278,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=281",
-        "created_at": "2020-02-17 05:19:59.089080",
-        "id": 1317,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:19:59.089114"
-    },
-    {
-        "brand_id": 2374,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=509",
-        "created_at": "2020-02-17 05:20:09.578242",
-        "id": 1318,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:20:09.578277"
-    },
-    {
-        "brand_id": 2385,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=285",
-        "created_at": "2020-02-17 05:20:17.976241",
-        "id": 1319,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:20:17.976277"
-    },
-    {
-        "brand_id": 2375,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=225",
-        "created_at": "2020-02-17 05:20:50.104313",
-        "id": 1320,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:20:50.104343"
-    },
-    {
-        "brand_id": 2282,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=488",
-        "created_at": "2020-02-17 05:21:12.974545",
-        "id": 1321,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:21:12.974576"
-    },
-    {
-        "brand_id": 2285,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=187",
-        "created_at": "2020-02-17 05:21:28.510976",
-        "id": 1322,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:21:28.511009"
-    },
-    {
-        "brand_id": 2376,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=482",
-        "created_at": "2020-02-17 05:22:30.971105",
-        "id": 1323,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:22:30.971137"
-    },
-    {
-        "brand_id": 2288,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=375",
-        "created_at": "2020-02-17 05:22:35.247229",
-        "id": 1324,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:22:35.247262"
-    },
-    {
-        "brand_id": 2290,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=270",
-        "created_at": "2020-02-17 05:22:36.814764",
-        "id": 1325,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:22:36.814799"
-    },
-    {
-        "brand_id": 2297,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=408",
-        "created_at": "2020-02-17 05:23:03.582663",
-        "id": 1326,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:23:03.582699"
-    },
-    {
-        "brand_id": 2302,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=495",
-        "created_at": "2020-02-17 05:23:53.572501",
-        "id": 1327,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:23:53.572536"
-    },
-    {
-        "brand_id": 2378,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=487",
-        "created_at": "2020-02-17 05:23:58.231554",
-        "id": 1328,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:23:58.231588"
-    },
-    {
-        "brand_id": 2303,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=508",
-        "created_at": "2020-02-17 05:24:02.143123",
-        "id": 1329,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:02.143154"
-    },
-    {
-        "brand_id": 2307,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=505",
-        "created_at": "2020-02-17 05:24:04.895840",
-        "id": 1330,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:04.895911"
-    },
-    {
-        "brand_id": 2306,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=510",
-        "created_at": "2020-02-17 05:24:08.545607",
-        "id": 1331,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:08.545654"
-    },
-    {
-        "brand_id": 2377,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=514",
-        "created_at": "2020-02-17 05:24:17.386670",
-        "id": 1332,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:17.386708"
-    },
-    {
-        "brand_id": 2364,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=428",
-        "created_at": "2020-02-17 05:24:25.855463",
-        "id": 1333,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:25.855495"
-    },
-    {
-        "brand_id": 2379,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=511",
-        "created_at": "2020-02-17 05:24:27.611550",
-        "id": 1334,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:27.611586"
-    },
-    {
-        "brand_id": 2381,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=445",
-        "created_at": "2020-02-17 05:24:33.671166",
-        "id": 1335,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:33.671198"
-    },
-    {
-        "brand_id": 2380,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=471",
-        "created_at": "2020-02-17 05:24:35.743758",
-        "id": 1336,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:35.743792"
-    },
-    {
-        "brand_id": 2315,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=199",
-        "created_at": "2020-02-17 05:24:46.142866",
-        "id": 1337,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:46.142910"
-    },
-    {
-        "brand_id": 2317,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=278",
-        "created_at": "2020-02-17 05:24:50.355493",
-        "id": 1338,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:50.355529"
-    },
-    {
-        "brand_id": 2318,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=489",
-        "created_at": "2020-02-17 05:24:55.616470",
-        "id": 1339,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:24:55.616508"
-    },
-    {
-        "brand_id": 2321,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=265",
-        "created_at": "2020-02-17 05:25:07.387138",
-        "id": 1340,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:25:07.387171"
-    },
-    {
-        "brand_id": 2383,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=271",
-        "created_at": "2020-02-17 05:25:22.336516",
-        "id": 1341,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:25:22.336549"
-    },
-    {
-        "brand_id": 2384,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=289",
-        "created_at": "2020-02-17 05:25:27.409627",
-        "id": 1342,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:25:27.409666"
-    },
-    {
-        "brand_id": 2331,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=507",
-        "created_at": "2020-02-17 05:25:32.988581",
-        "id": 1343,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:25:32.988611"
-    },
-    {
-        "brand_id": 2382,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=512",
-        "created_at": "2020-02-17 05:25:36.194341",
-        "id": 1344,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:25:36.194373"
-    },
-    {
-        "brand_id": 2325,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=378",
-        "created_at": "2020-02-17 05:25:48.457745",
-        "id": 1345,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:25:48.457778"
-    },
-    {
-        "brand_id": 2328,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=395",
-        "created_at": "2020-02-17 05:26:09.063224",
-        "id": 1346,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:26:09.063256"
-    },
-    {
-        "brand_id": 2324,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=499",
-        "created_at": "2020-02-17 05:26:14.143873",
-        "id": 1347,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:26:14.143905"
-    },
-    {
-        "brand_id": 2334,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=286",
-        "created_at": "2020-02-17 05:26:18.375173",
-        "id": 1348,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:26:18.375206"
-    },
-    {
-        "brand_id": 2386,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=513",
-        "created_at": "2020-02-17 05:26:41.536134",
-        "id": 1349,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:26:41.536167"
-    },
-    {
-        "brand_id": 2387,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=515",
-        "created_at": "2020-02-17 05:26:52.969019",
-        "id": 1350,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:26:52.969049"
-    },
-    {
-        "brand_id": 2340,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=291",
-        "created_at": "2020-02-17 05:26:56.556622",
-        "id": 1351,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:26:56.556655"
-    },
-    {
-        "brand_id": 2343,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=501",
-        "created_at": "2020-02-17 05:27:01.055587",
-        "id": 1352,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:27:01.055621"
-    },
-    {
-        "brand_id": 2388,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=380",
-        "created_at": "2020-02-17 05:27:13.820956",
-        "id": 1353,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:27:13.820989"
-    },
-    {
-        "brand_id": 2389,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=503",
-        "created_at": "2020-02-17 05:27:17.767130",
-        "id": 1354,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:27:17.767163"
-    },
-    {
-        "brand_id": 2345,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=498",
-        "created_at": "2020-02-17 05:27:26.178006",
-        "id": 1355,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:27:26.178043"
-    },
-    {
-        "brand_id": 2390,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=377",
-        "created_at": "2020-02-17 05:27:47.352413",
-        "id": 1356,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:27:47.352448"
-    },
-    {
-        "brand_id": 2370,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=500",
-        "created_at": "2020-02-17 05:27:55.625930",
-        "id": 1357,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:27:55.625965"
-    },
-    {
-        "brand_id": 2349,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=243",
-        "created_at": "2020-02-17 05:27:58.351944",
-        "id": 1358,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:27:58.352073"
-    },
-    {
-        "brand_id": 2391,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=496",
-        "created_at": "2020-02-17 05:28:09.893086",
-        "id": 1359,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:28:09.893118"
-    },
-    {
-        "brand_id": 2392,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=490",
-        "created_at": "2020-02-17 05:28:26.744362",
-        "id": 1360,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:28:26.744391"
-    },
-    {
-        "brand_id": 2352,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=409",
-        "created_at": "2020-02-17 05:28:36.873991",
-        "id": 1361,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:28:36.874023"
-    },
-    {
-        "brand_id": 2344,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=494",
-        "created_at": "2020-02-17 05:28:53.855314",
-        "id": 1362,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:28:53.855350"
-    },
-    {
-        "brand_id": 2372,
-        "brand_url": "http://queenpuppy.co.kr/shop/cate.html?category=394",
-        "created_at": "2020-02-17 05:29:11.322017",
-        "id": 1363,
-        "logo": "http://queenpuppy.co.kr/img/QP_LOGO.png",
-        "name": "QueenNPuppy",
-        "updated_at": "2020-02-17 05:29:11.322049"
-    },
-    {
-        "brand_id": 2273,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001065",
-        "created_at": "2020-02-17 05:29:36.757250",
-        "id": 1364,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.391197"
-    },
-    {
-        "brand_id": 2393,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001118",
-        "created_at": "2020-02-17 05:29:36.761340",
-        "id": 1365,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.395407"
-    },
-    {
-        "brand_id": 2394,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001048",
-        "created_at": "2020-02-17 05:29:36.764714",
-        "id": 1366,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.399060"
-    },
-    {
-        "brand_id": 2395,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001059",
-        "created_at": "2020-02-17 05:29:36.767809",
-        "id": 1367,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.402112"
-    },
-    {
-        "brand_id": 2396,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001049",
-        "created_at": "2020-02-17 05:29:36.770674",
-        "id": 1368,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.404810"
-    },
-    {
-        "brand_id": 2282,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001090",
-        "created_at": "2020-02-17 05:29:36.773370",
-        "id": 1369,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.407962"
-    },
-    {
-        "brand_id": 2284,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001079",
-        "created_at": "2020-02-17 05:29:36.776338",
-        "id": 1370,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.411358"
-    },
-    {
-        "brand_id": 2285,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001002",
-        "created_at": "2020-02-17 05:29:36.778899",
-        "id": 1371,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.413915"
-    },
-    {
-        "brand_id": 2397,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001122",
-        "created_at": "2020-02-17 05:29:36.782100",
-        "id": 1372,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.417881"
-    },
-    {
-        "brand_id": 2398,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001119",
-        "created_at": "2020-02-17 05:29:36.784915",
-        "id": 1373,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.420656"
-    },
-    {
-        "brand_id": 2287,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001005",
-        "created_at": "2020-02-17 05:29:36.787924",
-        "id": 1374,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.423698"
-    },
-    {
-        "brand_id": 2288,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001120",
-        "created_at": "2020-02-17 05:29:36.790809",
-        "id": 1375,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.427451"
-    },
-    {
-        "brand_id": 2399,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001006",
-        "created_at": "2020-02-17 05:29:36.794245",
-        "id": 1376,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.430158"
-    },
-    {
-        "brand_id": 2360,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001112",
-        "created_at": "2020-02-17 05:29:36.797254",
-        "id": 1377,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.433721"
-    },
-    {
-        "brand_id": 2400,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001116",
-        "created_at": "2020-02-17 05:29:36.800413",
-        "id": 1378,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.437151"
-    },
-    {
-        "brand_id": 2401,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001010",
-        "created_at": "2020-02-17 05:29:36.804684",
-        "id": 1379,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.441138"
-    },
-    {
-        "brand_id": 2293,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001012",
-        "created_at": "2020-02-17 05:29:36.808131",
-        "id": 1380,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.445401"
-    },
-    {
-        "brand_id": 2402,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001086",
-        "created_at": "2020-02-17 05:29:36.811628",
-        "id": 1381,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.450001"
-    },
-    {
-        "brand_id": 2403,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001083",
-        "created_at": "2020-02-17 05:29:36.814754",
-        "id": 1382,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.453381"
-    },
-    {
-        "brand_id": 2297,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001091",
-        "created_at": "2020-02-17 05:29:36.817882",
-        "id": 1383,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.457102"
-    },
-    {
-        "brand_id": 2299,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001061",
-        "created_at": "2020-02-17 05:29:36.821335",
-        "id": 1384,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.461081"
-    },
-    {
-        "brand_id": 2404,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001106",
-        "created_at": "2020-02-17 05:29:36.824183",
-        "id": 1385,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.465459"
-    },
-    {
-        "brand_id": 2405,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001115",
-        "created_at": "2020-02-17 05:29:36.827401",
-        "id": 1386,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.471768"
-    },
-    {
-        "brand_id": 2305,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001104",
-        "created_at": "2020-02-17 05:29:36.830627",
-        "id": 1387,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.475277"
-    },
-    {
-        "brand_id": 2314,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001020",
-        "created_at": "2020-02-17 05:29:36.834522",
-        "id": 1388,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.479715"
-    },
-    {
-        "brand_id": 2406,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001097",
-        "created_at": "2020-02-17 05:29:36.837914",
-        "id": 1389,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.484962"
-    },
-    {
-        "brand_id": 2407,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001051",
-        "created_at": "2020-02-17 05:29:36.841561",
-        "id": 1390,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.488990"
-    },
-    {
-        "brand_id": 2318,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001099",
-        "created_at": "2020-02-17 05:29:36.844648",
-        "id": 1391,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.492164"
-    },
-    {
-        "brand_id": 2321,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001030",
-        "created_at": "2020-02-17 05:29:36.848029",
-        "id": 1392,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.496392"
-    },
-    {
-        "brand_id": 2408,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001107",
-        "created_at": "2020-02-17 05:29:36.851462",
-        "id": 1393,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.500293"
-    },
-    {
-        "brand_id": 2325,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001071",
-        "created_at": "2020-02-17 05:29:36.854626",
-        "id": 1394,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.504705"
-    },
-    {
-        "brand_id": 2328,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001111",
-        "created_at": "2020-02-17 05:29:36.857832",
-        "id": 1395,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.507656"
-    },
-    {
-        "brand_id": 2384,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001094",
-        "created_at": "2020-02-17 05:29:36.861038",
-        "id": 1396,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.512047"
-    },
-    {
-        "brand_id": 2409,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001109",
-        "created_at": "2020-02-17 05:29:36.864257",
-        "id": 1397,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.516221"
-    },
-    {
-        "brand_id": 2410,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001074",
-        "created_at": "2020-02-17 05:29:36.867742",
-        "id": 1398,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.521016"
-    },
-    {
-        "brand_id": 2411,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001085",
-        "created_at": "2020-02-17 05:29:36.871025",
-        "id": 1399,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.524031"
-    },
-    {
-        "brand_id": 2348,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001042",
-        "created_at": "2020-02-17 05:29:36.874302",
-        "id": 1400,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.527854"
-    },
-    {
-        "brand_id": 2412,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001121",
-        "created_at": "2020-02-17 05:29:36.877604",
-        "id": 1401,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.531400"
-    },
-    {
-        "brand_id": 2349,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001043",
-        "created_at": "2020-02-17 05:29:36.880685",
-        "id": 1402,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.535932"
-    },
-    {
-        "brand_id": 2413,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001108",
-        "created_at": "2020-02-17 05:29:36.884911",
-        "id": 1403,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.539129"
-    },
-    {
-        "brand_id": 2352,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001110",
-        "created_at": "2020-02-17 05:29:36.888407",
-        "id": 1404,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.543841"
-    },
-    {
-        "brand_id": 2414,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001103",
-        "created_at": "2020-02-17 05:29:36.893078",
-        "id": 1405,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.547231"
-    },
-    {
-        "brand_id": 2415,
-        "brand_url": "http://www.dogskingdom.co.kr/shop/goods/goods_list.php?category=001114",
-        "created_at": "2020-02-17 05:29:36.896824",
-        "id": 1406,
-        "logo": "http://www.dogskingdom.co.kr/shop/data/skin/apple_tree/img/banner/54564.jpg",
-        "name": "kingdom",
-        "updated_at": "2020-02-17 05:33:01.551623"
-    },
-    {
-        "brand_id": 2273,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=2",
-        "created_at": "2020-02-17 05:40:24.377407",
-        "id": 1407,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.377486"
-    },
-    {
-        "brand_id": 2274,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=7",
-        "created_at": "2020-02-17 05:40:24.395787",
-        "id": 1408,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.395855"
-    },
-    {
-        "brand_id": 2275,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=11",
-        "created_at": "2020-02-17 05:40:24.413315",
-        "id": 1409,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.413362"
-    },
-    {
-        "brand_id": 2276,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1579",
-        "created_at": "2020-02-17 05:40:24.432137",
-        "id": 1410,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.432423"
-    },
-    {
-        "brand_id": 2277,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=881",
-        "created_at": "2020-02-17 05:40:24.462227",
-        "id": 1411,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.462308"
-    },
-    {
-        "brand_id": 2278,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=16",
-        "created_at": "2020-02-17 05:40:24.474002",
-        "id": 1412,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.474081"
-    },
-    {
-        "brand_id": 2279,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1894",
-        "created_at": "2020-02-17 05:40:24.483243",
-        "id": 1413,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.483305"
-    },
-    {
-        "brand_id": 2280,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=23",
-        "created_at": "2020-02-17 05:40:24.496076",
-        "id": 1414,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.496163"
-    },
-    {
-        "brand_id": 2281,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=30",
-        "created_at": "2020-02-17 05:40:24.500901",
-        "id": 1415,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.500988"
-    },
-    {
-        "brand_id": 2282,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=779",
-        "created_at": "2020-02-17 05:40:24.512739",
-        "id": 1416,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.512906"
-    },
-    {
-        "brand_id": 2283,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1681",
-        "created_at": "2020-02-17 05:40:24.518207",
-        "id": 1417,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.518253"
-    },
-    {
-        "brand_id": 2284,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=32",
-        "created_at": "2020-02-17 05:40:24.527888",
-        "id": 1418,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.527974"
-    },
-    {
-        "brand_id": 2285,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=31",
-        "created_at": "2020-02-17 05:40:24.533141",
-        "id": 1419,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.533188"
-    },
-    {
-        "brand_id": 2286,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=34",
-        "created_at": "2020-02-17 05:40:24.540923",
-        "id": 1420,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.540989"
-    },
-    {
-        "brand_id": 2287,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=36",
-        "created_at": "2020-02-17 05:40:24.547252",
-        "id": 1421,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.547303"
-    },
-    {
-        "brand_id": 2288,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=40",
-        "created_at": "2020-02-17 05:40:24.551732",
-        "id": 1422,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.551777"
-    },
-    {
-        "brand_id": 2289,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1726",
-        "created_at": "2020-02-17 05:40:24.558268",
-        "id": 1423,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.558323"
-    },
-    {
-        "brand_id": 2290,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=47",
-        "created_at": "2020-02-17 05:40:24.564331",
-        "id": 1424,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.564375"
-    },
-    {
-        "brand_id": 2291,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1846",
-        "created_at": "2020-02-17 05:40:24.571296",
-        "id": 1425,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.571367"
-    },
-    {
-        "brand_id": 2292,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=52",
-        "created_at": "2020-02-17 05:40:24.576253",
-        "id": 1426,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.576299"
-    },
-    {
-        "brand_id": 2293,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=55",
-        "created_at": "2020-02-17 05:40:24.581880",
-        "id": 1427,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.581931"
-    },
-    {
-        "brand_id": 2294,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1873",
-        "created_at": "2020-02-17 05:40:24.585722",
-        "id": 1428,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.585778"
-    },
-    {
-        "brand_id": 2295,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=64",
-        "created_at": "2020-02-17 05:40:24.591166",
-        "id": 1429,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.591210"
-    },
-    {
-        "brand_id": 2296,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1523",
-        "created_at": "2020-02-17 05:40:24.596452",
-        "id": 1430,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.596497"
-    },
-    {
-        "brand_id": 2297,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=577",
-        "created_at": "2020-02-17 05:40:24.600041",
-        "id": 1431,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.600083"
-    },
-    {
-        "brand_id": 2298,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1463",
-        "created_at": "2020-02-17 05:40:24.607278",
-        "id": 1432,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.607323"
-    },
-    {
-        "brand_id": 2299,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=258",
-        "created_at": "2020-02-17 05:40:24.611205",
-        "id": 1433,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.611254"
-    },
-    {
-        "brand_id": 2300,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=2011",
-        "created_at": "2020-02-17 05:40:24.616487",
-        "id": 1434,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.616530"
-    },
-    {
-        "brand_id": 2301,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1552",
-        "created_at": "2020-02-17 05:40:24.621421",
-        "id": 1435,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.621465"
-    },
-    {
-        "brand_id": 2302,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1645",
-        "created_at": "2020-02-17 05:40:24.624709",
-        "id": 1436,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.624751"
-    },
-    {
-        "brand_id": 2303,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1525",
-        "created_at": "2020-02-17 05:40:24.628140",
-        "id": 1437,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.628182"
-    },
-    {
-        "brand_id": 2304,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=2003",
-        "created_at": "2020-02-17 05:40:24.631590",
-        "id": 1438,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.631630"
-    },
-    {
-        "brand_id": 2305,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1329",
-        "created_at": "2020-02-17 05:40:24.634870",
-        "id": 1439,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.634912"
-    },
-    {
-        "brand_id": 2306,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1723",
-        "created_at": "2020-02-17 05:40:24.640275",
-        "id": 1440,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.640316"
-    },
-    {
-        "brand_id": 2307,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1717",
-        "created_at": "2020-02-17 05:40:24.644504",
-        "id": 1441,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.644545"
-    },
-    {
-        "brand_id": 2308,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1834",
-        "created_at": "2020-02-17 05:40:24.647827",
-        "id": 1442,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.647868"
-    },
-    {
-        "brand_id": 2309,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=105",
-        "created_at": "2020-02-17 05:40:24.651042",
-        "id": 1443,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.651079"
-    },
-    {
-        "brand_id": 2310,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1567",
-        "created_at": "2020-02-17 05:40:24.655790",
-        "id": 1444,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.655831"
-    },
-    {
-        "brand_id": 2311,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=2014",
-        "created_at": "2020-02-17 05:40:24.659221",
-        "id": 1445,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.659263"
-    },
-    {
-        "brand_id": 2312,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1672",
-        "created_at": "2020-02-17 05:40:24.662714",
-        "id": 1446,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.662754"
-    },
-    {
-        "brand_id": 2313,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1013",
-        "created_at": "2020-02-17 05:40:24.666168",
-        "id": 1447,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.666208"
-    },
-    {
-        "brand_id": 2314,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=119",
-        "created_at": "2020-02-17 05:40:24.670540",
-        "id": 1448,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.670602"
-    },
-    {
-        "brand_id": 2315,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=126",
-        "created_at": "2020-02-17 05:40:24.674340",
-        "id": 1449,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.674401"
-    },
-    {
-        "brand_id": 2316,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=127",
-        "created_at": "2020-02-17 05:40:24.677999",
-        "id": 1450,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.678039"
-    },
-    {
-        "brand_id": 2317,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=168",
-        "created_at": "2020-02-17 05:40:24.681149",
-        "id": 1451,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.681188"
-    },
-    {
-        "brand_id": 2318,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=974",
-        "created_at": "2020-02-17 05:40:24.684603",
-        "id": 1452,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.684641"
-    },
-    {
-        "brand_id": 2319,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=230",
-        "created_at": "2020-02-17 05:40:24.689982",
-        "id": 1453,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.690027"
-    },
-    {
-        "brand_id": 2320,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=135",
-        "created_at": "2020-02-17 05:40:24.693216",
-        "id": 1454,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.693256"
-    },
-    {
-        "brand_id": 2321,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=150",
-        "created_at": "2020-02-17 05:40:24.696703",
-        "id": 1455,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.696742"
-    },
-    {
-        "brand_id": 2322,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1759",
-        "created_at": "2020-02-17 05:40:24.699933",
-        "id": 1456,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.699970"
-    },
-    {
-        "brand_id": 2323,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=152",
-        "created_at": "2020-02-17 05:40:24.704210",
-        "id": 1457,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.704290"
-    },
-    {
-        "brand_id": 2324,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1501",
-        "created_at": "2020-02-17 05:40:24.707647",
-        "id": 1458,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.707683"
-    },
-    {
-        "brand_id": 2325,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=157",
-        "created_at": "2020-02-17 05:40:24.711161",
-        "id": 1459,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.711199"
-    },
-    {
-        "brand_id": 2326,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1849",
-        "created_at": "2020-02-17 05:40:24.713899",
-        "id": 1460,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.713935"
-    },
-    {
-        "brand_id": 2327,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=782",
-        "created_at": "2020-02-17 05:40:24.717010",
-        "id": 1461,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.717049"
-    },
-    {
-        "brand_id": 2328,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1134",
-        "created_at": "2020-02-17 05:40:24.721913",
-        "id": 1462,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.721956"
-    },
-    {
-        "brand_id": 2329,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=161",
-        "created_at": "2020-02-17 05:40:24.725081",
-        "id": 1463,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.725117"
-    },
-    {
-        "brand_id": 2330,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=166",
-        "created_at": "2020-02-17 05:40:24.728075",
-        "id": 1464,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.728112"
-    },
-    {
-        "brand_id": 2331,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1275",
-        "created_at": "2020-02-17 05:40:24.730989",
-        "id": 1465,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.731057"
-    },
-    {
-        "brand_id": 2332,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1227",
-        "created_at": "2020-02-17 05:40:24.734098",
-        "id": 1466,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.734138"
-    },
-    {
-        "brand_id": 2333,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1170",
-        "created_at": "2020-02-17 05:40:24.739156",
-        "id": 1467,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.739215"
-    },
-    {
-        "brand_id": 2334,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=239",
-        "created_at": "2020-02-17 05:40:24.742556",
-        "id": 1468,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.742592"
-    },
-    {
-        "brand_id": 2335,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=2004",
-        "created_at": "2020-02-17 05:40:24.746002",
-        "id": 1469,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.746057"
-    },
-    {
-        "brand_id": 2336,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=181",
-        "created_at": "2020-02-17 05:40:24.748991",
-        "id": 1470,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.749026"
-    },
-    {
-        "brand_id": 2337,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=559",
-        "created_at": "2020-02-17 05:40:24.751910",
-        "id": 1471,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.751947"
-    },
-    {
-        "brand_id": 2338,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1825",
-        "created_at": "2020-02-17 05:40:24.756195",
-        "id": 1472,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.756231"
-    },
-    {
-        "brand_id": 2339,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=764",
-        "created_at": "2020-02-17 05:40:24.759375",
-        "id": 1473,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.759411"
-    },
-    {
-        "brand_id": 2340,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=620",
-        "created_at": "2020-02-17 05:40:24.762229",
-        "id": 1474,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.762265"
-    },
-    {
-        "brand_id": 2341,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=194",
-        "created_at": "2020-02-17 05:40:24.765057",
-        "id": 1475,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.765093"
-    },
-    {
-        "brand_id": 2342,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=196",
-        "created_at": "2020-02-17 05:40:24.767901",
-        "id": 1476,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.767935"
-    },
-    {
-        "brand_id": 2343,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1837",
-        "created_at": "2020-02-17 05:40:24.772233",
-        "id": 1477,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.772270"
-    },
-    {
-        "brand_id": 2344,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1037",
-        "created_at": "2020-02-17 05:40:24.775122",
-        "id": 1478,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.775173"
-    },
-    {
-        "brand_id": 2345,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1454",
-        "created_at": "2020-02-17 05:40:24.778208",
-        "id": 1479,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.778243"
-    },
-    {
-        "brand_id": 2346,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=2056",
-        "created_at": "2020-02-17 05:40:24.782622",
-        "id": 1480,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.782677"
-    },
-    {
-        "brand_id": 2347,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=215",
-        "created_at": "2020-02-17 05:40:24.786523",
-        "id": 1481,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.786579"
-    },
-    {
-        "brand_id": 2348,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=216",
-        "created_at": "2020-02-17 05:40:24.790345",
-        "id": 1482,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.790384"
-    },
-    {
-        "brand_id": 2349,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=217",
-        "created_at": "2020-02-17 05:40:24.794601",
-        "id": 1483,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.794639"
-    },
-    {
-        "brand_id": 2350,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1891",
-        "created_at": "2020-02-17 05:40:24.797937",
-        "id": 1484,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.797977"
-    },
-    {
-        "brand_id": 2351,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1576",
-        "created_at": "2020-02-17 05:40:24.801680",
-        "id": 1485,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.801721"
-    },
-    {
-        "brand_id": 2352,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1173",
-        "created_at": "2020-02-17 05:40:24.807216",
-        "id": 1486,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.807257"
-    },
-    {
-        "brand_id": 2353,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=770",
-        "created_at": "2020-02-17 05:40:24.811227",
-        "id": 1487,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.811268"
-    },
-    {
-        "brand_id": 2354,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1942",
-        "created_at": "2020-02-17 05:40:24.814345",
-        "id": 1488,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.814502"
-    },
-    {
-        "brand_id": 2355,
-        "brand_url": "http://www.dogpre.com/shop/goods/goods_list.php?category=036&search_word=&parent_sno=&scroll=0&cateType=&v_category=&category=036&search_brand%5B%5D=1888",
-        "created_at": "2020-02-17 05:40:24.817658",
-        "id": 1489,
-        "logo": "http://www.apslove.com/shop/data/skin/aps2016/img/banner/main_header_logo.gif",
-        "name": "president",
-        "updated_at": "2020-02-17 05:40:24.817697"
+        "updated_at": "2020-02-21 08:28:38.835193"
     }
 ]

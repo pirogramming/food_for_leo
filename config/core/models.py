@@ -34,7 +34,7 @@ class Product(models.Model):
     img_main = models.URLField(blank=True, null=True)
     img_detail = models.URLField(blank=True, null=True)
     made_in = models.CharField(max_length=255, blank=True, null=True)
-    likes = models.ManyToManyField(Profile, related_name='like', blank=True, null=True)
+    likes = models.IntegerField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True,blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True,blank=True, null=True)
 
