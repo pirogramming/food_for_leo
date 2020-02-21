@@ -28,8 +28,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
@@ -42,15 +40,15 @@
             color:#808080;
         }
 
-        a:hover {
-            text-decoration: none;
-            color: #808080
-        }
+
 
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
+        }
+        button :active{
+            box-shadow: none;
         }
 
         .whole_wrapper {
@@ -192,6 +190,7 @@
         .content_down_products_container_product_1 {
             text-align: center;
 
+
             transform: scale(1.0);
             transition: transform .5s;
         }
@@ -199,6 +198,9 @@
             color: grey;
             background: none;
             border: none;
+            margin-bottom: 10px;
+            width:10%;
+            float:left;
         }
 
         .itemImg {
@@ -321,10 +323,9 @@
 
                 {% for i in final_result_revised %}
                     <div class="content_down_products_container_product">
-                            <button type="button" onclick="clickLike({{ i.id }})" id="like{{ i.id }}" class="like"
-                            </button>
+                            <button type="button" onclick="clickLike({{ i.id }})" id="like{{ i.id }}" class="like">
                                 <i class="fas fa-heart"></i>
-                                    name="{{ i.id }}">
+                                    </button>
                         <a href="{% url "core:product_detail" i.pk %}">
                         <div class="content_down_products_container_product_1 itemImg"><img src="{{ i.img_main }}"
                                                                                     style="width:70%;" alt=""></div>

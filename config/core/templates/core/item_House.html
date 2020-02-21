@@ -48,6 +48,7 @@
         text-decoration: none;
         color: #808080;
     }
+
     html, body {
         height: 100%;
         margin: 0;
@@ -59,41 +60,41 @@
     }
 
     .middle_img {
-            width: 100vw;
-            background-image: url("http://www.hearthstonehomemade.com/images/0-Dog-Not-Eating-635.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            height: 50vh;
-        }
+        width: 100vw;
+        background-image: url("http://www.hearthstonehomemade.com/images/0-Dog-Not-Eating-635.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 50vh;
+    }
 
-        .middle_img_cover {
-            object-fit: cover;
-            width: 100vw;
-            height: 50vh;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    .middle_img_cover {
+        object-fit: cover;
+        width: 100vw;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .middle_img_cover_content {
-            color: white;
+    .middle_img_cover_content {
+        color: white;
 
-            text-space: 2px;
-            opacity: 80%;
-            text-align: center;
-        }
+        text-space: 2px;
+        opacity: 80%;
+        text-align: center;
+    }
 
-        .search_bar {
-            width: 30%;
-            height: 20%;
-            margin-left: 10%;
-        }
+    .search_bar {
+        width: 30%;
+        height: 20%;
+        margin-left: 10%;
+    }
 
     .item-list {
-        width:100%;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -118,18 +119,20 @@
     .content_down_items div {
         text-align: center;
     }
-    #product-container{
-        width:90vw;
-        margin:0 auto;
+
+    #product-container {
+        width: 90vw;
+        margin: 0 auto;
 
     }
-    .itemimg {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 30px;
 
-            transform: scale(1.0);
-            transition: transform .5s;
+    .itemimg {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+
+        transform: scale(1.0);
+        transition: transform .5s;
     }
 
     .itemimg:hover {
@@ -146,20 +149,24 @@
     }
 
 
-    .pagination-container{
+    .pagination-container {
         text-align: center;
         list-style: none;
         display: flex;
         justify-content: center;
     }
-    .pagination-container li{
+
+    .pagination-container li {
         padding: 0 10px
     }
 
-    .like{
+    .like {
         background: none;
         border: none;
         color: grey;
+        width:10%;
+        float:left;
+
     }
 
 </style>
@@ -172,7 +179,7 @@
 <body>
 {% include "core/base.html" %}
 <div class="whole_wrapper">
-     <div class="middle_img">
+    <div class="middle_img">
         <div class="middle_img_cover">
             <div class="middle_img_cover_content">
                 <h1>PRODUCTS</h1>
@@ -201,39 +208,40 @@
             {% for item in items %}
                 <div class="content_down_items">
                     <a href="{% url 'core:product_detail' item.pk %}">
-                            <div class="itemimg">
-                                <img src="{{ item.img_main }}" alt="" style="width:80%">
-                            </div>
-                            <div class="itemName" title="{{ item.name }}">{{ item.name }}</div>
+                        <div class="itemimg">
+                            <img src="{{ item.img_main }}" alt="" style="width:80%">
+                        </div>
+                        <div class="itemName" title="{{ item.name }}">{{ item.name }}</div>
                     </a>
-                <button type="button" onclick="clickLike({{ item.id }})" id="like{{ item.id }}" class="like" name="{{ item.id }}" >
+                    <button type="button" onclick="clickLike({{ item.id }})" id="like{{ item.id }}" class="like"
+                            name="{{ item.id }}">
                         <i class="fas fa-heart"></i>
                     </button>
                 </div>
             {% endfor %}
         </div>
-        
+
         <!--pagination-->
         {% if items.has_other_pages %}
-        <ul class="pagination-container">
-            {% if items.has_previous %}
-            <li><a href="?page={{ items.previous_page_number }}">&laquo;</a></li>
-            {% else %}
-            <li class="disabled"><span>&laquo;</span></li>
-            {% endif %}
-            {% for i in items.paginator.page_range %}
-            {% if items.number == i %}
-            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-            {% else %}
-            <li><a href="?page={{ i }}">{{ i }}</a></li>
-            {% endif %}
-            {% endfor %}
-            {% if items.has_next %}
-            <li><a href="?page={{ items.next_page_number }}">&raquo;</a></li>
-            {% else %}
-            <li class="disabled"><span>&raquo;</span></li>
-            {% endif %}
-        </ul>
+            <ul class="pagination-container">
+                {% if items.has_previous %}
+                    <li><a href="?page={{ items.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in items.paginator.page_range %}
+                    {% if items.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if items.has_next %}
+                    <li><a href="?page={{ items.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
         {% endif %}
 
     </div>
@@ -241,59 +249,59 @@
 </body>
 <script>
     function fetchJsonFilter(val) {
-    var tags = [];
-    //brand name filtering
-    fetch('../../static/json/core_brand.json').then(function (response) {
-        response.text().then(function (text) {
-            var b_list = JSON.parse(text);
-            var show_brand = [];
-            b_list.filter(function (element, index, array) {
-                if (array[index].name.includes(val)) {
-                    console.log(array[index].name)
-                    show_brand.push(array[index]);
-                }
-            });
-            var brand=show_brand[0]
-            var brand_tag = '<li class="list-group-item"><a href="{% url "core:brand_detail" 111 %}">'.replace(111, brand.id) + show_brand[0].name + '</a></li>'
-            tags = tags + brand_tag
+        var tags = [];
+        //brand name filtering
+        fetch('../../static/json/core_brand.json').then(function (response) {
+            response.text().then(function (text) {
+                var b_list = JSON.parse(text);
+                var show_brand = [];
+                b_list.filter(function (element, index, array) {
+                    if (array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_brand.push(array[index]);
+                    }
+                });
+                var brand = show_brand[0]
+                var brand_tag = '<li class="list-group-item"><a href="{% url "core:brand_detail" 111 %}">'.replace(111, brand.id) + show_brand[0].name + '</a></li>'
+                tags = tags + brand_tag
+            })
         })
-    })
-    //product name filtering
-    fetch('../../static/json/core_product.json').then(function (response) {
-        response.text().then(function (text) {
-            var p_list = JSON.parse(text);
-            var show_product = [];
-            p_list.filter(function (element, index, array) { //필터링하기
-                if (array[index].name.includes(val)) {
-                    console.log(array[index].name)
-                    show_product.push(array[index]);
+        //product name filtering
+        fetch('../../static/json/core_product.json').then(function (response) {
+            response.text().then(function (text) {
+                var p_list = JSON.parse(text);
+                var show_product = [];
+                p_list.filter(function (element, index, array) { //필터링하기
+                    if (array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_product.push(array[index]);
+                    }
+                });
+                for (var i = 0; i < show_product.length; i++) {
+                    if (i > 1) {
+                        break
+                    } else {
+                        var product = show_product[i];
+                        var tag = '<li class="list-group-item"><a href="{% url "core:product_detail" 111 %}">'.replace(111, product.id) + product.name + '</a></li>'
+                        tags = tags + tag
+                    }
                 }
-            });
-            for (var i = 0; i < show_product.length; i++) {
-                if (i > 1) {
-                    break
-                } else {
-                    var product = show_product[i];
-                    var tag = '<li class="list-group-item"><a href="{% url "core:product_detail" 111 %}">'.replace(111, product.id) + product.name + '</a></li>'
-                    tags = tags + tag
-                }
-            }
-            document.querySelector('#result').innerHTML = tags;
+                document.querySelector('#result').innerHTML = tags;
+            })
         })
-    })
-}
-
-$('.search').on('keyup', function () {
-    var searchInput = $(this).val();
-    if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
-        document.querySelector('#result').innerHTML = []
-    } else {
-        fetchJsonFilter(searchInput)
     }
-});
-    </script>
+
+    $('.search').on('keyup', function () {
+        var searchInput = $(this).val();
+        if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
+            document.querySelector('#result').innerHTML = []
+        } else {
+            fetchJsonFilter(searchInput)
+        }
+    });
+</script>
 <script>
-    function clickLike(pk){
+    function clickLike(pk) {
         console.log(pk)
         $.ajax({
             type: "post",
@@ -301,15 +309,14 @@ $('.search').on('keyup', function () {
             data: {"pk": pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
             success: function (response) {
                 console.log(1);
-                if(response.likes == 0){
-                    $('#like'+pk).css('color','grey');
-                    $('#like'+pk).css('background','none');
-                    $('#like'+pk).css('border','none');
-                }
-                else{
-                    $('#like'+pk).css('color','red');
-                    $('#like'+pk).css('background','none');
-                    $('#like'+pk).css('border','none');
+                if (response.likes == 0) {
+                    $('#like' + pk).css('color', 'grey');
+                    $('#like' + pk).css('background', 'none');
+                    $('#like' + pk).css('border', 'none');
+                } else {
+                    $('#like' + pk).css('color', 'red');
+                    $('#like' + pk).css('background', 'none');
+                    $('#like' + pk).css('border', 'none');
                 }
             }, error: function (request, status, error) { // 통신 실패시 - 로그인 페이지 리다이렉트
                 alert('fail');

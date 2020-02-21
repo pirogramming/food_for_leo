@@ -73,12 +73,12 @@ a{
     transition: all 0.3s ease;
 }
 
-input:focus ~ label {
+.url input:focus ~ label {
     color: RGBA(254, 253, 255, 1.00);
 }
 
-input:focus ~ label,
-input:valid ~ label {
+.url input:focus ~ label,
+.url input:valid ~ label {
     top: 0;
     letter-spacing: 5px;
     -webkit-transform: translate(0, -30px) scale(0.7, 0.7);
@@ -87,7 +87,7 @@ input:valid ~ label {
 
 }
 
-input {
+.url input {
     font-family: system-ui, Helvetica, Arial, sans-serif;
     font-size: 20px !important;
     width: 100%;
@@ -97,7 +97,7 @@ input {
     color: white;
 }
 
-input:focus {
+.url input:focus {
     outline: none;
 }
 
@@ -116,11 +116,11 @@ input:focus {
     transition: all 0.3s ease;
 }
 
-input:focus ~ .after {
+.url input:focus ~ .after {
     background-position: 0 0;
 }
 
-button {
+.enter button {
     position: relative;
     width: 100px;
     height: 40px;
@@ -144,7 +144,7 @@ button {
     transition: all 0.3s ease;
 }
 
-button:before {
+.enter button:before {
     position: absolute;
     content: "\f00c";
     font-family: system-ui, FontAwesome, Helvetica, Arial, sans-serif;;
@@ -158,9 +158,9 @@ button:before {
     /*color: white;*/
 }
 
-button:active,
-button:focus,
-button:hover {
+.enter button:active,
+.enter button:focus,
+.enter button:hover {
     outline: none;
     color: white;
     font-weight: bolder;
@@ -174,25 +174,25 @@ button:hover {
 }
 
 @media (max-width: 590px) {
-    button {
+    .enter button {
         width: 150px;
         margin-left: -20px !important;
     }
 
-    label {
+    .url label {
         letter-spacing: 7px;
     }
 }
 
 @media (max-width: 475px) {
-    form {
+    .search_bar form {
         -webkit-box-orient: vertical !important;
         -webkit-box-direction: normal !important;
         -ms-flex-direction: column !important;
         flex-direction: column !important;
     }
 
-    button {
+    .enter button {
         float: right;
         margin-right: 25px !important;
     }
