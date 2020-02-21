@@ -1,11 +1,8 @@
 import os
 import sys
-
-from django.core.paginator import PageNotAnInteger, Paginator
-
+from django.core.paginator import PageNotAnInteger, Paginator, EmptyPage
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
-
 django.setup()
 
 from django.contrib import auth
@@ -467,10 +464,13 @@ def delete_account(request):
             context.update({'error': "입력하신 비밀번호가 일치하지 않습니다."})
     return render(request, 'core/delete_account.html', context)
 
+#
+# def brand_like(request):
+#     return HttpResponse(json.dumps(context), content_type='application/json')
 
 @login_required
 @require_POST
-def like(request):
+def product_like(request):
     if request.method == 'POST':
         profile = request.user.profile  # 로그인한 유저의 프로필을 가져온다.
         product_id = request.POST.get('pk', None)
