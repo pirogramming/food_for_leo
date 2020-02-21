@@ -9,10 +9,10 @@
         <div class="col-md-3" >
             <div class="card" id="diary_card1">
                 {% if diary1.img %}
-                    <div class="card_img_div"><img src="{{ diary1.img.url }}" id="card_img_top1" class="card-img-top"></div>
+                    <div class="diary_card_img_div"><img src="{{ diary1.img.url }}" id="card_img_top1" class="diary_img_top"></div>
                 {% endif %}
                 {% if not diary1.img %}
-                    <div class="card_img_div"></div>
+                    <div class="diary_card_img_div"><img src="https://cdn1.iconfinder.com/data/icons/personal-business-finance-4-2/64/x-10-512.png" class="diary_img_top"></div>
                 {% endif %}
                     <div class="card-body" id="diary_card_body1">
                         <div class="card-title">{{ diary1.title }}</div>
@@ -24,10 +24,10 @@
         <div class="col-md-3">
             <div class="card" id="diary_card2">
                 {% if diary2.img %}
-                    <div class="card_img_div"><img src="{{ diary2.img.url }}" id="card_img_top2" class="card-img-top"></div>
+                    <div class="diary_card_img_div"><img src="{{ diary2.img.url }}" id="card_img_top2" class="diary_img_top"></div>
                 {% endif %}
                 {% if not diary2.img %}
-                    <div class="card_img_div"></div>
+                    <div class="diary_card_img_div"><img src="https://cdn1.iconfinder.com/data/icons/personal-business-finance-4-2/64/x-10-512.png" class="diary_img_top"></div>
                 {% endif %}
                 <div class="card-body" id="diary_card_body2">
                     <div class="card-title">{{ diary2.title }}</div>
@@ -39,10 +39,10 @@
         <div class="col-md-3">
             <div class="card" id="diary_card3">
                 {% if diary3.img %}
-                    <div class="card_img_div"><img src="{{ diary3.img.url }}" id="card_img_top3" class="card-img-top"></div>
+                    <div class="diary_card_img_div"><img src="{{ diary3.img.url }}" id="card_img_top3" class="diary_img_top"></div>
                 {% endif %}
                 {% if not diary3.img %}
-                    <div class="card_img_div">이미지가 없습니다</div>
+                    <div class="diary_card_img_div"><img src="https://cdn1.iconfinder.com/data/icons/personal-business-finance-4-2/64/x-10-512.png" class="diary_img_top"></div>
                 {% endif %}
                 <div class="card-body" id="diary_card_body3">
                     <div class="card-title">{{ diary3.title }}</div>

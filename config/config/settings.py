@@ -51,7 +51,6 @@ INSTALLED_APPS = [
 
     'allauth.socialaccount.providers.google',
 
-    'bootstrap3',
     'bootstrap4',
 ]
 

@@ -9,43 +9,49 @@ div {
 }
 
 #top_wrap {
-    width: 100vw; height: 40vh;
+    width: 100vw;
+    height: 40vh;
     display: flex;
 }
 
 #profile_img_background_wrap {
-    width: inherit; height: inherit;
+    width: inherit;
+    height: inherit;
     position: absolute;
     z-index: 1;
 }
 
-#profile_img_background{
-    width: inherit; height: inherit;
+#profile_img_background {
+    width: inherit;
+    height: inherit;
     object-fit: cover;
     filter: brightness(65%) blur(4px);
 }
 
 #profile_top_container {
-    width: inherit; height: inherit;
+    width: inherit;
+    height: inherit;
     position: relative;
     top: 5vh;
     z-index: 999;
 }
 
 #img_text_wrap {
-    width: 182px; height: 182px;
+    width: 180px;
+    height: 180px;
     border-radius: 100%;
     position: relative;
 }
 
 #profile_img_main {
-    width: 180px; height: 180px;
+    width: 180px;
+    height: 180px;
     border-radius: 100%;
     object-fit: cover;
 }
 
 .profile_change_text {
-    position:absolute;
+    position: absolute;
     top: 45%;
     left: 25%;
     color: white;
@@ -61,6 +67,7 @@ div {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 85%;
 }
 
 #profile_img_name, #profile_img_email, #profile_img_tel {
@@ -70,28 +77,48 @@ div {
 }
 
 .button_change {
-    width: 75px; height: 35px;
+    width: 75px;
+    height: 35px;
     border-radius: 10px;
-    background-color: #D09E88;
-    color: white;
+    background: none;
+    color: gray;
+    font-size: 0.8rem;
+    border:none;
+}
+.button_change:hover{
+    color: black;
+}
+.button_change:active {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    color: black;
 }
 
 .button_submit {
-    width: 75px; height: 35px;
+    width: 75px;
+    height: 35px;
     border-radius: 10px;
-    background-color: #754F44;
-    color: white;
+   background: none;
+    color: gray;
+    border: none;
+    font-size: 0.8rem;
+}
+.button_submit:hover{
+    color: black;
+}
+.button_submit:active {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    color: black;
 }
 
-
-#profile_name_row, #profile_tel_row {
-    border: black 1px solid;
-    padding: 5px;
+#input_Name, #input_Email, #input_Tel {
+    box-shadow: 1px 1px 1px black;
 }
 
-#profile_email_row {
-    border-right: black 1px solid;
-    border-left: black 1px solid;
+#profile_name_row, #profile_tel_row, #profile_email_row {
     padding: 5px;
 }
 
@@ -102,4 +129,133 @@ div {
 #name_div, #email_div, #tel_div {
     border-right: black 1px solid;
     padding-top: 6px;
+    font-weight: bold;
+}
+
+.diary_title {
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'Lobster', sans-serif;
+    margin-right: 10px;
+}
+
+.diary_subtitle_text-muted {
+    font-size: 0.7rem;
+    padding-left: 30px;
+    color: #4f4f4f;
+}
+
+.diary_more {
+    font-size: 0.7rem;
+}
+
+.button_diary_more {
+    padding: 7px 11px;
+    margin: 0 10px;
+    color: gray;
+    background: none;
+    border-radius: 8px;
+    border: none;
+}
+
+.button_diary_more:hover {
+    text-decoration: none;
+    color:black;
+}
+
+.button_diary_more:active {
+    outline: none;
+    box-shadow: none;
+    color: black;
+}
+
+.pet_title {
+    padding-top: 50px;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'Lobster', sans-serif;
+    margin-right: 5px;
+}
+
+.diary_title {
+    padding-top: 20px;
+    padding-bottom: 12px;
+}
+
+
+.pet_more {
+    font-size: 0.7rem;
+}
+
+.button_pet_more {
+    padding: 7px 11px;
+    margin: 0 10px;
+    color: gray;
+    background: none;
+    border-radius: 8px;
+    border: none;
+}
+
+.button_pet_more:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.button_pet_more:active {
+    outline: none;
+    box-shadow: none;
+    color: black;
+}
+
+#profile_img_form {
+    display: none;
+}
+
+
+#sidebar_list
+{
+    border-bottom: dotted 1px #333333;
+   padding-bottom: 30px;
+}
+
+#profile_wrap {
+    padding-top: 30px;
+}
+
+#sidebar_list a
+{
+    text-decoration: none;
+    color: #333333;
+    /*font-family: 'Caveat', sans-serif;*/
+    /*font-family: 'Courgette', sans-serif;*/
+    font-family: 'Volkhov', sans-serif;
+       font-size: 1.5em;
+    padding-left: 15px;
+    padding-right: 10px;
+    /*border-right: solid 1px #333333;*/
+}
+
+#sidebar_list a:hover
+{
+    text-decoration: none;
+    color: #0D3349;
+    font-size: 1.7em;
+
+}
+
+#col-diary_title {
+    left: -60px;
+}
+
+#sidebar_wrap {
+    padding-top: 20px;
+}
+
+#row-col-diary_title {
+    border-top: dotted 1px #333333;
+    padding-top: 10px;
+}
+
+#name_div_long, #tel_div_long, #email_div_long {
+    padding-left: 50px;
 }

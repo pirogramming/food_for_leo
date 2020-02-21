@@ -1,18 +1,76 @@
-{% load bootstrap3 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-{% bootstrap_messages %}
+<!-- Load CSS -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'mypage/pet_detail.css' %}">
+
+<!-- Bootstrap CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Poor+Story&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <p>name: {{ pet.name }}</p>
-    <p>kind: {{ pet.kind }}</p>
-    <p>img:
-        {% if pet.img %}
-        <img src="{{ pet.img.url }}" alt="no image" width="100px">
-        {% endif %}</p>
-    <p>info: {{ pet.petInfo }}</p>
+<div class="container" id="pet_detail_superwrap">
+    <!--LOGO-->
+    <div class="row" id="pet_detal-row1">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="pet_detail_logo">My Pets</div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
 
+    <div class="row" id="pet_detal-row2">
+        <div class="col-md-1"></div>
+        <!--PET IMAGE-->
+        <div class="col-md-5" id="pet_detail-imgWrap">
+            <div class="pet_detail-img">
+                {% if pet.img %}
+                    <img class="pd-img" src="{{ pet.img.url }}">
+                {% endif %}
+                {% if not pet.img %}
+                    <img class="pd-img" src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/2076503/910/607/m1/fpnw/wm0/dog_cm-.jpg?1483086484&s=b6fc5adc727b1f892beeea285638feba">
+                {% endif %}
+            </div>
+        </div>
 
-<a href="{% url 'mypage:pet' %}">펫 목록</a> <br>
-<a href="{% url 'mypage:pet_update' pk %}">펫 수정</a> <br>
-<a href="{% url 'mypage:pet_delete' pk %}">펫 삭제</a> <br>
+        <!--PET CONTENT-->
+        <div class="col-md-5" id="pet_detail-contents">
+            <div class="pet_detail-name">
+                {{ pet.name }}
+            </div>
+            <div class="pet_detail-kind">
+                {{ pet.kind }}
+            </div>
+            <pre class="pet_detail-info">{{ pet.petInfo }}</pre>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <!--PET CRUD-->
+    <div class="row" id="pet_detal-row3">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" id="pet_detail-crud">
+            <div class="pet_detail-crud">
+                <a class="pet_detail-list" href="{% url 'mypage:pet_list' %}">list</a>
+                <a class="pet_detail-update" href="{% url 'mypage:pet_update' pk %}">edit</a>
+                <a class="pet_detail-delete" href="{% url 'mypage:pet_delete' pk %}">delete</a>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+</div>

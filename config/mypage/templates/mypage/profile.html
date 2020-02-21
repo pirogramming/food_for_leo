@@ -2,12 +2,20 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'mypage/profile.css' %}">
 <link rel="stylesheet" href="{% static 'mypage/diary_brief.css' %}">
+<link rel="stylesheet" href="{% static 'mypage/pet_brief.css' %}">
 
 <!-- Bootstrap CDN -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <!-- Django-Bootstrap4 -->
 {% load bootstrap4 %}
@@ -18,18 +26,21 @@
 <!-- JQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Google Fonts -->
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Volkhov&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=latin-ext" rel="stylesheet">
 
+<!-- Buttons -->
 
 <!-- Main Code Starts -->
 
 <div id="top_wrap">
     <div id="profile_img_background_wrap">
         {% if user.profile.img %}
-            <img src="{{ user.profile.img.url }}" id="profile_img_background" />
+            <img src="{{ user.profile.img.url }}" id="profile_img_background"/>
         {% endif %}
     </div>
 
@@ -38,7 +49,7 @@
             <div class="col-md-3" id="profile_img">
                 {% if user.profile.img %}
                     <div id="img_text_wrap">
-                        <label for="id_img"><img src="{{ user.profile.img.url }}" id="profile_img_main" /></label>
+                        <label for="id_img"><img src="{{ user.profile.img.url }}" id="profile_img_main"/></label>
                         <p class="profile_change_text">프로필 사진 바꾸기</p>
                     </div>
                 {% endif %}
@@ -53,38 +64,51 @@
 </div>
 
 <script>
-$('#img_text_wrap').mouseover(function() {
-  $('.profile_change_text').css("visibility","visible");
-  $('#profile_img_main').css("filter","brightness(50%)");
-});
+    $('#img_text_wrap').mouseover(function () {
+        $('.profile_change_text').css("visibility", "visible");
+        $('#profile_img_main').css("filter", "brightness(50%)");
+    });
 
-$('#img_text_wrap').mouseout(function() {
-  $('.profile_change_text').css("visibility","hidden");
-  $('#profile_img_main').css("filter","brightness(100%)");
-});
+    $('#img_text_wrap').mouseout(function () {
+        $('.profile_change_text').css("visibility", "hidden");
+        $('#profile_img_main').css("filter", "brightness(100%)");
+    });
 </script>
 
 <div class="container" id="profile_bottom_container">
+    <div id="sidebar_list">
+
+        <a class="sidebar_list-profile" href="{% url 'mypage:profile' %}">My Page</a>
+        <a class="sidebar_list-pet" href="{% url 'mypage:pet_list' %}">My Pets</a>
+        <a class="sidebar_list-diary" href="{% url 'mypage:diary_list' %}">Diary</a>
+        <a class="sidebar_list-favorites" href="{% url 'mypage:favorites' %}">Wish List</a>
+    </div>
+
     <div class="row" style="display: flex; justify-content: center">
-        <div class="col-md-6" id="profile_wrap">
+
+        <div class="col-md-8" id="profile_wrap">
             <div class="row" id="profile_name_row">
                 <div class="col-md-3" id="name_div">이름</div>
                 <div class="col-md-9" id="name_div_long">
-                    {{ user.profile.name }}
-                    <button class="button_change" type="button" data-toggle="collapse" data-target="#name_update" aria-expanded="false" aria-controls="collapseExample">
-                        변경하기
-                    </button>
+                    <div style="display: flex; justify-content: space-between">
+                        <div>{{ user.profile.name }}</div>
+                        <div>
+                            <button class="button_change" type="button" data-toggle="collapse"
+                                    data-target="#name_update" aria-expanded="false" aria-controls="collapseExample">
+                                변경하기
+                            </button>
+                        </div>
+                    </div>
                     <div class="collapse" id="name_update">
                         <div class="collapse_div">
                             <form action="{% url 'mypage:name_update' %}" method="POST">
-                            {% csrf_token %}
-                                <div class="form-group row">
+                                {% csrf_token %}
+                                <div class="form-group row" style="display: flex; justify-content: space-between">
                                     <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="input_Name" name="name_update">
+                                        <input type="text" class="form-control" id="input_Name" name="name_update">
                                     </div>
-
                                     <div class="col-sm-2">
-                                    <button type="submit" class="button_submit">변경</button>
+                                        <button type="submit" class="button_submit">변경</button>
                                     </div>
                                 </div>
                             </form>
@@ -95,20 +119,25 @@ $('#img_text_wrap').mouseout(function() {
             <div class="row" id="profile_email_row">
                 <div class="col-md-3" id="email_div">이메일</div>
                 <div class="col-md-9" id="email_div_long">
-                    {{ user.profile.email }}
-                    <button class="button_change" type="button" data-toggle="collapse" data-target="#email_update" aria-expanded="false" aria-controls="collapseExample">
-                        변경하기
-                    </button>
+                    <div style="display: flex; justify-content: space-between">
+                        <div>{{ user.profile.email }}</div>
+                        <div>
+                            <button class="button_change" type="button" data-toggle="collapse"
+                                    data-target="#email_update" aria-expanded="false" aria-controls="collapseExample">
+                                변경하기
+                            </button>
+                        </div>
+                    </div>
                     <div class="collapse" id="email_update">
                         <div class="collapse_div">
                             <form action="{% url 'mypage:email_update' %}" method="POST">
-                            {% csrf_token %}
-                                <div class="form-group row">
+                                {% csrf_token %}
+                                <div class="form-group row" style="display: flex; justify-content: space-between">
                                     <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="input_Email" name="email_update">
+                                        <input type="email" class="form-control" id="input_Email" name="email_update">
                                     </div>
                                     <div class="col-sm-3">
-                                    <button type="submit" class="button_submit">변경</button>
+                                        <button type="submit" class="button_submit">변경</button>
                                     </div>
                                 </div>
                             </form>
@@ -119,20 +148,25 @@ $('#img_text_wrap').mouseout(function() {
             <div class="row" id="profile_tel_row">
                 <div class="col-md-3" id="tel_div">휴대전화</div>
                 <div class="col-md-9" id="tel_div_long">
-                    {{ user.profile.tel }}
-                    <button class="button_change" type="button" data-toggle="collapse" data-target="#tel_update" aria-expanded="false" aria-controls="collapseExample">
-                        변경하기
-                    </button>
+                    <div style="display: flex; justify-content: space-between">
+                        <div>{{ user.profile.tel }}</div>
+                        <div>
+                            <button class="button_change" type="button" data-toggle="collapse" data-target="#tel_update"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                변경하기
+                            </button>
+                        </div>
+                    </div>
                     <div class="collapse" id="tel_update">
                         <div class="collapse_div">
                             <form action="{% url 'mypage:tel_update' %}" method="POST">
-                            {% csrf_token %}
-                                <div class="form-group row">
+                                {% csrf_token %}
+                                <div class="form-group row" style="display: flex; justify-content: space-between">
                                     <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="input_Tel" name="tel_update">
+                                        <input type="text" class="form-control" id="input_Tel" name="tel_update">
                                     </div>
                                     <div class="col-sm-3">
-                                    <button type="submit" class="button_submit">변경</button>
+                                        <button type="submit" class="button_submit">변경</button>
                                     </div>
                                 </div>
                             </form>
@@ -141,33 +175,47 @@ $('#img_text_wrap').mouseout(function() {
                 </div>
             </div>
         </div>
-        <div class="col-md-2" id="sidebar_wrap">
-            <div class="list-group" id="sidebar_list">
-              <a href="{% url 'mypage:profile' %}" class="list-group-item list-group-item-action active">
-                마이 페이지
-              </a>
-              <a href="{% url 'mypage:pet_list'%}" class="list-group-item list-group-item-action">애완동물 관리</a>
-              <a href="{% url 'mypage:diary_list' %}" class="list-group-item list-group-item-action">다이어리</a>
-              <a href="{% url 'mypage:favorites'%}" class="list-group-item list-group-item-action">찜한 상품</a>
+
+    </div>
+</div>
+</div>
+
+
+<div class="container" style="margin-top: 30px">
+    <div class="row" id="row-col-diary_title">
+        <div class="col-sm-2"></div>
+        <div class="col-md-10" style="display: flex; flex-direction: row">
+            <div class="diary_title">Diary</div>
+            <div style="display: flex; align-items: flex-end">
+                <div class="diary_subtitle_text-muted">Recent</div>
+            </div>
+            <div style="display: flex; align-items: flex-end">
+                <div class="diary_more">
+                    <a href="{% url 'mypage:diary_list' %}" class="button_diary_more">More ></a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="profile_img_form">
-    <h2>프로필 사진 등록</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ profile_form.as_p }}
-        <input type="submit" value="저장하기" class="btn btn-primary"/>
-    </form>
-</div>
-
-    <p><a href="{% url 'mypage:create_pet' %}">펫 등록하기</a></p>
-    <p><a href="{% url 'mypage:pet_info' %}">펫 정보보기</a></p>
-
 {% include 'mypage/diary_brief.html' %}
 
+
+<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-md-10" style="display: flex; flex-direction: row">
+            <div class="pet_title">My Pets</div>
+            <div style="display: flex; align-items: flex-end">
+                <div class="pet_more">
+                    <a href="{% url 'mypage:pet_list' %}" class="button_pet_more">More ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'mypage/pet_brief.html' %}
 
 
 <div id="profile_img_form">
@@ -176,7 +224,13 @@ $('#img_text_wrap').mouseout(function() {
         {% csrf_token %}
         {{ form.img }}
         <button type="submit" id="img_form_submit" class="button_submit">
-        Submit
+            Submit
         </button>
     </form>
 </div>
+
+<script>
+    $("#id_img").change(function () {
+        jQuery('.form').submit();
+    })
+</script>

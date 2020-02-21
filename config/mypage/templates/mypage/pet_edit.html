@@ -4,14 +4,13 @@
 {% bootstrap_messages %}
 
 
-<form action="{% url 'mypage:create_diary' %}" method="POST" enctype="multipart/form-data">
+<form action="{% url 'mypage:pet_update' pk %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
         <button type="submit" class="btn btn-primary">
-        다이어리 등록 {% bootstrap_icon "pencil" %}
+        pet 수정 {% bootstrap_icon "pencil" %}
         </button>
         {% endbuttons %}
 </form>
-
 

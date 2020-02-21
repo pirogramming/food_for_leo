@@ -1,15 +1,71 @@
-<div class="diary_detail">
-    <h5>title : {{ diary.title }}</h5>
-    <p>content : </p>
-    <p>{{ diary.content }}</p>
-    <p>author : {{ diary.author }}</p>
-    <p>created at : {{ diary.created_at }}</p>
-    <p>img :</p>
-    {% if diary.img %}
-        <img src="{{ diary.img.url }}" alt="no image" width="100px">
-    {% endif %}
-</div>
+<!-- Load CSS -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'mypage/diary_detail.css' %}">
 
-<a href="{% url 'mypage:diary_list' %}">다이어리 목록</a> <br>
-<a href="{% url 'mypage:update_diary' pk %}">다이어리 수정</a> <br>
-<a href="{% url 'mypage:delete_diary' pk %}">다이어리 삭제</a> <br>
+<!-- Bootstrap CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Lobster|Nanum+Gothic|Nanum+Gothic+Coding|Pattaya&display=swap"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic|Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poor+Story&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Poor+Story&display=swap" rel="stylesheet">
+
+
+<div class="container" id="superwrap">
+    <div class="row" id="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" id="diary_detail_wrap">
+
+            <div class="diary_detail-top">
+                <div class="diary_detail_logo">Diary</div>
+                <div class="diary_detail-author">
+                    {{ diary.author }}
+                </div>
+                <div class="diary_detail-created" style="display: flex; flex-direction: column">
+                    <div>{{ diary.created_at|date:"Y.m.d (D)" }}</div>
+                    <div>{{ diary.created_at|date:"P" }}</div>
+                </div>
+            </div>
+            <div class="diary_detail-body">
+                <div class="diary_detail-title">
+                    {{ diary.title }}
+                </div>
+                <div class="diary_detail-img">
+                    {% if diary.img %}
+                        <p><img class="dd-img" src="{{ diary.img.url }}"></p>
+                    {% endif %}
+                    {% if not diary.img %}
+                        <p><img src="https://cdn1.iconfinder.com/data/icons/personal-business-finance-4-2/64/x-10-512.png" class="dd-img"></p>
+                    {% endif %}
+                </div>
+                <div class="diary_detail-content">
+                    <pre>{{ diary.content }}</pre>
+                </div>
+            </div>
+
+            <div class="diary_detail-crud">
+                <a class="diary_detail-list" href="{% url 'mypage:diary_list' %}">list</a>
+                <a class="diary_detail-update" href="{% url 'mypage:update_diary' pk %}">edit</a>
+                <a class="diary_detail-delete" href="{% url 'mypage:delete_diary' pk %}">delete</a>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
