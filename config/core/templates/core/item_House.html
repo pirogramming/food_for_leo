@@ -75,7 +75,7 @@
     }
 
     .item-list {
-
+        padding:30px 15px;
     }
 
     .col {
@@ -117,21 +117,19 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
+    .pagination-container{
+        text-align: center;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
 </style>
 
 <script type="text/javascript">
     $('.itemName').tooltip({track: true});
 </script>
 
-<script type="text/javascript">
-    var count = 0;
-    window.onscroll = function (e) {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            count++;
-            var addContent = '<div id="product-container"><div>'
-        }
-    }
-</script>
 
 <body>
 {% include "core/base.html" %}
@@ -166,8 +164,30 @@
                 </div>
             {% endfor %}
         </div>
+        
+        <!--pagination-->
+        {% if items.has_other_pages %}
+        <ul class="pagination-container">
+            {% if items.has_previous %}
+            <li><a href="?page={{ items.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in items.paginator.page_range %}
+            {% if items.number == i %}
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+            <li><a href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if items.has_next %}
+            <li><a href="?page={{ items.next_page_number }}">&raquo;</a></li>
+            {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
     </div>
 </div>
-
-
 </body>

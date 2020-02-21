@@ -197,12 +197,13 @@
 
         <div class="content_down">
             {% for foo in product_all %}
-                <div class="content_down_items"><a
-                            href="{% url "core:product_detail" foo.pk %}">
+                <div class="content_down_items">
+                    <a href="{% url "core:product_detail" foo.pk %}">
                     <div class="content_down_items_img"><img src="{{ foo.img_main }}" style="width:80%;" alt=""></div>
-                    <div class="content_down_items_name" title="{{foo.name}}"> {{ foo.name }}</a></div>
+                    <div class="content_down_items_name" title="{{foo.name}}"> {{ foo.name }}</div>
                     <div class="content_down_items_madein">{{ foo.made_in }}</div>
                     <div class="content_down_items_price">가격:{{ foo.price }}</div>
+                    </a>
                 </div>
             {% endfor %}
         </div>
