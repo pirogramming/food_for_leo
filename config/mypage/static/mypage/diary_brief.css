@@ -27,12 +27,18 @@
     font-family: 'Jua', sans-serif;
     font-size: 1.2rem;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .card-text {
     height: 6.0rem;
     font-size: 1rem;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .card-link {

@@ -27,18 +27,27 @@
     font-family: 'Jua', sans-serif;
     font-size: 1.2rem;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .pet_kind_text {
     height: 1rem;
     font-size: 0.8rem;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .pet_card-text {
     height: 6.0rem;
     font-size: 1rem;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .pet_card-link {

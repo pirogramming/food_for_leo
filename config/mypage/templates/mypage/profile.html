@@ -161,9 +161,9 @@ $('#img_text_wrap').mouseout(function() {
         <div class="col-sm-2"></div>
         <div class="col-md-10" style="display: flex; flex-direction: row">
             <div class="diary_title">Diary</div>
-            <div style="display: flex; align-items: flex-end"><div class="diary_subtitle text-muted">최근 3개</div></div>
+            <div style="display: flex; align-items: flex-end"><div class="diary_subtitle text-muted">Recent</div></div>
             <div style="display: flex; align-items: flex-end"><div class="diary_more">
-                <a href="{% url 'mypage:diary_list' %}" class="button_diary_more">지난 글 더 보기</a>
+                <a href="{% url 'mypage:diary_list' %}" class="button_diary_more">More</a>
             </div></div>
         </div>
     </div>
@@ -178,7 +178,7 @@ $('#img_text_wrap').mouseout(function() {
         <div class="col-md-10" style="display: flex; flex-direction: row">
             <div class="pet_title">My Pets</div>
             <div style="display: flex; align-items: flex-end"><div class="pet_more">
-                <a href="{% url 'mypage:pet_list' %}" class="button_pet_more">반려동물 더 보기</a>
+                <a href="{% url 'mypage:pet_list' %}" class="button_pet_more">More</a>
             </div></div>
         </div>
     </div>
@@ -198,3 +198,9 @@ $('#img_text_wrap').mouseout(function() {
         </button>
     </form>
 </div>
+
+<script>
+    $("#id_img").change(function(){
+        jQuery('.form').submit();
+    })
+</script>

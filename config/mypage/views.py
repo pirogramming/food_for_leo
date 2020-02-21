@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db import transaction
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
@@ -141,7 +142,19 @@ def pet_delete(request, pk):
 
 @login_required
 def diary_list(request):
-    return render(request, 'mypage/diary_list.html')
+    diaries = Diary.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(diaries, 3)
+    try:
+        diarys = paginator.page(page)
+    except PageNotAnInteger:
+        diarys = paginator.page(1)
+    except EmptyPage:
+        diarys = paginator.page(paginator.num_pages)
+
+    return render(request, 'mypage/diary_list.html', {
+        'diarys':diarys,
+    })
 
 
 @login_required

@@ -33,7 +33,7 @@ div {
 }
 
 #img_text_wrap {
-    width: 182px; height: 182px;
+    width: 180px; height: 180px;
     border-radius: 100%;
     position: relative;
 }
@@ -162,6 +162,7 @@ div {
     font-size: 2rem;
     font-weight: bold;
     font-family: 'Lobster', sans-serif;
+    margin-right: 5px;
 }
 
 .pet_more {
@@ -185,4 +186,8 @@ div {
 .button_pet_more:active{
     outline: none;
     box-shadow: none;
+}
+
+#profile_img_form {
+    display: none;
 }
