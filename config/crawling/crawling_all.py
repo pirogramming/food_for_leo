@@ -2,7 +2,6 @@ import os
 from bs4 import BeautifulSoup
 
 
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
@@ -16,11 +15,6 @@ from crawling.mall3_crawling import *
 
 from core.models import *
 import time
-
-
-
-
-
 
 
 if __name__ == '__main__':

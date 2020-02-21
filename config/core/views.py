@@ -5,15 +5,14 @@ from django.core.paginator import PageNotAnInteger, Paginator, EmptyPage
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
-
 django.setup()
 
 from django.contrib import auth
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from django.core.serializers import json
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 
@@ -537,10 +536,13 @@ def delete_account(request):
             context.update({'error': "입력하신 비밀번호가 일치하지 않습니다."})
     return render(request, 'core/delete_account.html', context)
 
+#
+# def brand_like(request):
+#     return HttpResponse(json.dumps(context), content_type='application/json')
 
 @login_required
 @require_POST
-def like(request):
+def product_likeeeee(request):
     if request.method == 'POST':
         profile = request.user.profile  # 로그인한 유저의 프로필을 가져온다.
         product_id = request.POST.get('pk', None)
@@ -556,6 +558,21 @@ def like(request):
         return HttpResponse(json.dumps(context), content_type='application/json')
         # dic 형식을 json 형식으로 바꾸어 전달한다.
 
+@require_POST
+def product_like(request):
+    pk = request.POST.get("pk")
+    item = get_object_or_404(Product, pk=pk)
+    if item.likes == None:
+        item.likes = 1
+    elif item.likes == 0:
+        item.likes = 1
+    else:
+        item.likes = 0
+    item.save()
+    ctx = {
+        "likes": item.likes,
+    }
+    return JsonResponse(ctx)
 
 def logout(request):
     auth.logout(request)

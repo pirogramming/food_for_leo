@@ -14,12 +14,10 @@ urlpatterns = [
     path('sign_up', sign_up, name='sign_up'),
     path('account/delete/', delete_account, name='delete_account'),
     path('product/detail/<int:pk>', product_detail, name='product_detail'),
-    path('like/', like, name='like'),  #여기 <int:pk>/ 들어가는지 아닌지 모르겠...ㅎㅎ
-
-    path('result/',search_result, name="search_result"),
-    path('brand/detail/<int:pk>',brand_detail, name='brand_detail'),
+    path('product/likes/', product_like, name="product_like"),
+    path('result/', search_result, name="search_result"),
+    path('brand/detail/<int:pk>', brand_detail, name='brand_detail'),
     path('brand_page', brand_page, name='brand_page'),
-    path('item_house', item_House,name="item_House")
-
+    path('item_house', item_House, name="item_House"),
 
 ]
