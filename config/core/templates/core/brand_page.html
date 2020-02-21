@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,6 +6,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" href="../../static/css/product_detail_search.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
     <title>Document</title>
     <style>
         a {
@@ -21,6 +43,7 @@
         .whole_wrapper {
             padding-top: 20vh;
         }
+
         .middle_img {
             width: 100vw;
             background-image: url("http://www.hearthstonehomemade.com/images/0-Dog-Not-Eating-635.jpg");
@@ -29,6 +52,7 @@
             background-position: center center;
             height: 50vh;
         }
+
         .middle_img_cover {
             object-fit: cover;
             width: 100vw;
@@ -39,24 +63,19 @@
             justify-content: center;
             align-items: center;
         }
-        .middle_img_cover_search {
-            width: 500px;
-        }
-
-        input.form-control {
-            width: 500px;
-            height: 50px;
-            background: white;
-            opacity: 50%;
-            border-radius: 30px;
-        }
 
         .middle_img_cover_content {
             color: white;
-            margin-bottom: 30px;
+
             text-space: 2px;
             opacity: 80%;
+            text-align: center;
+        }
 
+        .search_bar {
+            width: 30%;
+            height: 20%;
+            margin-left: 10%;
         }
 
         .content {
@@ -112,7 +131,6 @@
         }
 
 
-
     </style>
 
 </head>
@@ -123,14 +141,24 @@
     <div class="middle_img">
         <div class="middle_img_cover">
             <div class="middle_img_cover_content">
-                <h2>
-                    한 해 발생하는 유기동물 수 97,852마리<br/>
-                    그 중 73%인 68,140마리는 유기견</h2>
-                반려동물 사지말고 입양하세요
+                <h1>BRANDS</h1>
             </div>
-            <div class="middle_img_cover_search">
-                <input class="form-control" type="search" id="search">
-                <ul class="list-group" id="result"></ul>
+            <div class="search_bar" style="display: flex; flex-direction: row; position: relative">
+
+                <form action="{% url "core:search_result" %}" method="GET" autocomplete="off">
+                    <fieldset class="url">
+                        <input id="url" class="search" type="text" name="q" value="{{ q }}" required>
+                        <div class="search_list">
+                            <ul class="list-group" id="result">
+                            </ul>
+                        </div>
+                        <label for="url"><i class="fa fa-search" aria-hidden="true"></i> Search</label>
+                        <div class="after"></div>
+                    </fieldset>
+                    <fieldset class="enter">
+                        <button></button>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
@@ -166,7 +194,7 @@
             </div>
         </div>
         <div class="content_down">
-            {% for foo in product_all %}
+            {% for foo in items %}
                 <div class="content_down_items">
                     <div class="content_down_items_img"><img src="{{ foo.img_main }}" style="width:80%;" alt=""></div>
                     <div class="content_down_items_name">가격: <a
@@ -178,8 +206,27 @@
         </div>
     </div>
 </div>
-<h3><a href="{% url 'core:home' %}">home</a></h3>
-<h3><a href="{% url 'mypage:profile' %}">mypage</a></h3>
-</div>
+<!--pagination-->
+{% if items.has_other_pages %}
+    <ul class="pagination-container">
+        {% if items.has_previous %}
+            <li><a href="?page={{ items.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+        {% for i in items.paginator.page_range %}
+            {% if items.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if items.has_next %}
+            <li><a href="?page={{ items.next_page_number }}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+        {% endif %}
+    </ul>
+{% endif %}
 </body>
 </html>

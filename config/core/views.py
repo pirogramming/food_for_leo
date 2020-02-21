@@ -1,7 +1,7 @@
 import os
 import sys
 
-from django.core.paginator import PageNotAnInteger, Paginator
+from django.core.paginator import PageNotAnInteger, Paginator, EmptyPage
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 import django
@@ -72,7 +72,7 @@ def keyword_detail(products):
             if product_include == 'president':
                 mall3 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[3] = 1
-            print(check)
+
         for i in range(4):
             if check[i] == 0:
                 if i == 0:
@@ -165,8 +165,6 @@ def similarity_test(products, mallCount):
 
 
 def brand_page(request):
-    brand_all = Brand.objects.all()
-    product_all = Product.objects.all()
     brands_mall1 = []
     brands_mall2 = []
     brands_mall3 = []
@@ -176,11 +174,21 @@ def brand_page(request):
     brands_mall2 += Brand.objects.filter(malls__name="QueenNPuppy").all()
     brands_mall3 += Brand.objects.filter(malls__name="kingdom").all()
     brands_mall4 += Brand.objects.filter(malls__name="president").all()
+    itemsAll=list(Product.objects.all())[:50]
+    random.shuffle(itemsAll)
+    page = request.GET.get('page', 1)
+    paginator = Paginator(itemsAll, 16)
+    try:
+        items = paginator.page(page)
+    except PageNotAnInteger:
+        items = paginator.page(1)
+    except EmptyPage:
+        items = paginator.page(paginator.num_pages)
 
     return render(request, "core/brand_page.html", {
-        "brand_all": brand_all,
-        "product_all": product_all,
-        "brands_mall1": brands_mall1,
+        "itemsAll_random" : itemsAll,
+        "items":items,
+        "brands_mall1":brands_mall1,
         "brands_mall2": brands_mall2,
         "brands_mall3": brands_mall3,
         "brands_mall4": brands_mall4,
@@ -200,11 +208,10 @@ def product_detail(request, pk):
     brands_mall4 += Brand.objects.filter(malls__name="president").all()
 
     certain_product = Product.objects.get(id=pk)
-    print(certain_product.id)
-    print(certain_product.mall)
+
     certain_product.name = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', certain_product.name).lower()
     certain_product.name = certain_product.name.replace('유기농', '').replace('플러스', '').replace('eco', "에코")
-    print(certain_product)
+
     product_all = Product.objects.all()
     for i in product_all:
         i.name = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', i.name).lower()
@@ -223,7 +230,7 @@ def product_detail(request, pk):
     mall3 = ['president']
     for sameProducts in product_list:
         check = [0, 0, 0, 0]
-        print(sameProducts)
+
         chart_index_1 += [Product.objects.get(id=sameProducts[0]).name]
         for j in range(len(sameProducts)):
             product_include = str(Product.objects.get(id=sameProducts[j]).mall)
@@ -240,7 +247,7 @@ def product_detail(request, pk):
             if product_include == 'president':
                 mall3 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[3] = 1
-        print(check)
+
         for i in range(4):
             if check[i] == 0:
                 if i == 0:
@@ -253,9 +260,14 @@ def product_detail(request, pk):
                     mall3.append(0)
     mall_length = len(product_list)
     final_result_revised = []
+    final_result_revised_stock_check=0
     for i in product_list[0]:
         final_result_revised.append(Product.objects.get(id=i))
     final_result_revised_detail = final_result_revised[0].img_detail
+    for i in final_result_revised:
+        if i.stock!=0:
+            final_result_revised_stock_check=1
+
 
     return render(request, 'core/product_detail.html', {
         'chart_index_1': chart_index_1,
@@ -270,6 +282,7 @@ def product_detail(request, pk):
         "brands_mall3": brands_mall3,
         "brands_mall4": brands_mall4,
         'final_result_revised_detail': final_result_revised_detail,
+        'final_result_revised_stock_check' : final_result_revised_stock_check,
     })
 
 
@@ -305,7 +318,10 @@ def brand_detail(request, pk):
     all_product = products_mall1 + products_mall2 + products_mall3 + products_mall4
 
     final_result = similarity_test(all_product, 4)
-
+    final_result_sort = {}
+    for i in range(len(final_result)):
+        final_result_sort[str(final_result[i])] = len(final_result[i])
+    final_result = ["".join(list(i[0])[1:-1]).split(", ") for i in sorted(final_result_sort.items(), key=operator.itemgetter(1), reverse=True)]
     chart_index_1 = ["x"]
     mall0 = ["동물사랑APS"]
     mall1 = ["QueenNPuppy"]
@@ -330,7 +346,7 @@ def brand_detail(request, pk):
             if product_include == 'president':
                 mall3 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[3] = 1
-        print(check)
+
         for i in range(4):
             if check[i] == 0:
                 if i == 0:
