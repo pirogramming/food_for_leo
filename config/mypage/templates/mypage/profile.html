@@ -37,6 +37,9 @@
 
 <!-- Main Code Starts -->
 
+{% include "core/base.html" %}
+
+<div style="padding-top: 20vh">
 <div id="top_wrap">
     <div id="profile_img_background_wrap">
         {% if user.profile.img %}
@@ -63,17 +66,7 @@
     </div>
 </div>
 
-<script>
-    $('#img_text_wrap').mouseover(function () {
-        $('.profile_change_text').css("visibility", "visible");
-        $('#profile_img_main').css("filter", "brightness(50%)");
-    });
 
-    $('#img_text_wrap').mouseout(function () {
-        $('.profile_change_text').css("visibility", "hidden");
-        $('#profile_img_main').css("filter", "brightness(100%)");
-    });
-</script>
 
 <div class="container" id="profile_bottom_container">
     <div id="sidebar_list">
@@ -203,6 +196,7 @@
     </div>
 </div>
 
+
 {% include 'mypage/diary_brief.html' %}
 
 
@@ -221,7 +215,7 @@
 </div>
 
 {% include 'mypage/pet_brief.html' %}
-
+</div>
 
 <div id="profile_img_form">
     <h3>프로필 사진 등록/변경</h3>
@@ -233,6 +227,18 @@
         </button>
     </form>
 </div>
+
+<script>
+    $('#img_text_wrap').mouseover(function () {
+        $('.profile_change_text').css("visibility", "visible");
+        $('#profile_img_main').css("filter", "brightness(50%)");
+    });
+
+    $('#img_text_wrap').mouseout(function () {
+        $('.profile_change_text').css("visibility", "hidden");
+        $('#profile_img_main').css("filter", "brightness(100%)");
+    });
+</script>
 
 <script>
     $("#id_img").change(function () {
