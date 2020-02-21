@@ -58,6 +58,7 @@
             background-size: cover;
             background-position: center center;
             height: 50vh;
+            margin-bottom:30px;
 
         }
 
@@ -117,7 +118,7 @@
 
         #product-container {
             display: inline-block;
-            padding: 70px;
+            margin: 0 auto;
             overflow: auto;
         }
 
@@ -202,10 +203,10 @@
             {% for item in item_final %}
                 <div class="content_down_products_container_product">
                     <a href="{% url 'core:product_detail' item.pk %}">
-                            <div class="itemimg">
-                                <img src="{{ item.img_main }}" alt="" style="width:70%;">
-                            </div>
-                            <div class="itemName" title="{{item.name}}">{{ item.name }}</div>
+                        <div class="itemimg">
+                            <img src="{{ item.img_main }}" alt="" style="width:70%;">
+                        </div>
+                        <div class="itemName" title="{{ item.name }}">{{ item.name }}</div>
                     </a>
                 </div>
             {% endfor %}
@@ -215,56 +216,56 @@
 </body>
 <script>
     function fetchJsonFilter(val) {
-    var tags = [];
-    //brand name filtering
-    fetch('../../static/json/core_brand.json').then(function (response) {
-        response.text().then(function (text) {
-            var b_list = JSON.parse(text);
-            var show_brand = [];
-            b_list.filter(function (element, index, array) {
-                if (array[index].name.includes(val)) {
-                    console.log(array[index].name)
-                    show_brand.push(array[index]);
-                }
-            });
-            var brand=show_brand[0]
-            var brand_tag = '<li class="list-group-item"><a href="{% url "core:brand_detail" 111 %}">'.replace(111, brand.id) + show_brand[0].name + '</a></li>'
-            tags = tags + brand_tag
+        var tags = [];
+        //brand name filtering
+        fetch('../../static/json/core_brand.json').then(function (response) {
+            response.text().then(function (text) {
+                var b_list = JSON.parse(text);
+                var show_brand = [];
+                b_list.filter(function (element, index, array) {
+                    if (array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_brand.push(array[index]);
+                    }
+                });
+                var brand = show_brand[0]
+                var brand_tag = '<li class="list-group-item"><a href="{% url "core:brand_detail" 111 %}">'.replace(111, brand.id) + show_brand[0].name + '</a></li>'
+                tags = tags + brand_tag
+            })
         })
-    })
-    //product name filtering
-    fetch('../../static/json/core_product.json').then(function (response) {
-        response.text().then(function (text) {
-            var p_list = JSON.parse(text);
-            var show_product = [];
-            p_list.filter(function (element, index, array) { //필터링하기
-                if (array[index].name.includes(val)) {
-                    console.log(array[index].name)
-                    show_product.push(array[index]);
+        //product name filtering
+        fetch('../../static/json/core_product.json').then(function (response) {
+            response.text().then(function (text) {
+                var p_list = JSON.parse(text);
+                var show_product = [];
+                p_list.filter(function (element, index, array) { //필터링하기
+                    if (array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_product.push(array[index]);
+                    }
+                });
+                for (var i = 0; i < show_product.length; i++) {
+                    if (i > 1) {
+                        break
+                    } else {
+                        var product = show_product[i];
+                        var tag = '<li class="list-group-item"><a href="{% url "core:product_detail" 111 %}">'.replace(111, product.id) + product.name + '</a></li>'
+                        tags = tags + tag
+                    }
                 }
-            });
-            for (var i = 0; i < show_product.length; i++) {
-                if (i > 1) {
-                    break
-                } else {
-                    var product = show_product[i];
-                    var tag = '<li class="list-group-item"><a href="{% url "core:product_detail" 111 %}">'.replace(111, product.id) + product.name + '</a></li>'
-                    tags = tags + tag
-                }
-            }
-            document.querySelector('#result').innerHTML = tags;
+                document.querySelector('#result').innerHTML = tags;
+            })
         })
-    })
-}
-
-$('.search').on('keyup', function () {
-    var searchInput = $(this).val();
-    if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
-        document.querySelector('#result').innerHTML = []
-    } else {
-        fetchJsonFilter(searchInput)
     }
-});
+
+    $('.search').on('keyup', function () {
+        var searchInput = $(this).val();
+        if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
+            document.querySelector('#result').innerHTML = []
+        } else {
+            fetchJsonFilter(searchInput)
+        }
+    });
     var chart2 = bb.generate({
         data: {
             x: "x",

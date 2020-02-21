@@ -89,13 +89,14 @@
 
             text-space: 2px;
             opacity: 80%;
-            width:30%;
+            width: 30%;
             text-align: center;
         }
+
         .search_bar {
             width: 30%;
-            height:20%;
-            margin-left:10%;
+            height: 20%;
+            margin-left: 10%;
         }
 
         .content {
@@ -121,7 +122,7 @@
         .content_down_chart_container {
             width: 100%;
             display: flex;
-            margin:15px 0;
+            margin: 15px 0;
 
         }
 
@@ -137,13 +138,34 @@
 
         .content_down_chart_container_status {
             width: 50%;
+            height: 400px;
+            display: flex;
+            flex-direction: row;
+        }
+        .content_down_chart_container_status a{
+            text-decoration: none;
+            color:black;
+        }
+        .content_down_chart_container_status a:hover{
+            color:#808080;
+        }
 
-
+        .content_down_chart_container_status_mall {
+            width: 30%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            align-items: center;
-
+            text-align: center;
+        }
+        .hooah{
+            border-bottom: 1px  solid lightgray;
+            padding-bottom: 30px;
+        }
+        .content_down_chart_container_status_stock{
+            width:80%;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
 
         }
 
@@ -194,7 +216,7 @@
         <div class="middle_img_cover">
 
             <div class="middle_img_cover_content">
-                    <h1>PRODUCT</h1>
+                <h1>PRODUCT</h1>
             </div>
             <div class="search_bar" style="display: flex; flex-direction: row; position: relative">
                 <form action="{% url "core:search_result" %}" method="GET" autocomplete="off">
@@ -228,13 +250,39 @@
 
 
                 <div class="content_down_chart_container_status">
+
+                    <div class="content_down_chart_container_status_mall" >
+                        <div class="hooah" >쇼핑몰</div>
+                        {% for foo in final_result_revised %}
+                            <a href="{{ foo.product_url }}">
+                                <div class="content_down_chart_container_status_mall_context">
+                                    {{ foo.mall }}
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <div class="content_down_chart_container_status_mall">
+                    <div class="hooah">재고</div>
+                        {% for foo in final_result_revised %}
+                            <a href="{{ foo.product_url }}">
+                                <div class="content_down_chart_container_status_mall_context">
+                                    {{ foo.stock }}
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                <div class="content_down_chart_container_status_mall">
+                <div class="hooah">가격</div>
                     {% for foo in final_result_revised %}
-                        <a href="{{ foo.product_url }}">
-                            <div class="content_down_chart_container_status_1">
-                                쇼핑몰 : {{ foo.mall }} 재고 : {{ foo.stock }} 가격 : {{ foo.price }}
-                            </div>
-                        </a>
-                    {% endfor %}
+                            <a href="{{ foo.product_url }}">
+                                <div class="content_down_chart_container_status_mall_context">
+                                    {{ foo.price }}
+                                </div>
+                            </a>
+                        {% endfor %}
+                </div>
+
+
                 </div>
             </div>
             <div class="content_down_detail_container">
