@@ -1,0 +1,65 @@
+#diary_detail_wrap {
+    padding-top: 10px;
+}
+
+.diary_detail_logo {
+    font-family: 'Lobster', cursive;
+    font-size: 3em;
+    color: #473403;
+}
+
+.diary_detail-created, .diary_detail-author, .diary_detail-crud {
+    color: #4f4f4f;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+
+.diary_detail-title {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Do Hyeon';
+    padding: 10px 0;
+    border-bottom: #333333 dotted 1px;
+    border-top: #333333 solid 1px;
+    opacity: 90%;
+}
+
+
+.diary_detail-img {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.dd-img {
+    width: 75%;
+    height: auto;
+}
+
+
+.diary_detail-content {
+    padding: 0 30px 20px 30px;
+    font-size: 1.2em;
+    font-family: 'Poor Story';
+    font-family: 'Nanum Myeongjo';
+    border-bottom: black 1px solid;
+}
+
+.diary_detail-crud {
+    text-align: right;
+    padding-top: 20px;
+    font-size: 1.2em;
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+
+.diary_detail-crud a {
+    color: #333333;
+    border: 1px solid #333333;
+    border-radius: 35%;
+    padding: 3px 8px;
+}
+
+.diary_detail-crud a:hover {
+    text-decoration: none;
+    color: #473403;
+}

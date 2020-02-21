@@ -23,7 +23,9 @@
 <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=latin-ext" rel="stylesheet">
+
+<!-- Buttons -->
 
 <!-- Main Code Starts -->
 
@@ -144,12 +146,10 @@ $('#img_text_wrap').mouseout(function() {
         </div>
         <div class="col-md-2" id="sidebar_wrap">
             <div class="list-group" id="sidebar_list">
-              <a href="{% url 'mypage:profile' %}" class="list-group-item list-group-item-action active">
-                마이 페이지
-              </a>
-              <a href="{% url 'mypage:pet_list'%}" class="list-group-item list-group-item-action">애완동물 관리</a>
-              <a href="{% url 'mypage:diary_list' %}" class="list-group-item list-group-item-action">다이어리</a>
-              <a href="{% url 'mypage:favorites'%}" class="list-group-item list-group-item-action">찜한 상품</a>
+              <a href="{% url 'mypage:profile' %}" class="list-group-item list-group-item-action active">My Page</a>
+              <a href="{% url 'mypage:pet_list'%}" class="list-group-item list-group-item-action">My Pets</a>
+              <a href="{% url 'mypage:diary_list' %}" class="list-group-item list-group-item-action">Diary</a>
+              <a href="{% url 'mypage:favorites'%}" class="list-group-item list-group-item-action">Wish List</a>
             </div>
         </div>
     </div>
@@ -160,10 +160,10 @@ $('#img_text_wrap').mouseout(function() {
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-md-10" style="display: flex; flex-direction: row">
-            <div class="diary_title">다이어리</div>
+            <div class="diary_title">Diary</div>
             <div style="display: flex; align-items: flex-end"><div class="diary_subtitle text-muted">최근 3개</div></div>
             <div style="display: flex; align-items: flex-end"><div class="diary_more">
-                <a href="{% url 'mypage:diary_list' %}">지난 글 더 보기</a>
+                <a href="{% url 'mypage:diary_list' %}" class="button_diary_more">지난 글 더 보기</a>
             </div></div>
         </div>
     </div>
@@ -176,8 +176,10 @@ $('#img_text_wrap').mouseout(function() {
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-md-10" style="display: flex; flex-direction: row">
-            <div class="pet_title">반려동물</div>
-            <div class="pet_more">반려동물 더 보기</div>
+            <div class="pet_title">My Pets</div>
+            <div style="display: flex; align-items: flex-end"><div class="pet_more">
+                <a href="{% url 'mypage:pet_list' %}" class="button_pet_more">반려동물 더 보기</a>
+            </div></div>
         </div>
     </div>
 </div>

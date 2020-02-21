@@ -6,7 +6,6 @@
 
 div {
     box-sizing: border-box;
-    border: black 1px solid;
 }
 
 #top_wrap {
@@ -75,6 +74,14 @@ div {
     border-radius: 10px;
     background-color: #D09E88;
     color: white;
+    font-size: 0.8rem;
+    box-shadow: 2px 2px #754F44;
+}
+
+.button_change:active{
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
 }
 
 .button_submit {
@@ -82,8 +89,19 @@ div {
     border-radius: 10px;
     background-color: #754F44;
     color: white;
+    font-size: 0.8rem;
+    box-shadow: 2px 2px black;
 }
 
+.button_submit:active {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#input_Name, #input_Email, #input_Tel {
+    box-shadow: 1px 1px 1px black;
+}
 
 #profile_name_row, #profile_tel_row {
     border: black 1px solid;
@@ -103,24 +121,68 @@ div {
 #name_div, #email_div, #tel_div {
     border-right: black 1px solid;
     padding-top: 6px;
+    font-weight: bold;
 }
 
 .diary_title {
     font-size: 2rem;
     font-weight: bold;
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Lobster', sans-serif;
+    margin-right: 10px;
 }
 
 .diary_subtitle {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .diary_more {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+}
+
+.button_diary_more{
+    padding: 7px 11px;
+    margin: 0 10px;
+    color: white;
+    background-color: #a3a1a1;
+    border-radius: 8px;
+    box-shadow: 2px 2px 1px black;
+}
+
+.button_diary_more:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.button_diary_more:active{
+    outline: none;
+    box-shadow: none;
 }
 
 .pet_title {
     font-size: 2rem;
     font-weight: bold;
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Lobster', sans-serif;
+}
+
+.pet_more {
+    font-size: 0.7rem;
+}
+
+.button_pet_more{
+    padding: 7px 11px;
+    margin: 0 10px;
+    color: white;
+    background-color: #a3a1a1;
+    border-radius: 8px;
+    box-shadow: 2px 2px 1px black;
+}
+
+.button_pet_more:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.button_pet_more:active{
+    outline: none;
+    box-shadow: none;
 }
