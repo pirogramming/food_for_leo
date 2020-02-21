@@ -6,6 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!--tooltip CDN-->
+<link type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+<script type="text/javascript">
+    $(".content_down_items_name").tooltip({track:true});
+</script>
+
     <style>
         a {
             text-decoration: none;
@@ -100,17 +111,34 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 15px;
         }
 
         .content_down_items {
             width: 24%;
-
+            margin-bottom: 15px;
         }
 
         .content_down_items_img {
             width: 100%;
+            text-align: center;
+
+            transform: scale(1.0);
+            transition: transform .5s;
         }
 
+        .content_down_items_img:hover{
+            transform: scale(1.1);
+            transition: transform .5s;
+        }
+
+        .content_down_items_name {
+            padding-top: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
 
     </style>
@@ -118,7 +146,6 @@
 </head>
 <body>
 {% include "core/base.html" %}
-
 <div class="whole_wrapper">
     <div class="middle_img">
         <div class="middle_img_cover">
@@ -165,14 +192,17 @@
                 {% endfor %}
             </div>
         </div>
+
+
+
         <div class="content_down">
             {% for foo in product_all %}
-                <div class="content_down_items">
+                <div class="content_down_items"><a
+                            href="{% url "core:product_detail" foo.pk %}">
                     <div class="content_down_items_img"><img src="{{ foo.img_main }}" style="width:80%;" alt=""></div>
-                    <div class="content_down_items_name">가격: <a
-                            href="{% url "core:product_detail" foo.pk %}">{{ foo.name }}</a></div>
+                    <div class="content_down_items_name" title="{{foo.name}}"> {{ foo.name }}</a></div>
                     <div class="content_down_items_madein">{{ foo.made_in }}</div>
-                    <div class="content_down_items_price">{{ foo.price }}</div>
+                    <div class="content_down_items_price">가격:{{ foo.price }}</div>
                 </div>
             {% endfor %}
         </div>

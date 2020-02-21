@@ -217,11 +217,8 @@ def product_detail(request,pk):
     brands_mall4 += Brand.objects.filter(malls__name="president").all()
 
     certain_product =Product.objects.get(id=pk)
-    print(certain_product.id)
-    print(certain_product.mall)
     certain_product.name = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', certain_product.name).lower()
     certain_product.name = certain_product.name.replace('유기농', '').replace('플러스', '').replace('eco',"에코")
-    print(certain_product)
     product_all =Product.objects.all()
     for i in product_all:
         i.name = re.sub('[-=+,#/\?:^$@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'… ]+', '', i.name).lower()
@@ -240,7 +237,6 @@ def product_detail(request,pk):
     mall3 = ['president']
     for sameProducts in product_list:
         check = [0, 0, 0, 0]
-        print(sameProducts)
         chart_index_1 += [Product.objects.get(id=sameProducts[0]).name]
         for j in range(len(sameProducts)):
             product_include = str(Product.objects.get(id=sameProducts[j]).mall)
@@ -257,7 +253,6 @@ def product_detail(request,pk):
             if product_include == 'president':
                 mall3 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[3] = 1
-        print(check)
         for i in range(4):
             if check[i] == 0:
                 if i == 0:
@@ -349,7 +344,6 @@ def brand_detail(request, pk):
             if product_include == 'president':
                 mall3 += [Product.objects.get(id=sameProducts[j]).stock]
                 check[3] = 1
-        print(check)
         for i in range(4):
             if check[i] == 0:
                 if i == 0:
