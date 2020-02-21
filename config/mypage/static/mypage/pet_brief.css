@@ -50,7 +50,25 @@
     -webkit-box-orient: vertical;
 }
 
-.pet_card-link {
-    height: 1rem;
+.pet_brief_link_div {
     font-size: 0.8rem;
+    height: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pet_brief_link_a {
+    color: #4f4f4f;
+}
+
+
+.pet_brief_link_a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.pet_brief_link_a:active {
+    outline: none;
+    box-shadow: none;
+    color: black;
 }

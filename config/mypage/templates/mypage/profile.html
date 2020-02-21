@@ -190,6 +190,11 @@
                 <div class="diary_subtitle_text-muted">Recent</div>
             </div>
             <div style="display: flex; align-items: flex-end">
+                <div class="diary_new">
+                    <a href="{% url 'mypage:create_diary' %}" class="diary_new_a">New</a>
+                </div>
+            </div>
+            <div style="display: flex; align-items: flex-end">
                 <div class="diary_more">
                     <a href="{% url 'mypage:diary_list' %}" class="button_diary_more">More ></a>
                 </div>

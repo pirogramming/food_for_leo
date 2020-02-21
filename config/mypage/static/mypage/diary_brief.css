@@ -41,7 +41,25 @@
     -webkit-box-orient: vertical;
 }
 
-.card-link {
-    height: 1rem;
+.diary_brief_link {
     font-size: 0.8rem;
+    height: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.diary_link {
+    color: #4f4f4f;
+}
+
+
+.diary_link:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.diary_link:active {
+    outline: none;
+    box-shadow: none;
+    color: black;
 }

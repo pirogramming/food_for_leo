@@ -55,32 +55,42 @@
 
 <!--pagination-->
 
-<div class="footer_wrap" style="display: flex">
-    <div class="pagination_wrap">
-        {% if diarys.has_other_pages %}
-        <ul class="pagination-container">
-            {% if diarys.has_previous %}
-            <li><a href="?page={{ diarys.previous_page_number }}">&laquo;&nbsp;</a></li>
-            {% else %}
-            <li class="disabled"><span>&laquo;</span></li>
-            {% endif %}
-            {% for i in diarys.paginator.page_range %}
-            {% if diarys.number == i %}
-                <li class="active"><span>&nbsp;{{ i }}&nbsp;</span></li>
-            {% else %}
-            <li><a href="?page={{ i }}">{{ i }}</a></li>
-            {% endif %}
-            {% endfor %}
-            {% if diarys.has_next %}
-            <li><a href="?page={{ diarys.next_page_number }}">&nbsp;&raquo;</a></li>
-            {% else %}
-            <li class="disabled"><span>&raquo;</span></li>
-            {% endif %}
-        </ul>
-        {% endif %}
-    </div>
-    <div class="button_diary_create">
-        <a href="{% url 'mypage:create_diary' %}">create</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2">
+            <div class="pagination_wrap">
+                {% if diarys.has_other_pages %}
+                <ul class="pagination-container">
+                    {% if diarys.has_previous %}
+                    <li><a href="?page={{ diarys.previous_page_number }}">&laquo;&nbsp;</a></li>
+                    {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                    {% endif %}
+                    {% for i in diarys.paginator.page_range %}
+                    {% if diarys.number == i %}
+                        <li class="active"><span>&nbsp;{{ i }}&nbsp;</span></li>
+                    {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if diarys.has_next %}
+                    <li><a href="?page={{ diarys.next_page_number }}">&nbsp;&raquo;</a></li>
+                    {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-1">
+            <div class="button_diary_create">
+                <a href="{% url 'mypage:create_diary' %}">Write</a>
+            </div>
+        <div class="col-md-2"></div>
+        </div>
     </div>
 </div>
+
 

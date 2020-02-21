@@ -149,13 +149,33 @@ div {
     font-size: 0.7rem;
 }
 
-.button_diary_more {
+.diary_new {
+    font-size: 0.7rem;
+}
+
+.diary_new_a {
     padding: 7px 11px;
     margin: 0 10px;
-    color: gray;
+    color: #4f4f4f;
     background: none;
     border-radius: 8px;
     border: none;
+}
+
+.diary_new_a:hover {
+    text-decoration: none;
+    color:black;
+}
+
+.diary_new_a:active {
+    outline: none;
+    box-shadow: none;
+    color: black;
+}
+
+.button_diary_more {
+    color: #4f4f4f;
+    background: none;
 }
 
 .button_diary_more:hover {

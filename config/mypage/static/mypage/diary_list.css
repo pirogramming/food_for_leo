@@ -98,11 +98,16 @@ div {
     margin-right: 5px;
 }
 
+.button_diary_create {
+    font-size: 1rem;
+    color: #4f4f4f;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
 .button_diary_create a {
     color: #333333;
-    border: 1px solid #333333;
-    border-radius: 35%;
-    padding: 2px 7px;
+
+    padding: 3px 8px;
 }
 
 .button_diary_create a:hover {
