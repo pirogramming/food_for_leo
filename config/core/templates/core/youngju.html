@@ -1,0 +1,254 @@
+<head>
+<style>
+
+    body {
+        height: 500px;
+    }
+
+    header {
+        line-height: 0;
+        position: fixed;
+        height: 500px;
+        transition: top 0.2s ease-in-out;
+    }
+
+    .nav-up {
+        -500: px;
+    }
+
+    .header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-color: white; /*야매*/
+    }
+
+    .logo {
+        text-align: center;
+        padding-top: 50px;
+        font-size: 3.5em;
+        font-family: Forte;
+
+
+
+    }
+
+    .logo > a {
+        color: #333333;
+        text-decoration: none;
+
+    }
+
+    .header-img {
+        padding-top: 110px;
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
+
+    img {
+        position: absolute;
+        object-fit: cover;
+        width: 100vw;
+        height: 350px
+    }
+
+    .img-cover {
+        position: absolute;
+        height: 350px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+
+    .signup, #SearchBar, .list-group, .nav_bar {
+        z-index: 100;
+        position: relative;
+    }
+
+    .signup {
+        float: right;
+        right: 0;
+        margin: 20px
+    }
+
+    .signup > a {
+        color: #333333;
+        margin: 5px;
+        text-decoration: none;
+
+    }
+
+    #SearchBar {
+        padding-top: 100px;
+        display: flex;
+        line-height: 15px
+    }
+
+
+    .nav_bar {
+
+        padding-top: 80px;
+        list-style-type: none;
+        flex-direction: row;
+        display: flex;
+        margin: 0 80px;
+
+    }
+
+    .search {
+        width: 300px;
+        vertical-align: middle;
+        white-space: nowrap;
+        position: relative;
+    }
+
+
+    .search input#search {
+        background: white;
+        opacity: 30%;
+        border-radius: 15px;
+    }
+
+    input[type='submit']{font-family: FontAwesome}
+
+    .nav_bar li {
+        /*border-top: grey 1px solid;*/
+        width: 20%;
+        text-align: center;
+    }
+
+    .nav_bar a {
+        text-decoration: none;
+        color: #444444;
+        font-size: 1.2em;
+
+    }
+
+    .nav_bar li :hover {
+        color: #808080;
+        transform: scale(3);
+    }
+
+    .phrase {
+        text-align: center;
+        position: relative;
+        padding-top: 50px;
+        color: white;
+        z-index: 100;
+
+    }
+
+    .contents {
+        padding-top: 600px
+    }
+
+    #matrix {
+      width: 400px;
+      margin: auto;
+      overflow: auto;
+      text-align: justify;
+    }
+
+    #arrowTop {
+      height: 20px;
+      width: 20px;
+      color: black;
+      position: absolute;
+display: flex;
+      cursor: pointer;
+         right: 10px;
+
+    }
+
+    #arrowTop::before {
+      content: '▲';
+
+    }
+
+
+
+</style>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="C:\dev\food_for_LEO\config\templates\nav.js"></script>
+
+
+<html>
+
+<body>
+<header>
+
+    <div class="head-container">
+        <div class="header">
+            <div class="signup">
+                <a href="{% url 'core:login' %}">login</a>
+                <a href="{% url 'core:sign_up' %}">sign up</a>
+            </div>
+            <div class="logo">
+                <a href="{% url 'core:home' %}">LEO</a>
+            </div>
+            <div class="header-img" id="imgs">
+                <img src="http://www.hearthstonehomemade.com/images/0-Dog-Not-Eating-635.jpg">
+                <div class="img-cover"></div>
+            </div>
+            <div class="nav_bar">
+                <li><a class='nav_item' href="{% url 'core:brand_page' %}">Brands</a></li>
+                <li><a class='nav_item' href="{% url 'core:product_list' %}">Products</a></li>
+                <li><a class='nav_item' href="{% url 'core:product_list' %}">Wish List</a></li>
+                <li><a class='nav_item' href="{% url 'mypage:diary' %}">Diary</a></li>
+                <li><a class='nav_item' href="{% url 'mypage:profile' %}">My Page</a></li>
+            </div>
+
+            <div id="SearchBar">
+                <div class="search">
+                    <input class="form-control" type="search" id="search">
+
+                    <!--<input type="submit"  id="getResult" value="search"
+                            style="position: relative; left: 290px; top: -29px;"/>-->
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="phrase">
+
+                <h2>
+                한 해 발생하는 유기동물 수 97,852마리<br/>
+                그 중 73%인 68,140마리는 유기견</h2>
+                반려동물 사지말고 입양하세요
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+
+<div id="arrowTop" hidden></div>
+<script>
+
+    arrowTop.onclick = function() {
+      window.scrollTo(pageXOffset, 0);
+      // after scrollTo, there will be a "scroll" event, so the arrow will hide automatically
+    };
+
+    window.addEventListener('scroll', function() {
+      arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+    });
+
+////
+//야매 ㅎㅎ
+   /**
+    $(window).scroll(function() {
+    if($(this).scrollTop() == 0)
+        $('#imgs').css('opacity','0');
+    else
+
+    $('#imgs').css('opacity','0');
+
+});
+
+**/
+
+  </script>
+</body>
+</html>

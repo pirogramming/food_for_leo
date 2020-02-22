@@ -1,0 +1,56 @@
+
+<div class="container" id="pet_page_wrap">
+    <div class="row" style="display: flex; justify-content: center;">
+        <div class="col-md-3" >
+            <div class="card" id="pet_card1">
+                {% if pet1.img %}
+                    <div class="pet_card_img_div"><img src="{{ pet1.img.url }}" id="pet_card_img_top1" class="pet_img_top"></div>
+                {% endif %}
+                {% if not pet1.img %}
+                    <div class="pet_card_img_div"><img src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/2076503/910/607/m1/fpnw/wm0/dog_cm-.jpg?1483086484&s=b6fc5adc727b1f892beeea285638feba" class="pet_img_top"></div>
+                {% endif %}
+                    <div class="card-body" id="pet_card_body1">
+                        <div class="pet_card-title">{{ pet1.name }}</div>
+                        <div class="pet_kind_text text-muted">{{ pet1.kind }}</div>
+                        <div class="pet_card-text"><pre>{{ pet1.petInfo }}</pre></div>
+                        <div class="pet_brief_link_div"><div><a href="{% url 'mypage:pet_detail' pet1.pk %}" class="pet_brief_link_a">detail</a></div></div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" id="pet_card2">
+                {% if pet2.img %}
+                    <div class="pet_card_img_div"><img src="{{ pet2.img.url }}" id="pet_card_img_top2" class="pet_img_top"></div>
+                {% endif %}
+                {% if not pet2.img %}
+                    <div class="pet_card_img_div"><img src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/2076503/910/607/m1/fpnw/wm0/dog_cm-.jpg?1483086484&s=b6fc5adc727b1f892beeea285638feba" class="pet_img_top"></div>
+                {% endif %}
+                <div class="card-body" id="pet_card_body2">
+                    <div class="pet_card-title">{{ pet2.name }}</div>
+                    <div class="pet_kind_text text-muted">{{ pet2.kind }}</div>
+                    <div class="pet_card-text"><pre>{{ pet2.petInfo }}</pre></div>
+                    <div class="pet_brief_link_div"><div><a href="{% url 'mypage:pet_detail' pet2.pk %}" class="pet_brief_link_a">detail</a></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" id="pet_card3">
+                {% if pet3.img %}
+                    <div class="pet_card_img_div"><img src="{{ pet3.img.url }}" id="pet_card_img_top3" class="pet_img_top"></div>
+                {% endif %}
+                {% if not pet3.img %}
+                    <div class="pet_card_img_div"><img src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/2076503/910/607/m1/fpnw/wm0/dog_cm-.jpg?1483086484&s=b6fc5adc727b1f892beeea285638feba" class="pet_img_top"></div>
+                {% endif %}
+                <div class="card-body" id="pet_card_body3">
+                    <div class="pet_card-title">{{ pet3.name }}</div>
+                    <div class="pet_kind_text text-muted">{{ pet3.kind }}</div>
+                    <div class="pet_card-text"><pre>{{ pet3.petInfo }}</pre></div>
+                    <div class="pet_brief_link_div"><div><a href="{% url 'mypage:pet_detail' pet3.pk %}" class="pet_brief_link_a">detail</a></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

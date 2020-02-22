@@ -1,0 +1,24 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
+{% include "core/base.html" %}
+
+<div style="padding-top: 20vh">
+
+<div class="create_pet_form">
+    <h2>펫 등록</h2>
+        <form action="{% url 'mypage:create_pet' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+            <button type="submit" class="btn btn-primary">
+            펫 등록 {% bootstrap_icon "heart" %}
+            </button>
+            {% endbuttons %}
+        </form>
+</div>
+
+</div>

@@ -1,0 +1,57 @@
+ .pet_list_cardbody-img{
+    width: 70%;
+    object-fit: cover;
+     /*border-right: #333333 solid 1px;*/
+     padding-right: 40px;
+     padding-left: 40px;
+     padding-bottom: 25px;
+}
+
+ .button_pet_add {
+    font-size: 1.1rem;
+    color: #4f4f4f;
+    font-family: 'Do Hyeon', sans-serif;
+     margin-top: 15px;
+}
+
+.button_pet_add a {
+    color: #333333;
+    padding: 3px 8px;
+    text-align: right;
+}
+
+.button_pet_adda:hover {
+    text-decoration: none;
+    color: #4E4025
+}
+
+.card-title {
+    font-family: 'Do Hyeon';
+    font-weight: bold;
+    font-size: 2.3em;
+    padding: 5px
+}
+
+.card-subtitle{
+    font-family: 'Do Hyeon';
+    font-size:1.5em;
+
+}
+
+.card-body {text-align: center}
+
+#pet_list_wrap {
+    padding-bottom: 50px;
+}
+.pet_list-card-content {
+    padding-bottom: 15px;
+}
+
+.card-link {
+    padding-right: 8vw;
+}
+
+/*.card-body {*/
+/*    border:1px solid #333333;*/
+/*}*/
+

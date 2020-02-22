@@ -1,0 +1,327 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/css/product_detail_search.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: #808080;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .whole_wrapper {
+        padding-top: 20vh;
+    }
+
+    .middle_img {
+        width: 100vw;
+        background-image: url("http://www.hearthstonehomemade.com/images/0-Dog-Not-Eating-635.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 50vh;
+    }
+
+    .middle_img_cover {
+        object-fit: cover;
+        width: 100vw;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .middle_img_cover_content {
+        color: white;
+
+        text-space: 2px;
+        opacity: 80%;
+        text-align: center;
+    }
+
+    .search_bar {
+        width: 30%;
+        height: 20%;
+        margin-left: 10%;
+    }
+
+    .item-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        margin-top: 60px;
+    }
+
+    .content_down_items {
+        width: 24%;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    .content_down_items > a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .content_down_items div {
+        text-align: center;
+    }
+
+    #product-container {
+        width: 90vw;
+        margin: 0 auto;
+
+    }
+
+    .itemimg {
+        padding-top: 15px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+
+        transform: scale(1.0);
+        transition: transform .5s;
+    }
+
+    .itemimg:hover {
+        transform: scale(1.1);
+        transition: transform .5s;
+    }
+
+    .itemName {
+        padding: 5px 0 3px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+
+    .pagination-container {
+        text-align: center;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination-container li {
+        padding: 0 10px
+    }
+
+    .like {
+        background: none;
+        border: none;
+        color: grey;
+        width:10%;
+        float:left;
+
+    }
+
+</style>
+
+<script type="text/javascript">
+    $('.itemName').tooltip({track: true});
+</script>
+
+
+<body>
+{% include "core/base.html" %}
+<div class="whole_wrapper">
+    <div class="middle_img">
+        <div class="middle_img_cover">
+            <div class="middle_img_cover_content">
+                <h1>PRODUCTS</h1>
+            </div>
+            <div class="search_bar" style="display: flex; flex-direction: row; position: relative">
+
+                <form action="{% url 'core:search_result' %}" method="GET" autocomplete="off">
+                    <fieldset class="url">
+                        <input id="url" class="search" type="text" name="q" value="{{ q }}" required>
+                        <div class="search_list">
+                            <ul class="list-group" id="result">
+                            </ul>
+                        </div>
+                        <label for="url"><i class="fa fa-search" aria-hidden="true"></i> Search</label>
+                        <div class="after"></div>
+                    </fieldset>
+                    <fieldset class="enter">
+                        <button></button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="product-container">
+        <div class="item-list">
+            {% for item in items %}
+                <div class="content_down_items">
+                    <a href="{% url 'core:product_detail' item.pk %}">
+                        <div class="itemimg">
+                            <img src="{{ item.img_main }}" alt="" style="width:80%">
+                        </div>
+                        <div class="itemName" title="{{ item.name }}">{{ item.name }}</div>
+                    </a>
+                    <button type="button" onclick="clickLike({{ item.id }})" id="like{{ item.id }}" class="like"
+                            name="{{ item.id }}">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!--pagination-->
+        {% if items.has_other_pages %}
+            <ul class="pagination-container">
+                {% if items.has_previous %}
+                    <li><a href="?page={{ items.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in items.paginator.page_range %}
+                    {% if items.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if items.has_next %}
+                    <li><a href="?page={{ items.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+
+    </div>
+</div>
+</body>
+<script>
+    function fetchJsonFilter(val) {
+        var tags = [];
+        //brand name filtering
+        fetch('../../static/json/core_brand.json').then(function (response) {
+            response.text().then(function (text) {
+                var b_list = JSON.parse(text);
+                var show_brand = [];
+                b_list.filter(function (element, index, array) {
+                    if (array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_brand.push(array[index]);
+                    }
+                });
+                var brand = show_brand[0]
+                var brand_tag = '<li class="list-group-item"><a href="{% url "core:brand_detail" 111 %}">'.replace(111, brand.id) + show_brand[0].name + '</a></li>'
+                tags = tags + brand_tag
+            })
+        })
+        //product name filtering
+        fetch('../../static/json/core_product.json').then(function (response) {
+            response.text().then(function (text) {
+                var p_list = JSON.parse(text);
+                var show_product = [];
+                p_list.filter(function (element, index, array) { //필터링하기
+                    if (array[index].name.includes(val)) {
+                        console.log(array[index].name)
+                        show_product.push(array[index]);
+                    }
+                });
+                for (var i = 0; i < show_product.length; i++) {
+                    if (i > 1) {
+                        break
+                    } else {
+                        var product = show_product[i];
+                        var tag = '<li class="list-group-item"><a href="{% url "core:product_detail" 111 %}">'.replace(111, product.id) + product.name + '</a></li>'
+                        tags = tags + tag
+                    }
+                }
+                document.querySelector('#result').innerHTML = tags;
+            })
+        })
+    }
+
+    $('.search').on('keyup', function () {
+        var searchInput = $(this).val();
+        if (searchInput.length <= 1) { //검색에 1개 이하일때 아무것도 안보여줌
+            document.querySelector('#result').innerHTML = []
+        } else {
+            fetchJsonFilter(searchInput)
+        }
+    });
+</script>
+<script>
+    function clickLike(pk) {
+        console.log(pk)
+        $.ajax({
+            type: "post",
+            url: "{% url 'core:product_like' %}",
+            data: {"pk": pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+            success: function (response) {
+                console.log(1);
+                if (response.likes == 0) {
+                    $('#like' + pk).css('color', 'grey');
+                    $('#like' + pk).css('background', 'none');
+                    $('#like' + pk).css('border', 'none');
+                } else {
+                    $('#like' + pk).css('color', 'red');
+                    $('#like' + pk).css('background', 'none');
+                    $('#like' + pk).css('border', 'none');
+                }
+            }, error: function (request, status, error) { // 통신 실패시 - 로그인 페이지 리다이렉트
+                alert('fail');
+            },
+        })
+    }
+</script>
