@@ -3,10 +3,19 @@
 <link rel="stylesheet" href="{% static 'mypage/pet_list.css' %}">
 
 <!-- Bootstrap CDN -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
 
 <!-- Django-Bootstrap4 -->
 {% load bootstrap3 %}
@@ -14,19 +23,37 @@
 
 {% include "core/base.html" %}
 <div style="padding-top: 20vh">
-{% for pet in pets %}
-<div class="card" style="width: 25rem; height: 20rem; display: inline-block; overflow: hidden">
-  <div class="card-body">
-    <h5 class="card-title" style="height: 2rem; overflow: hidden">{{ pet.name }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ pet.kind }}</h6>
-    <p class="card-text" style="height: 9rem; overflow: hidden">{{ pet.petInfo }}</p>
-    <a href="{% url 'mypage:pet_detail' pet.pk %}" class="card-link">펫 상세정보</a>
-  </div>
-</div>
-{% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10" id="pet_list_wrap">
+                <div style="padding-top: 10vh">
+                    {% for pet in pets %}
+                        <div class="pet_list-card">
+                            <div class="card-body">
+                                {% if pet.img %}
+                                    <img src="{{ pet.img.url }}" class="pet_list_cardbody-img">
+                                {% endif %}
+                                <div class="pet_list-card-content">
+                                    <span class="card-title">{{ pet.name }}</span>
+                                    <span class="card-subtitle">{{ pet.kind }}</span>
+                                </div>
+                            </div>
+                            <div class="pet_list_cardbody-detail">
+                                <a href="{% url 'mypage:pet_detail' pet.pk %}" class="card-link">detail</a>
+                            </div>
+                        </div>
+                        </div>
+                    {% endfor %}
 
-<h3><a href="{% url 'mypage:profile' %}">profile</a></h3>
-<h3><a href="{% url 'mypage:favorites' %}">favorites</a></h3>
-<h3><a href="{% url 'mypage:create_pet' %}">펫 등록하기</a></h3>
 
+                <dev class="button_pet_add">
+                    <a href="{% url 'mypage:create_pet' %}">Add</a>
+                </dev>
+
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
 </div>
