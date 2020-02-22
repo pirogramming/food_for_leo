@@ -51,6 +51,15 @@
     -webkit-box-orient: vertical;
 }
 
+.pet_card-text pre {
+    height: 6.0rem;
+    font-size: 1rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
 .pet_brief_link_div {
     font-size: 0.8rem;
     height: 1rem;

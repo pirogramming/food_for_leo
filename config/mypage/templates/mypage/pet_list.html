@@ -23,6 +23,7 @@
 
 {% include "core/base.html" %}
 <div style="padding-top: 20vh">
+
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -34,26 +35,23 @@
                                 {% if pet.img %}
                                     <img src="{{ pet.img.url }}" class="pet_list_cardbody-img">
                                 {% endif %}
-                                <div class="pet_list-card-content">
-                                    <span class="card-title">{{ pet.name }}</span>
-                                    <span class="card-subtitle">{{ pet.kind }}</span>
-                                </div>
+                            <div class="pet_list-card-content">
+                                <span class="card-title">{{ pet.name }}</span>
+                                <span class="card-subtitle">{{ pet.kind }}</span>
                             </div>
-                            <div class="pet_list_cardbody-detail">
+                            </div>
+                            <div style="display: flex; justify-content: flex-end"><div class="pet_list_cardbody-detail">
                                 <a href="{% url 'mypage:pet_detail' pet.pk %}" class="card-link">detail</a>
-                            </div>
-                        </div>
+                            </div></div>
                         </div>
                     {% endfor %}
-
-
-                <dev class="button_pet_add">
+                </div>
+                <div style="display:flex; justify-content: flex-end"><div class="button_pet_add">
                     <a href="{% url 'mypage:create_pet' %}">Add</a>
-                </dev>
-
+                </div></div>
             </div>
-
+            <div class="col-md-1"></div>
         </div>
-        <div class="col-md-1"></div>
     </div>
+
 </div>
