@@ -9,7 +9,7 @@ django-allauth==0.41.0
 -e git+https://github.com/yourlabs/django-autocomplete-light.git@e639471eef0813239baba7ee2b812d9a3c63da3c#egg=django_autocomplete_light
 django-bootstrap3==12.0.3
 idna==2.8
-lxml==4.5.0
+lxml==4.6.2
 numpy==1.18.1
 oauthlib==3.1.0
 pandas==1.0.1
